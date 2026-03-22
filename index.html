@@ -5,30 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CUHK–UCL EMI Symposium 2026</title>
   <meta name="description" content="English-medium instruction in the era of GenAI: Negotiating tradition and modernity — CUHK–UCL EMI Symposium, 24 April 2026." />
-  <meta name="theme-color" content="#4d2d8f" />
+  <meta name="theme-color" content="#e8d7ff" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f7f4fb;
-      --bg-deep: #f1ebfb;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: rgba(255, 255, 255, 0.92);
-      --text: #201731;
-      --muted: #645a7a;
-      --line: rgba(98, 79, 133, 0.14);
-      --primary: #6f4bb8;
-      --primary-deep: #4d2d8f;
-      --primary-soft: #ece4fb;
-      --accent: #a888e8;
-      --accent-soft: #d6c8f7;
-      --shadow-lg: 0 24px 70px rgba(58, 36, 96, 0.13);
-      --shadow-md: 0 14px 34px rgba(58, 36, 96, 0.08);
-      --radius-xl: 34px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max: 1200px;
+      --lavender: #e8d7ff;
+      --butter: #fff2bd;
+      --bg: #fcf9ff;
+      --paper: #fffdf7;
+      --white: #ffffff;
+      --ink: #241a35;
+      --muted: #5f556f;
+      --line: #d9cbe9;
+      --line-strong: #c8b3e4;
+      --primary: #6f4aa3;
+      --primary-deep: #4b2f72;
+      --accent: #b487f2;
+      --tint: #f4ecff;
+      --highlight: #fff8d8;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -36,11 +33,8 @@
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(177, 150, 238, 0.26), transparent 24%),
-        radial-gradient(circle at 90% 14%, rgba(111, 75, 184, 0.12), transparent 22%),
-        linear-gradient(180deg, #fbf9fe 0%, var(--bg) 52%, var(--bg-deep) 100%);
+      color: var(--ink);
+      background: linear-gradient(180deg, #fffefb 0%, var(--bg) 52%, #faf5ff 100%);
       line-height: 1.7;
     }
 
@@ -48,7 +42,7 @@
     img { max-width: 100%; display: block; }
 
     .container {
-      width: min(var(--max), calc(100% - 48px));
+      width: min(var(--max), calc(100% - 56px));
       margin: 0 auto;
     }
 
@@ -56,218 +50,222 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(247, 244, 251, 0.8);
-      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 247, 0.96);
+      border-bottom: 1px solid var(--line-strong);
+      backdrop-filter: blur(8px);
     }
 
     .nav {
-      min-height: 78px;
-      display: flex;
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
     }
 
     .brand {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 4px;
     }
 
     .brand small {
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .brand strong {
       font-size: 16px;
-      letter-spacing: 0.04em;
       font-weight: 800;
+      letter-spacing: 0.03em;
     }
 
     .nav-links {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
-      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
     }
 
     .nav-links a:hover { color: var(--primary-deep); }
 
     .hero {
-      padding: 92px 0 54px;
+      padding: 54px 0 0;
     }
 
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      padding: 68px;
-      border-radius: 40px;
-      border: 1px solid rgba(111, 75, 184, 0.15);
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(243, 236, 255, 0.78));
-      box-shadow: var(--shadow-lg);
-      isolation: isolate;
+    .hero-shell {
+      border-top: 4px solid var(--primary-deep);
+      border-bottom: 1px solid var(--line-strong);
+      background: linear-gradient(90deg, rgba(232, 215, 255, 0.35) 0%, rgba(255, 242, 189, 0.22) 100%);
     }
 
-    .hero-card::before,
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      pointer-events: none;
-      filter: blur(14px);
-      z-index: -1;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) 360px;
+      gap: 0;
+      min-height: 520px;
     }
 
-    .hero-card::before {
-      width: 380px;
-      height: 380px;
-      right: -110px;
-      top: -110px;
-      background: radial-gradient(circle, rgba(137, 110, 206, 0.22), rgba(137, 110, 206, 0) 70%);
+    .hero-main,
+    .hero-side {
+      padding: 44px 0;
     }
 
-    .hero-card::after {
-      width: 320px;
-      height: 320px;
-      left: -120px;
-      bottom: -140px;
-      background: radial-gradient(circle, rgba(201, 181, 245, 0.28), rgba(201, 181, 245, 0) 70%);
+    .hero-main {
+      padding-right: 44px;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-side {
+      padding-left: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.12) 100%);
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 22px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(111, 75, 184, 0.09);
-      color: var(--primary-deep);
-      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--primary);
     }
 
-    h1, h2, h3, .display {
+    h1, h2, h3, h4 {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      line-height: 1.03;
+      line-height: 1.04;
       letter-spacing: 0.01em;
       font-weight: 700;
     }
 
     h1 {
-      font-size: clamp(44px, 7vw, 82px);
-      max-width: 980px;
-      margin-bottom: 18px;
+      font-size: clamp(46px, 7vw, 88px);
+      max-width: 900px;
+      margin-bottom: 20px;
     }
 
     .hero-subtitle {
-      max-width: 900px;
-      color: var(--muted);
+      max-width: 820px;
       font-size: 18px;
-      margin-bottom: 34px;
+      color: var(--muted);
+      margin: 0 0 28px;
     }
 
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-      margin: 36px 0 34px;
+    .hero-note {
+      max-width: 820px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .meta-card {
-      padding: 22px 22px 20px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(111, 75, 184, 0.1);
-      box-shadow: 0 6px 18px rgba(58, 36, 96, 0.03);
+    .detail-block {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-block:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .label {
       display: block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
       margin-bottom: 8px;
+      font-size: 11px;
       font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
-    .meta-card strong {
+    .detail-block strong {
       display: block;
       font-size: 17px;
-      line-height: 1.35;
-      font-weight: 700;
+      line-height: 1.45;
     }
 
     .cta-row {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-size: 14px;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid var(--primary-deep);
+      border-radius: 0;
+      font-size: 13px;
       font-weight: 800;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
-
     .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), var(--primary-deep));
-      box-shadow: 0 12px 26px rgba(77, 45, 143, 0.22);
+      background: linear-gradient(90deg, var(--lavender) 0%, var(--butter) 100%);
+      color: var(--primary-deep);
+      border-color: var(--primary-deep);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #e2ccff 0%, #ffec9a 100%);
     }
 
     .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,0.8);
-      border-color: rgba(111, 75, 184, 0.14);
+      background: transparent;
+      color: var(--primary-deep);
     }
 
-    section { padding: 34px 0; }
+    .btn-secondary:hover {
+      background: linear-gradient(90deg, rgba(232, 215, 255, 0.3) 0%, rgba(255, 242, 189, 0.28) 100%);
+    }
+
+    main section {
+      padding: 0;
+    }
 
     .section-shell {
-      padding: 36px;
-      border-radius: var(--radius-xl);
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(14px);
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line-strong);
     }
 
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 26px;
-      flex-wrap: wrap;
+    .section-grid {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .section-side {
+      position: sticky;
+      top: 100px;
+      align-self: start;
     }
 
     .section-kicker {
-      display: inline-block;
+      display: block;
       margin-bottom: 8px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -275,246 +273,402 @@
     }
 
     h2 {
-      font-size: clamp(30px, 4vw, 48px);
+      font-size: clamp(30px, 4vw, 50px);
     }
 
     .section-intro {
+      margin-top: 14px;
       color: var(--muted);
-      max-width: 780px;
-      font-size: 16px;
+      font-size: 15px;
+      max-width: 240px;
     }
 
-    .two-col {
+    .content-stack > * + * {
+      margin-top: 28px;
+    }
+
+    .lede {
+      font-size: 18px;
+      color: var(--ink);
+      max-width: 980px;
+    }
+
+    .split {
       display: grid;
-      grid-template-columns: 1.2fr 0.95fr;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      gap: 28px;
+      align-items: start;
     }
 
-    .panel, .info-card, .speaker-card, .programme-card, .theme-card {
-      background: var(--surface-strong);
-      border: 1px solid rgba(111, 75, 184, 0.1);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
+    .plain-box {
+      padding: 22px 0 0;
+      border-top: 1px solid var(--line);
     }
 
-    .panel, .info-card, .speaker-card, .programme-card { padding: 24px; }
-
-    .panel h3,
-    .info-card h3,
-    .speaker-card h3 {
+    .plain-box h3 {
       font-size: 28px;
       margin-bottom: 12px;
     }
 
-    .panel p,
-    .info-card p,
-    .speaker-card p,
-    .programme-card p { margin: 0; color: var(--muted); }
+    .plain-box p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-    .highlights,
-    .theme-grid,
-    .speaker-grid,
-    .info-grid,
-    .sponsors {
+    .key-points {
       display: grid;
-      gap: 18px;
-    }
-
-    .highlights {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      margin-top: 18px;
+      gap: 0;
+      border-top: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line);
+      background: var(--paper);
     }
 
-    .highlight-card {
-      padding: 18px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(238, 231, 252, 0.82), rgba(255,255,255,0.86));
-      border: 1px solid rgba(111, 75, 184, 0.1);
+    .key-item {
+      padding: 18px 20px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .highlight-card strong {
+    .key-item strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 15px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .theme-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      margin-top: 24px;
-    }
-
-    .theme-card {
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(243, 236, 252, 0.82));
-    }
-
-    .theme-card h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .theme-card p {
+    .key-item p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .speaker-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .theme-table,
+    .speaker-table,
+    .info-table,
+    .bio-table,
+    .featured-table {
+      border-top: 2px solid var(--primary-deep);
+      background: var(--paper);
     }
 
-    .speaker-card {
-      min-height: 270px;
+    .theme-row,
+    .speaker-row,
+    .info-row,
+    .programme-row,
+    .bio-row,
+    .featured-row {
+      display: grid;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .theme-row {
+      grid-template-columns: 280px 1fr;
+    }
+
+    .theme-row > div,
+    .speaker-row > div,
+    .info-row > div,
+    .programme-row > div,
+    .bio-row > div,
+    .featured-row > div {
+      padding: 18px 20px;
+    }
+
+    .theme-row > div:first-child,
+    .speaker-row > div:first-child,
+    .info-row > div:first-child,
+    .programme-row > div:first-child,
+    .bio-row > div:first-child,
+    .featured-row > div:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    .theme-row h3,
+    .speaker-name,
+    .info-title,
+    .speaker-block-title {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .theme-row p,
+    .speaker-meta,
+    .speaker-copy,
+    .info-copy,
+    .programme-copy,
+    .bio-copy,
+    .featured-copy {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .speaker-group + .speaker-group {
+      margin-top: 36px;
+    }
+
+    .speaker-block-head {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      margin-bottom: 14px;
+      align-items: end;
+    }
+
+    .speaker-block-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .speaker-block-copy {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .bio-row {
+      grid-template-columns: 250px 1fr;
+      align-items: start;
+    }
+
+    .featured-row {
+      grid-template-columns: 250px 1fr;
+      align-items: start;
+    }
+
+    .speaker-identity {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(242, 236, 252, 0.8));
+      gap: 6px;
     }
 
-    .tag {
-      align-self: flex-start;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(111, 75, 184, 0.08);
-      color: var(--primary-deep);
+    .speaker-affiliation {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .field-block + .field-block {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 6px;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--primary);
     }
 
-    .programme-grid {
+    .field-title {
+      display: block;
+      margin: 0 0 6px;
+      font-weight: 800;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.45;
+    }
+
+    .programme-layout {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
+      grid-template-columns: 300px 1fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .programme-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(244, 238, 253, 0.84));
+    .programme-summary {
+      padding-top: 6px;
     }
 
-    .callout {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-      min-height: 100%;
+    .programme-summary h3 {
+      font-size: 34px;
+      margin-bottom: 14px;
     }
 
-    .display {
-      font-size: clamp(28px, 4vw, 46px);
+    .programme-summary p {
+      margin: 0 0 20px;
+      color: var(--muted);
     }
 
-    .programme-item {
-      display: grid;
-      grid-template-columns: 96px 1fr;
-      gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(111, 75, 184, 0.09);
+    .programme-table {
+      border-top: 2px solid var(--primary-deep);
+      background: var(--paper);
     }
 
-    .programme-item:last-child { border-bottom: 0; }
+    .programme-row {
+      grid-template-columns: 120px 1fr;
+    }
 
     .programme-time {
-      color: var(--primary-deep);
-      font-weight: 800;
       font-size: 14px;
-      letter-spacing: 0.02em;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--primary-deep);
     }
 
     .programme-title {
       display: block;
       margin-bottom: 4px;
       font-weight: 800;
-      color: var(--text);
+      color: var(--ink);
     }
 
-    .info-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .info-table .info-row {
+      grid-template-columns: 240px 1fr;
+    }
+
+    .funding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .funding-block {
+      padding-top: 18px;
+      border-top: 2px solid var(--primary-deep);
+    }
+
+    .funding-block h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .funding-block p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .map-wrap {
-      margin-top: 24px;
-      overflow: hidden;
-      min-height: 380px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(111, 75, 184, 0.1);
-      background: linear-gradient(135deg, rgba(111, 75, 184, 0.09), rgba(216, 203, 247, 0.22));
-      box-shadow: var(--shadow-md);
+      margin-top: 28px;
+      border-top: 2px solid var(--primary-deep);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(232, 215, 255, 0.08) 0%, rgba(255, 242, 189, 0.08) 100%);
     }
 
     .map-wrap iframe {
       width: 100%;
-      height: 380px;
+      height: 360px;
       border: 0;
       display: block;
     }
 
-    .sponsors {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .footer {
-      padding: 28px 0 56px;
-      color: var(--muted);
-      font-size: 14px;
+      padding: 26px 0 48px;
+      background: linear-gradient(90deg, rgba(232, 215, 255, 0.18) 0%, rgba(255, 242, 189, 0.18) 100%);
     }
 
     .footer-shell {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: end;
+      border-top: 2px solid var(--primary-deep);
+      padding-top: 18px;
     }
 
     .smallcaps {
-      font-size: 12px;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-    }
-
-    .note {
-      font-size: 13px;
       color: var(--muted);
     }
 
+    .footer-title {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
     @media (max-width: 1100px) {
-      .meta-grid,
-      .theme-grid,
-      .speaker-grid,
-      .info-grid,
-      .sponsors,
-      .two-col,
-      .programme-grid {
-        grid-template-columns: 1fr 1fr;
+      .hero-grid,
+      .section-grid,
+      .split,
+      .programme-layout,
+      .funding-grid,
+      .speaker-block-head {
+        grid-template-columns: 1fr;
       }
 
-      .meta-grid { grid-template-columns: 1fr 1fr; }
-      .speaker-grid { grid-template-columns: 1fr 1fr; }
-      .two-col,
-      .programme-grid { grid-template-columns: 1fr; }
-      .theme-grid { grid-template-columns: 1fr 1fr; }
+      .hero-main {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding-right: 0;
+      }
+
+      .hero-side {
+        padding-left: 0;
+      }
+
+      .section-side {
+        position: static;
+      }
+
+      .section-intro {
+        max-width: none;
+      }
     }
 
     @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 24px)); }
-      .hero { padding-top: 48px; }
-      .hero-card,
-      .section-shell { padding: 24px; }
-      .meta-grid,
-      .highlights,
-      .theme-grid,
-      .speaker-grid,
-      .info-grid,
-      .sponsors { grid-template-columns: 1fr; }
-      .programme-item { grid-template-columns: 1fr; gap: 6px; }
-      h1 { font-size: 44px; }
-      .nav { align-items: flex-start; padding: 16px 0; }
-      .nav-links { gap: 12px; }
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        grid-template-columns: 1fr;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 14px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .section-shell {
+        padding-top: 28px;
+        padding-bottom: 28px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .theme-row,
+      .info-table .info-row,
+      .programme-row,
+      .bio-row,
+      .featured-row,
+      .key-points {
+        grid-template-columns: 1fr;
+      }
+
+      .theme-row > div:first-child,
+      .info-row > div:first-child,
+      .programme-row > div:first-child,
+      .bio-row > div:first-child,
+      .featured-row > div:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .key-points {
+        border-left: 0;
+      }
+
+      .key-item {
+        border-right: 0;
+      }
     }
   </style>
 </head>
@@ -539,246 +693,318 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero-card">
-          <span class="eyebrow">Symposium · 24 April 2026 · Hong Kong</span>
-          <h1>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</h1>
-          <p class="hero-subtitle">A high-level international symposium bringing together scholars, educators, institutional leaders, and postgraduate researchers to examine how English-medium instruction is being reconfigured by generative AI across pedagogy, participation, assessment, teacher development, academic literacy, and the future of multilingual higher education.</p>
-
-          <div class="meta-grid">
-            <article class="meta-card">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-main">
+            <span class="eyebrow">Symposium · 24 April 2026 · Hong Kong</span>
+            <h1>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</h1>
+            <p class="hero-subtitle">A high-level international symposium bringing together scholars, educators, institutional leaders, and postgraduate researchers to examine how English-medium instruction is being reconfigured by generative AI across pedagogy, participation, assessment, teacher development, academic literacy, and the future of multilingual higher education.</p>
+            <p class="hero-note">This version distinguishes keynote speakers from featured speakers more clearly, simplifies registration and venue information, and introduces a lighter lavender–butter visual theme while keeping the site formally structured.</p>
+          </div>
+          <aside class="hero-side">
+            <div class="detail-block">
               <span class="label">Date</span>
               <strong>24 April 2026 (Friday)</strong>
-            </article>
-            <article class="meta-card">
+            </div>
+            <div class="detail-block">
               <span class="label">Venue</span>
               <strong>Yasumoto International Academic Park (YIA), CUHK</strong>
-            </article>
-            <article class="meta-card">
+            </div>
+            <div class="detail-block">
               <span class="label">Host</span>
               <strong>Department of Curriculum and Instruction, The Chinese University of Hong Kong</strong>
-            </article>
-            <article class="meta-card">
+            </div>
+            <div class="detail-block">
               <span class="label">Format</span>
               <strong>Keynotes, featured talks, dialogue, and networking</strong>
-            </article>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#registration">Register now</a>
-            <a class="btn btn-secondary" href="#programme">View programme</a>
-          </div>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#registration">Register now</a>
+              <a class="btn btn-secondary" href="#programme">View programme</a>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">About the symposium</span>
-              <h2>An international forum on EMI, GenAI, and academic futures</h2>
-            </div>
-            <p class="section-intro">This final version is a fully static single-file website designed for direct deployment on GitHub Pages. Replace placeholder links, speaker names, and final programme details when ready.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">About the symposium</span>
+            <h2>An international forum on EMI, GenAI, and academic futures</h2>
+            <p class="section-intro">Single-file static site for GitHub Pages, redesigned with stronger visual structure and a more institutional tone.</p>
           </div>
+          <div class="content-stack">
+            <p class="lede">Join us for the CUHK–UCL English-medium instruction (EMI) Symposium, to be held on 24 April 2026 at the Department of Curriculum and Instruction, The Chinese University of Hong Kong. Under the theme <em>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</em>, the symposium brings together leading voices from Hong Kong and the international research community to examine how EMI is being transformed by generative AI at every level of higher education. Across keynote addresses and featured presentations, the event will explore questions of human agency, authorship, participation, assessment, teacher language awareness, academic language proficiency, research practice, and educational inequality. Rather than treating GenAI as either a simple solution or a passing disruption, the symposium creates a rigorous space for rethinking EMI in relation to multilingual realities, pedagogical responsibility, and the changing conditions of academic work.</p>
 
-          <div class="two-col">
-            <div class="panel">
-              <h3>About</h3>
-              <p>Join us for the CUHK–UCL English-medium instruction (EMI) Symposium, to be held on 24 April 2026 at the Department of Curriculum and Instruction, The Chinese University of Hong Kong. Under the theme <em>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</em>, the symposium brings together leading voices from Hong Kong and the international research community to examine how EMI is being transformed by generative AI at every level of higher education. Across keynote addresses and featured presentations, the event will explore questions of human agency, authorship, participation, assessment, teacher language awareness, academic language proficiency, research practice, and educational inequality. Rather than treating GenAI as either a simple solution or a passing disruption, the symposium creates a rigorous space for rethinking EMI in relation to multilingual realities, pedagogical responsibility, and the changing conditions of academic work.</p>
-
-              <div class="highlights">
-                <div class="highlight-card">
-                  <strong>Audience</strong>
-                  <p>Researchers, university leaders, teachers, postgraduate students, and policy stakeholders working in EMI, EME, applied linguistics, and higher education.</p>
-                </div>
-                <div class="highlight-card">
-                  <strong>Focus</strong>
-                  <p>Human agency, classroom practice, participation, assessment, teacher development, multilingualism, literacy, and academic futures in the age of GenAI.</p>
-                </div>
-                <div class="highlight-card">
-                  <strong>Format</strong>
-                  <p>Keynote addresses, featured talks, curated discussion, and cross-institutional exchange across different research traditions and career stages.</p>
-                </div>
-                <div class="highlight-card">
-                  <strong>Scope</strong>
-                  <p>Local and international perspectives on how EMI is being reconfigured by technological change without losing sight of pedagogy, equity, and disciplinary learning.</p>
-                </div>
+            <div class="split">
+              <div class="plain-box">
+                <h3>Theme rationale</h3>
+                <p>The current programme suggests a shared intellectual concern: GenAI is not simply adding a new tool to EMI. It is reshaping academic voice, participation, assessment, teacher judgement, scholarly reading, and the conditions under which students gain access to disciplinary knowledge. The symposium approaches tradition and modernity as a live tension to be negotiated rather than a binary to be resolved.</p>
+              </div>
+              <div class="plain-box">
+                <h3>Audience</h3>
+                <p>Researchers, university leaders, teachers, postgraduate students, and policy stakeholders working in EMI, multilingual education, applied linguistics, and higher education.</p>
               </div>
             </div>
 
-            <aside class="panel">
-              <h3>Theme rationale</h3>
-              <p>The symposium theme is shaped by a shared concern running through the current programme: GenAI is not simply adding a new tool to EMI. It is altering how academic voice is produced, how participation is recognised, how proficiency is measured, how teachers make pedagogical decisions, and how students encounter scholarship itself. At the same time, several presentations insist that longstanding concerns in EMI do not disappear under technological modernity. Questions of support, inequality, disciplinary access, interpretive responsibility, and human judgement remain central. The symposium therefore approaches tradition and modernity not as opposites, but as a live tension to be negotiated in policy, practice, and research.</p>
-            </aside>
+            <div class="key-points">
+              <div class="key-item">
+                <strong>Focus</strong>
+                <p>Agency, participation, assessment, teacher development, multilingualism, literacy, and academic futures in the age of GenAI.</p>
+              </div>
+              <div class="key-item">
+                <strong>Format</strong>
+                <p>Keynote addresses, featured talks, curated discussion, and cross-institutional exchange across research traditions and career stages.</p>
+              </div>
+              <div class="key-item">
+                <strong>Scope</strong>
+                <p>Local and international perspectives on how EMI is being reconfigured by technological change without losing sight of pedagogy and equity.</p>
+              </div>
+              <div class="key-item">
+                <strong>Setting</strong>
+                <p>A formal one-day symposium hosted at CUHK, designed for scholarly exchange and institutional dialogue.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="themes">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Symposium themes</span>
-              <h2>Current conversations shaping the programme</h2>
-            </div>
-            <p class="section-intro">The abstracts point to a coherent intellectual agenda centred on the pedagogical, ethical, and methodological consequences of GenAI for EMI.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Symposium themes</span>
+            <h2>Current conversations shaping the programme</h2>
+            <p class="section-intro">The abstracts converge on a coherent agenda around pedagogy, ethics, literacy, inequality, and research method in the age of GenAI.</p>
           </div>
-
-          <div class="theme-grid">
-            <article class="theme-card">
-              <h3>Agency and decision-making</h3>
-              <p>How should human judgement be protected when AI increasingly enters classroom interaction, instructional design, and academic work?</p>
-            </article>
-            <article class="theme-card">
-              <h3>Participation and authorship</h3>
-              <p>What happens to academic voice, collaboration, and visible participation when students work in hybrid human–AI environments?</p>
-            </article>
-            <article class="theme-card">
-              <h3>Teacher development</h3>
-              <p>How can AI support EMI teachers in developing stronger language awareness, scaffolding practices, and assessment design?</p>
-            </article>
-            <article class="theme-card">
-              <h3>Preparedness and inequality</h3>
-              <p>How do language support, institutional design, and AI-mediated practices shape access, inclusion, and stratification in EMI settings?</p>
-            </article>
-            <article class="theme-card">
-              <h3>Academic literacy and assessment</h3>
-              <p>How should we rethink proficiency, oral interaction, and academic literacy when new tools mediate both communication and evaluation?</p>
-            </article>
-            <article class="theme-card">
-              <h3>Research ethics and methodology</h3>
-              <p>What kinds of qualitative and interpretive practices remain necessary as open science and AI reshape scholarly expectations?</p>
-            </article>
+          <div class="theme-table">
+            <div class="theme-row">
+              <div><h3>Agency and decision-making</h3></div>
+              <div><p>How should human judgement be protected when AI increasingly enters classroom interaction, instructional design, and academic work?</p></div>
+            </div>
+            <div class="theme-row">
+              <div><h3>Participation and authorship</h3></div>
+              <div><p>What happens to academic voice, collaboration, and visible participation when students work in hybrid human–AI environments?</p></div>
+            </div>
+            <div class="theme-row">
+              <div><h3>Teacher development</h3></div>
+              <div><p>How can AI support EMI teachers in developing stronger language awareness, scaffolding practices, and assessment design?</p></div>
+            </div>
+            <div class="theme-row">
+              <div><h3>Preparedness and inequality</h3></div>
+              <div><p>How do language support, institutional design, and AI-mediated practices shape access, inclusion, and stratification in EMI settings?</p></div>
+            </div>
+            <div class="theme-row">
+              <div><h3>Academic literacy and assessment</h3></div>
+              <div><p>How should we rethink proficiency, oral interaction, and academic literacy when new tools mediate both communication and evaluation?</p></div>
+            </div>
+            <div class="theme-row">
+              <div><h3>Research ethics and methodology</h3></div>
+              <div><p>What kinds of qualitative and interpretive practices remain necessary as open science and AI reshape scholarly expectations?</p></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="speakers">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Speakers</span>
-              <h2>Keynote and featured speakers</h2>
-            </div>
-            <p class="section-intro">This section is ready for final names and affiliations. The current layout is intentionally restrained and text-led for a more formal academic presentation.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Speakers</span>
+            <h2>Keynote and featured speakers</h2>
+            <p class="section-intro">Keynotes and featured speakers are now separated into distinct sections, with fuller speaker documentation reserved for the keynote area.</p>
           </div>
+          <div>
+            <div class="speaker-group">
+              <div class="speaker-block-head">
+                <div>
+                  <span class="speaker-block-label">Keynote speakers</span>
+                  <h3 class="speaker-block-title">Keynotes</h3>
+                </div>
+                <p class="speaker-block-copy">Each keynote entry includes the speaker name, affiliation, short biography, keynote title, and abstract.</p>
+              </div>
+              <div class="bio-table">
+                <div class="bio-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Bio</span>
+                      <p class="bio-copy">Insert a concise speaker biography here. This can include current position, main research areas, and one or two major contributions relevant to EMI, applied linguistics, multilingual education, or GenAI in higher education.</p>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Keynote title</span>
+                      <span class="field-title">Keynote title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="bio-copy">Insert keynote abstract here. This space is designed for a fuller abstract paragraph rather than a one-line description.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bio-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Bio</span>
+                      <p class="bio-copy">Insert a concise speaker biography here. This can include current position, main research areas, and one or two major contributions relevant to EMI, applied linguistics, multilingual education, or GenAI in higher education.</p>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Keynote title</span>
+                      <span class="field-title">Keynote title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="bio-copy">Insert keynote abstract here. This space is designed for a fuller abstract paragraph rather than a one-line description.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="speaker-grid">
-            <article class="speaker-card">
-              <span class="tag">Keynote</span>
-              <div>
-                <h3>Speaker Name</h3>
-                <p>Institution / Department</p>
+            <div class="speaker-group">
+              <div class="speaker-block-head">
+                <div>
+                  <span class="speaker-block-label">Featured speakers</span>
+                  <h3 class="speaker-block-title">Featured talks</h3>
+                </div>
+                <p class="speaker-block-copy">Featured speaker entries are shorter and include the speaker name, affiliation, talk title, and abstract only.</p>
               </div>
-              <p>Keynote title or one-sentence research profile can be added here.</p>
-            </article>
-            <article class="speaker-card">
-              <span class="tag">Keynote</span>
-              <div>
-                <h3>Speaker Name</h3>
-                <p>Institution / Department</p>
+              <div class="featured-table">
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Featured talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Featured talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Featured talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <h3 class="speaker-name">Speaker Name</h3>
+                      <p class="speaker-affiliation">Institution / Department</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Featured talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p>Keynote title or one-sentence research profile can be added here.</p>
-            </article>
-            <article class="speaker-card">
-              <span class="tag">Featured</span>
-              <div>
-                <h3>Speaker Name</h3>
-                <p>Institution / Department</p>
-              </div>
-              <p>Featured talk title or one-sentence research profile can be added here.</p>
-            </article>
-            <article class="speaker-card">
-              <span class="tag">Featured</span>
-              <div>
-                <h3>Speaker Name</h3>
-                <p>Institution / Department</p>
-              </div>
-              <p>Featured talk title or one-sentence research profile can be added here.</p>
-            </article>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="programme">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Programme</span>
-              <h2>A concise and legible symposium schedule</h2>
-            </div>
-            <p class="section-intro">This layout works both as a public programme summary and as a gateway to a downloadable PDF.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Programme</span>
+            <h2>A concise and legible symposium schedule</h2>
+            <p class="section-intro">Presented as a timetable rather than as separate modular content blocks.</p>
           </div>
-
-          <div class="programme-grid">
-            <div class="programme-card callout">
-              <div>
-                <div class="smallcaps" style="color: var(--primary); margin-bottom: 10px;">Programme overview</div>
-                <div class="display">A one-day gathering on EMI, GenAI, pedagogy, literacy, and research futures.</div>
-              </div>
-              <div>
-                <p class="section-intro" style="margin-bottom: 18px;">The full symposium programme is available by clicking the button below.</p>
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Download full programme</a>
-              </div>
+          <div class="programme-layout">
+            <div class="programme-summary">
+              <h3>Programme overview</h3>
+              <p>A one-day gathering on EMI, GenAI, pedagogy, literacy, and research futures.</p>
+              <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Download full programme</a>
             </div>
-
-            <div class="programme-card">
-              <div class="programme-item">
-                <div class="programme-time">09:00</div>
-                <div>
-                  <span class="programme-title">Registration and welcome coffee</span>
-                  <p>Arrival and informal networking</p>
-                </div>
+            <div class="programme-table">
+              <div class="programme-row">
+                <div><span class="programme-time">09:00</span></div>
+                <div><span class="programme-title">Registration and welcome coffee</span><p class="programme-copy">Arrival and informal networking</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">09:30</div>
-                <div>
-                  <span class="programme-title">Opening remarks</span>
-                  <p>Hosts and convenors</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">09:30</span></div>
+                <div><span class="programme-title">Opening remarks</span><p class="programme-copy">Hosts and convenors</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">10:00</div>
-                <div>
-                  <span class="programme-title">Keynote address I</span>
-                  <p>Keynote speaker name and talk title</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">10:00</span></div>
+                <div><span class="programme-title">Keynote address I</span><p class="programme-copy">Keynote speaker name and talk title</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">11:15</div>
-                <div>
-                  <span class="programme-title">Featured talks</span>
-                  <p>Agency, authorship, support, and participation in EMI</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">11:15</span></div>
+                <div><span class="programme-title">Featured talks</span><p class="programme-copy">Agency, authorship, support, and participation in EMI</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">13:30</div>
-                <div>
-                  <span class="programme-title">Keynote address II</span>
-                  <p>Keynote speaker name and talk title</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">13:30</span></div>
+                <div><span class="programme-title">Keynote address II</span><p class="programme-copy">Keynote speaker name and talk title</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">15:00</div>
-                <div>
-                  <span class="programme-title">Roundtable discussion</span>
-                  <p>Negotiating tradition and modernity in EMI</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">15:00</span></div>
+                <div><span class="programme-title">Roundtable discussion</span><p class="programme-copy">Negotiating tradition and modernity in EMI</p></div>
               </div>
-              <div class="programme-item">
-                <div class="programme-time">16:30</div>
-                <div>
-                  <span class="programme-title">Closing remarks</span>
-                  <p>Final reflections and networking</p>
-                </div>
+              <div class="programme-row">
+                <div><span class="programme-time">16:30</span></div>
+                <div><span class="programme-title">Closing remarks</span><p class="programme-copy">Final reflections and networking</p></div>
               </div>
             </div>
           </div>
@@ -787,125 +1013,99 @@
     </section>
 
     <section id="registration">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Registration</span>
-              <h2>Participation and attendance</h2>
-            </div>
-            <p class="section-intro">The buttons below are ready for your final registration links. The section also works well if you later decide to include an online option.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Registration</span>
+            <h2>Participation and attendance</h2>
+            <p class="section-intro">Registration information is simplified to in-person participation only.</p>
           </div>
-
-          <div class="info-grid">
-            <article class="info-card">
-              <h3>In-person registration</h3>
-              <p>Registration for in-person participation is available via the link below.</p>
-              <div class="cta-row" style="margin-top: 18px;">
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Register in person</a>
+          <div class="info-table">
+            <div class="info-row">
+              <div><h3 class="info-title">In-person registration</h3></div>
+              <div>
+                <p class="info-copy">Registration for in-person participation is available via the link below.</p>
+                <div style="margin-top: 14px;"><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Register in person</a></div>
               </div>
-            </article>
-            <article class="info-card">
-              <h3>Online participation</h3>
-              <p>Replace this with livestream or hybrid details if the event will also welcome remote participants.</p>
-              <div class="cta-row" style="margin-top: 18px;">
-                <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Online registration</a>
-              </div>
-            </article>
-            <article class="info-card">
-              <h3>Who should attend</h3>
-              <p>Faculty members, postgraduate researchers, students, programme leaders, and all those interested in EMI, multilingual education, applied linguistics, and the educational implications of GenAI.</p>
-            </article>
+            </div>
+            <div class="info-row">
+              <div><h3 class="info-title">Who should attend</h3></div>
+              <div><p class="info-copy">Faculty members, postgraduate researchers, students, programme leaders, and all those interested in EMI, multilingual education, applied linguistics, and the educational implications of GenAI.</p></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="venue">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Venue and access</span>
-              <h2>Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</h2>
-            </div>
-            <p class="section-intro">This section combines institutional presence with practical visitor guidance, especially for first-time and overseas attendees.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Venue and access</span>
+            <h2>Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</h2>
+            <p class="section-intro">The map module is retained, while the venue information is kept concise and formal.</p>
           </div>
-
-          <div class="info-grid">
-            <article class="info-card">
-              <h3>Venue</h3>
-              <p>Yasumoto International Academic Park (YIA)<br />The Chinese University of Hong Kong</p>
-            </article>
-            <article class="info-card">
-              <h3>Access guide</h3>
-              <p>How to get to the symposium venue, Yasumoto International Academic Park. Add your final department or campus access guide link below.</p>
-              <div class="cta-row" style="margin-top: 18px;">
-                <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View access guide</a>
+          <div>
+            <div class="info-table">
+              <div class="info-row">
+                <div><h3 class="info-title">Venue</h3></div>
+                <div><p class="info-copy">Yasumoto International Academic Park (YIA)<br />The Chinese University of Hong Kong</p></div>
               </div>
-            </article>
-            <article class="info-card">
-              <h3>Travel and stay</h3>
-              <p>Add nearby MTR guidance, campus transport information, and recommended hotel options if the audience includes visitors from outside Hong Kong.</p>
-            </article>
-          </div>
-
-          <div class="map-wrap" aria-label="Google map module">
-            <iframe title="Google Map Module" src="https://www.google.com/maps?q=Yasumoto%20International%20Academic%20Park%20CUHK&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div class="info-row">
+                <div><h3 class="info-title">Access guide</h3></div>
+                <div>
+                  <p class="info-copy">How to get to the symposium venue, Yasumoto International Academic Park. Add your final department or campus access guide link below.</p>
+                  <div style="margin-top: 14px;"><a class="btn btn-secondary" href="#" target="_blank" rel="noopener">View access guide</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="map-wrap" aria-label="Google map module">
+              <iframe title="Google Map Module" src="https://www.google.com/maps?q=Yasumoto%20International%20Academic%20Park%20CUHK&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="funding">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Funding and support</span>
-              <h2>Institutional partners</h2>
-            </div>
-            <p class="section-intro">The layout stays restrained and formal. It works with plain text now and can later support approved institutional logos if needed.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Funding and support</span>
+            <h2>Institutional partners</h2>
+            <p class="section-intro">Clean, editorial presentation without promotional logo walls or decorative boxes.</p>
           </div>
-
-          <div class="sponsors">
-            <article class="info-card">
+          <div class="funding-grid">
+            <div class="funding-block">
               <h3>Funding</h3>
               <p>This symposium is funded by the UCL–CUHK Strategic Partner Funds and the Department of Curriculum and Instruction, The Chinese University of Hong Kong.</p>
-            </article>
-            <article class="info-card">
+            </div>
+            <div class="funding-block">
               <h3>Organising institutions</h3>
               <p>Add full institutional names, convenor details, and any affiliated research groups here when the final website information is confirmed.</p>
-            </article>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="container">
-        <div class="section-shell">
-          <div class="section-head">
-            <div>
-              <span class="section-kicker">Contact</span>
-              <h2>Event enquiries</h2>
-            </div>
-            <p class="section-intro">A dedicated symposium mailbox usually looks more polished than using an individual organiser’s address.</p>
+      <div class="container section-shell">
+        <div class="section-grid">
+          <div class="section-side">
+            <span class="section-kicker">Contact</span>
+            <h2>Event enquiries</h2>
+            <p class="section-intro">Contact details remain integrated into the same structured layout as the rest of the site.</p>
           </div>
-
-          <div class="info-grid">
-            <article class="info-card">
-              <h3>Email</h3>
-              <p>For any questions about the event, please contact:<br /><a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a></p>
-            </article>
-            <article class="info-card">
-              <h3>Organisers</h3>
-              <p>Add convenor names, affiliations, and roles here if you would like the site to foreground the organising team.</p>
-            </article>
-            <article class="info-card">
-              <h3>GitHub Pages note</h3>
-              <p>This is a pure static site. Save it as <strong>index.html</strong> in the root of your GitHub repository and enable GitHub Pages for the repository.</p>
-            </article>
+          <div class="info-table">
+            <div class="info-row">
+              <div><h3 class="info-title">Email</h3></div>
+              <div><p class="info-copy">For any questions about the event, please contact:<br /><a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a></p></div>
+            </div>
+            <div class="info-row">
+              <div><h3 class="info-title">Organisers</h3></div>
+              <div><p class="info-copy">Add convenor names, affiliations, and roles here if you would like the site to foreground the organising team.</p></div>
+            </div>
           </div>
         </div>
       </div>
@@ -915,10 +1115,9 @@
   <footer class="footer">
     <div class="container footer-shell">
       <div>
-        <div class="smallcaps">CUHK–UCL EMI Symposium 2026</div>
-        <div class="note">English-medium instruction in the era of GenAI: Negotiating tradition and modernity</div>
+        <span class="smallcaps">CUHK–UCL EMI Symposium 2026</span>
+        <div class="footer-title">English-medium instruction in the era of GenAI: Negotiating tradition and modernity</div>
       </div>
-      <div class="note">Static single-file website for GitHub Pages</div>
     </div>
   </footer>
 </body>
