@@ -14,18 +14,15 @@
       --lavender: #e8d7ff;
       --butter: #fff2bd;
       --bg: #fcf9ff;
-      --paper: #fffdf7;
-      --white: #ffffff;
-      --ink: #241a35;
-      --muted: #5f556f;
-      --line: #d9cbe9;
-      --line-strong: #c8b3e4;
-      --primary: #6f4aa3;
-      --primary-deep: #4b2f72;
-      --accent: #b487f2;
-      --tint: #f4ecff;
-      --highlight: #fff8d8;
-      --max: 1240px;
+      --paper: #fffdfa;
+      --ink: #1f172c;
+      --muted: #5d5668;
+      --line: #d7cae8;
+      --line-strong: #bba5de;
+      --primary: #6d47a1;
+      --primary-deep: #452a6f;
+      --accent: #fff2bd;
+      --max: 1260px;
     }
 
     * { box-sizing: border-box; }
@@ -34,8 +31,8 @@
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: linear-gradient(180deg, #fffefb 0%, var(--bg) 52%, #faf5ff 100%);
-      line-height: 1.7;
+      background: linear-gradient(180deg, #fffefb 0%, #fcf9ff 55%, #faf6ff 100%);
+      line-height: 1.72;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -50,13 +47,13 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 253, 247, 0.96);
+      background: rgba(255, 253, 250, 0.97);
       border-bottom: 1px solid var(--line-strong);
       backdrop-filter: blur(8px);
     }
 
     .nav {
-      min-height: 76px;
+      min-height: 78px;
       display: grid;
       grid-template-columns: 280px 1fr;
       gap: 28px;
@@ -105,23 +102,24 @@
     .hero-shell {
       border-top: 4px solid var(--primary-deep);
       border-bottom: 1px solid var(--line-strong);
-      background: linear-gradient(90deg, rgba(232, 215, 255, 0.35) 0%, rgba(255, 242, 189, 0.22) 100%);
+      background:
+        linear-gradient(90deg, rgba(232, 215, 255, 0.54) 0%, rgba(255, 242, 189, 0.32) 100%),
+        #fffdfa;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) 360px;
-      gap: 0;
-      min-height: 520px;
+      grid-template-columns: minmax(0, 1.5fr) 360px;
+      min-height: 530px;
     }
 
     .hero-main,
     .hero-side {
-      padding: 44px 0;
+      padding: 46px 0;
     }
 
     .hero-main {
-      padding-right: 44px;
+      padding-right: 46px;
       border-right: 1px solid var(--line);
     }
 
@@ -131,7 +129,7 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.12) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 100%);
     }
 
     .eyebrow {
@@ -147,30 +145,32 @@
     h1, h2, h3, h4 {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      line-height: 1.04;
+      line-height: 1.03;
       letter-spacing: 0.01em;
       font-weight: 700;
     }
 
     h1 {
-      font-size: clamp(46px, 7vw, 88px);
-      max-width: 900px;
-      margin-bottom: 20px;
+      font-size: clamp(46px, 7vw, 90px);
+      margin-bottom: 22px;
+      max-width: 980px;
+    }
+
+    .title-line {
+      display: block;
+    }
+
+    .title-line-sub {
+      margin-top: 6px;
     }
 
     .hero-subtitle {
-      max-width: 820px;
-      font-size: 18px;
-      color: var(--muted);
-      margin: 0 0 28px;
-    }
-
-    .hero-note {
-      max-width: 820px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 15px;
+      max-width: 760px;
+      font-size: 21px;
+      color: var(--primary-deep);
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.5;
     }
 
     .detail-block {
@@ -224,11 +224,10 @@
     .btn-primary {
       background: linear-gradient(90deg, var(--lavender) 0%, var(--butter) 100%);
       color: var(--primary-deep);
-      border-color: var(--primary-deep);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(90deg, #e2ccff 0%, #ffec9a 100%);
+      background: linear-gradient(90deg, #e0c9ff 0%, #ffe88d 100%);
     }
 
     .btn-secondary {
@@ -237,22 +236,20 @@
     }
 
     .btn-secondary:hover {
-      background: linear-gradient(90deg, rgba(232, 215, 255, 0.3) 0%, rgba(255, 242, 189, 0.28) 100%);
+      background: linear-gradient(90deg, rgba(232, 215, 255, 0.28) 0%, rgba(255, 242, 189, 0.26) 100%);
     }
 
-    main section {
-      padding: 0;
-    }
+    main section { padding: 0; }
 
     .section-shell {
-      padding: 42px 0;
+      padding: 44px 0;
       border-bottom: 1px solid var(--line-strong);
     }
 
     .section-grid {
       display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 32px;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 36px;
       align-items: start;
     }
 
@@ -276,13 +273,6 @@
       font-size: clamp(30px, 4vw, 50px);
     }
 
-    .section-intro {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 240px;
-    }
-
     .content-stack > * + * {
       margin-top: 28px;
     }
@@ -291,70 +281,19 @@
       font-size: 18px;
       color: var(--ink);
       max-width: 980px;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
-      gap: 28px;
-      align-items: start;
-    }
-
-    .plain-box {
-      padding: 22px 0 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .plain-box h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .plain-box p {
       margin: 0;
-      color: var(--muted);
-    }
-
-    .key-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0;
-      border-top: 1px solid var(--line-strong);
-      border-left: 1px solid var(--line);
-      background: var(--paper);
-    }
-
-    .key-item {
-      padding: 18px 20px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .key-item strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .key-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
     }
 
     .theme-table,
-    .speaker-table,
     .info-table,
     .bio-table,
-    .featured-table {
+    .featured-table,
+    .programme-table {
       border-top: 2px solid var(--primary-deep);
       background: var(--paper);
     }
 
     .theme-row,
-    .speaker-row,
     .info-row,
     .programme-row,
     .bio-row,
@@ -368,7 +307,6 @@
     }
 
     .theme-row > div,
-    .speaker-row > div,
     .info-row > div,
     .programme-row > div,
     .bio-row > div,
@@ -377,7 +315,6 @@
     }
 
     .theme-row > div:first-child,
-    .speaker-row > div:first-child,
     .info-row > div:first-child,
     .programme-row > div:first-child,
     .bio-row > div:first-child,
@@ -394,8 +331,6 @@
     }
 
     .theme-row p,
-    .speaker-meta,
-    .speaker-copy,
     .info-copy,
     .programme-copy,
     .bio-copy,
@@ -405,14 +340,14 @@
     }
 
     .speaker-group + .speaker-group {
-      margin-top: 36px;
+      margin-top: 42px;
     }
 
     .speaker-block-head {
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 24px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       align-items: end;
     }
 
@@ -430,20 +365,31 @@
       margin: 0;
     }
 
-    .bio-row {
-      grid-template-columns: 250px 1fr;
-      align-items: start;
-    }
-
+    .bio-row,
     .featured-row {
-      grid-template-columns: 250px 1fr;
+      grid-template-columns: 260px 1fr;
       align-items: start;
     }
 
     .speaker-identity {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 10px;
+    }
+
+    .speaker-photo {
+      width: 120px;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line-strong);
+      background:
+        linear-gradient(135deg, rgba(232, 215, 255, 0.65) 0%, rgba(255, 242, 189, 0.44) 100%);
+      display: grid;
+      place-items: center;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary-deep);
     }
 
     .speaker-affiliation {
@@ -479,32 +425,22 @@
 
     .programme-layout {
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 260px 1fr;
       gap: 28px;
       align-items: start;
     }
 
     .programme-summary {
-      padding-top: 6px;
+      padding-top: 4px;
     }
 
     .programme-summary h3 {
       font-size: 34px;
-      margin-bottom: 14px;
-    }
-
-    .programme-summary p {
-      margin: 0 0 20px;
-      color: var(--muted);
-    }
-
-    .programme-table {
-      border-top: 2px solid var(--primary-deep);
-      background: var(--paper);
+      margin-bottom: 16px;
     }
 
     .programme-row {
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 150px 1fr;
     }
 
     .programme-time {
@@ -539,6 +475,10 @@
     .funding-block h3 {
       font-size: 28px;
       margin-bottom: 10px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.04;
+      letter-spacing: 0.01em;
+      font-weight: 700;
     }
 
     .funding-block p {
@@ -566,10 +506,6 @@
     }
 
     .footer-shell {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      align-items: end;
       border-top: 2px solid var(--primary-deep);
       padding-top: 18px;
     }
@@ -592,7 +528,6 @@
     @media (max-width: 1100px) {
       .hero-grid,
       .section-grid,
-      .split,
       .programme-layout,
       .funding-grid,
       .speaker-block-head {
@@ -611,10 +546,6 @@
 
       .section-side {
         position: static;
-      }
-
-      .section-intro {
-        max-width: none;
       }
     }
 
@@ -648,8 +579,7 @@
       .info-table .info-row,
       .programme-row,
       .bio-row,
-      .featured-row,
-      .key-points {
+      .featured-row {
         grid-template-columns: 1fr;
       }
 
@@ -660,14 +590,6 @@
       .featured-row > div:first-child {
         border-right: 0;
         border-bottom: 1px solid var(--line);
-      }
-
-      .key-points {
-        border-left: 0;
-      }
-
-      .key-item {
-        border-right: 0;
       }
     }
   </style>
@@ -697,9 +619,11 @@
         <div class="hero-grid">
           <div class="hero-main">
             <span class="eyebrow">Symposium · 24 April 2026 · Hong Kong</span>
-            <h1>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</h1>
-            <p class="hero-subtitle">A high-level international symposium bringing together scholars, educators, institutional leaders, and postgraduate researchers to examine how English-medium instruction is being reconfigured by generative AI across pedagogy, participation, assessment, teacher development, academic literacy, and the future of multilingual higher education.</p>
-            <p class="hero-note">This version distinguishes keynote speakers from featured speakers more clearly, simplifies registration and venue information, and introduces a lighter lavender–butter visual theme while keeping the site formally structured.</p>
+            <h1>
+              <span class="title-line">English-medium instruction in the era of GenAI:</span>
+              <span class="title-line title-line-sub">Negotiating tradition and modernity</span>
+            </h1>
+            <p class="hero-subtitle">Rethinking EMI where generative AI, pedagogy, and multilingual futures converge.</p>
           </div>
           <aside class="hero-side">
             <div class="detail-block">
@@ -716,7 +640,7 @@
             </div>
             <div class="detail-block">
               <span class="label">Format</span>
-              <strong>Keynotes, featured talks, dialogue, and networking</strong>
+              <strong>Three keynotes and nine featured speakers</strong>
             </div>
             <div class="cta-row">
               <a class="btn btn-primary" href="#registration">Register now</a>
@@ -733,40 +657,9 @@
           <div class="section-side">
             <span class="section-kicker">About the symposium</span>
             <h2>An international forum on EMI, GenAI, and academic futures</h2>
-            <p class="section-intro">Single-file static site for GitHub Pages, redesigned with stronger visual structure and a more institutional tone.</p>
           </div>
           <div class="content-stack">
             <p class="lede">Join us for the CUHK–UCL English-medium instruction (EMI) Symposium, to be held on 24 April 2026 at the Department of Curriculum and Instruction, The Chinese University of Hong Kong. Under the theme <em>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</em>, the symposium brings together leading voices from Hong Kong and the international research community to examine how EMI is being transformed by generative AI at every level of higher education. Across keynote addresses and featured presentations, the event will explore questions of human agency, authorship, participation, assessment, teacher language awareness, academic language proficiency, research practice, and educational inequality. Rather than treating GenAI as either a simple solution or a passing disruption, the symposium creates a rigorous space for rethinking EMI in relation to multilingual realities, pedagogical responsibility, and the changing conditions of academic work.</p>
-
-            <div class="split">
-              <div class="plain-box">
-                <h3>Theme rationale</h3>
-                <p>The current programme suggests a shared intellectual concern: GenAI is not simply adding a new tool to EMI. It is reshaping academic voice, participation, assessment, teacher judgement, scholarly reading, and the conditions under which students gain access to disciplinary knowledge. The symposium approaches tradition and modernity as a live tension to be negotiated rather than a binary to be resolved.</p>
-              </div>
-              <div class="plain-box">
-                <h3>Audience</h3>
-                <p>Researchers, university leaders, teachers, postgraduate students, and policy stakeholders working in EMI, multilingual education, applied linguistics, and higher education.</p>
-              </div>
-            </div>
-
-            <div class="key-points">
-              <div class="key-item">
-                <strong>Focus</strong>
-                <p>Agency, participation, assessment, teacher development, multilingualism, literacy, and academic futures in the age of GenAI.</p>
-              </div>
-              <div class="key-item">
-                <strong>Format</strong>
-                <p>Keynote addresses, featured talks, curated discussion, and cross-institutional exchange across research traditions and career stages.</p>
-              </div>
-              <div class="key-item">
-                <strong>Scope</strong>
-                <p>Local and international perspectives on how EMI is being reconfigured by technological change without losing sight of pedagogy and equity.</p>
-              </div>
-              <div class="key-item">
-                <strong>Setting</strong>
-                <p>A formal one-day symposium hosted at CUHK, designed for scholarly exchange and institutional dialogue.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -777,8 +670,7 @@
         <div class="section-grid">
           <div class="section-side">
             <span class="section-kicker">Symposium themes</span>
-            <h2>Current conversations shaping the programme</h2>
-            <p class="section-intro">The abstracts converge on a coherent agenda around pedagogy, ethics, literacy, inequality, and research method in the age of GenAI.</p>
+            <h2>Thematic strands</h2>
           </div>
           <div class="theme-table">
             <div class="theme-row">
@@ -816,7 +708,7 @@
           <div class="section-side">
             <span class="section-kicker">Speakers</span>
             <h2>Keynote and featured speakers</h2>
-            <p class="section-intro">Keynotes and featured speakers are now separated into distinct sections, with fuller speaker documentation reserved for the keynote area.</p>
+            <p class="speaker-block-copy">A sharper split between keynote interventions and featured talks.</p>
           </div>
           <div>
             <div class="speaker-group">
@@ -825,20 +717,20 @@
                   <span class="speaker-block-label">Keynote speakers</span>
                   <h3 class="speaker-block-title">Keynotes</h3>
                 </div>
-                <p class="speaker-block-copy">Each keynote entry includes the speaker name, affiliation, short biography, keynote title, and abstract.</p>
               </div>
               <div class="bio-table">
                 <div class="bio-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Glenn Stockwell</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Bio</span>
-                      <p class="bio-copy">Insert a concise speaker biography here. This can include current position, main research areas, and one or two major contributions relevant to EMI, applied linguistics, multilingual education, or GenAI in higher education.</p>
+                      <p class="bio-copy">Bio to be added.</p>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Keynote title</span>
@@ -846,21 +738,22 @@
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="bio-copy">Insert keynote abstract here. This space is designed for a fuller abstract paragraph rather than a one-line description.</p>
+                      <p class="bio-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
                 <div class="bio-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Jim McKinley</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Bio</span>
-                      <p class="bio-copy">Insert a concise speaker biography here. This can include current position, main research areas, and one or two major contributions relevant to EMI, applied linguistics, multilingual education, or GenAI in higher education.</p>
+                      <p class="bio-copy">Bio to be added.</p>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Keynote title</span>
@@ -868,7 +761,30 @@
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="bio-copy">Insert keynote abstract here. This space is designed for a fuller abstract paragraph rather than a one-line description.</p>
+                      <p class="bio-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bio-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Angel Lin</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Bio</span>
+                      <p class="bio-copy">Bio to be added.</p>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Keynote title</span>
+                      <span class="field-title">Keynote title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="bio-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
@@ -881,78 +797,176 @@
                   <span class="speaker-block-label">Featured speakers</span>
                   <h3 class="speaker-block-title">Featured talks</h3>
                 </div>
-                <p class="speaker-block-copy">Featured speaker entries are shorter and include the speaker name, affiliation, talk title, and abstract only.</p>
               </div>
               <div class="featured-table">
                 <div class="featured-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Daisy Di Zou</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Talk title</span>
-                      <span class="field-title">Featured talk title goes here</span>
+                      <span class="field-title">Talk title goes here</span>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                      <p class="featured-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
                 <div class="featured-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Christy Xuyan Qiu</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Talk title</span>
-                      <span class="field-title">Featured talk title goes here</span>
+                      <span class="field-title">Talk title goes here</span>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                      <p class="featured-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
                 <div class="featured-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Sihan Zhou</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Talk title</span>
-                      <span class="field-title">Featured talk title goes here</span>
+                      <span class="field-title">Talk title goes here</span>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                      <p class="featured-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
                 <div class="featured-row">
                   <div>
                     <div class="speaker-identity">
-                      <h3 class="speaker-name">Speaker Name</h3>
-                      <p class="speaker-affiliation">Institution / Department</p>
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Bo Peng</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
                     </div>
                   </div>
                   <div>
                     <div class="field-block">
                       <span class="field-label">Talk title</span>
-                      <span class="field-title">Featured talk title goes here</span>
+                      <span class="field-title">Talk title goes here</span>
                     </div>
                     <div class="field-block">
                       <span class="field-label">Abstract</span>
-                      <p class="featured-copy">Insert featured talk abstract here.</p>
+                      <p class="featured-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Yuen Yi Lo</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Gabriel Fan Fang</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">King Tat Daniel Fung</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Benjamin Moorhouse</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Abstract to be added.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="featured-row">
+                  <div>
+                    <div class="speaker-identity">
+                      <div class="speaker-photo">Photo</div>
+                      <h3 class="speaker-name">Nathan Thomas</h3>
+                      <p class="speaker-affiliation">Affiliation</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="field-block">
+                      <span class="field-label">Talk title</span>
+                      <span class="field-title">Talk title goes here</span>
+                    </div>
+                    <div class="field-block">
+                      <span class="field-label">Abstract</span>
+                      <p class="featured-copy">Abstract to be added.</p>
                     </div>
                   </div>
                 </div>
@@ -968,43 +982,65 @@
         <div class="section-grid">
           <div class="section-side">
             <span class="section-kicker">Programme</span>
-            <h2>A concise and legible symposium schedule</h2>
-            <p class="section-intro">Presented as a timetable rather than as separate modular content blocks.</p>
+            <h2>Symposium schedule</h2>
           </div>
           <div class="programme-layout">
             <div class="programme-summary">
-              <h3>Programme overview</h3>
-              <p>A one-day gathering on EMI, GenAI, pedagogy, literacy, and research futures.</p>
+              <h3>Programme timetable</h3>
               <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Download full programme</a>
             </div>
             <div class="programme-table">
               <div class="programme-row">
-                <div><span class="programme-time">09:00</span></div>
-                <div><span class="programme-title">Registration and welcome coffee</span><p class="programme-copy">Arrival and informal networking</p></div>
+                <div><span class="programme-time">09:45 – 10:00</span></div>
+                <div><span class="programme-title">Opening remark</span><p class="programme-copy">Jim McKinley &amp; Sihan Zhou</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">09:30</span></div>
-                <div><span class="programme-title">Opening remarks</span><p class="programme-copy">Hosts and convenors</p></div>
+                <div><span class="programme-time">10:00 – 10:45</span></div>
+                <div><span class="programme-title">Keynote 1</span><p class="programme-copy">Glenn Stockwell</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">10:00</span></div>
-                <div><span class="programme-title">Keynote address I</span><p class="programme-copy">Keynote speaker name and talk title</p></div>
+                <div><span class="programme-time">10:45 – 11:15</span></div>
+                <div><span class="programme-title">Invited talk 1</span><p class="programme-copy">Daisy Di Zou</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">11:15</span></div>
-                <div><span class="programme-title">Featured talks</span><p class="programme-copy">Agency, authorship, support, and participation in EMI</p></div>
+                <div><span class="programme-time">11:15 – 11:45</span></div>
+                <div><span class="programme-title">Invited talk 2</span><p class="programme-copy">Christy Xuyan Qiu</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">13:30</span></div>
-                <div><span class="programme-title">Keynote address II</span><p class="programme-copy">Keynote speaker name and talk title</p></div>
+                <div><span class="programme-time">11:45 – 12:15</span></div>
+                <div><span class="programme-title">Invited talk 3</span><p class="programme-copy">Sihan Zhou</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">15:00</span></div>
-                <div><span class="programme-title">Roundtable discussion</span><p class="programme-copy">Negotiating tradition and modernity in EMI</p></div>
+                <div><span class="programme-time">13:00 – 13:45</span></div>
+                <div><span class="programme-title">Keynote 2</span><p class="programme-copy">Jim McKinley</p></div>
               </div>
               <div class="programme-row">
-                <div><span class="programme-time">16:30</span></div>
-                <div><span class="programme-title">Closing remarks</span><p class="programme-copy">Final reflections and networking</p></div>
+                <div><span class="programme-time">13:45 – 14:15</span></div>
+                <div><span class="programme-title">Invited talk 4</span><p class="programme-copy">Bo Peng &amp; Yuen Yi Lo</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">14:15 – 14:45</span></div>
+                <div><span class="programme-title">Invited talk 5</span><p class="programme-copy">Gabriel Fan Fang</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">14:45 – 15:15</span></div>
+                <div><span class="programme-title">Invited talk 6</span><p class="programme-copy">King Tat Daniel Fung</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">16:00 – 16:45</span></div>
+                <div><span class="programme-title">Keynote 3</span><p class="programme-copy">Angel Lin</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">16:45 – 17:15</span></div>
+                <div><span class="programme-title">Invited talk 7</span><p class="programme-copy">Benjamin Moorhouse</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">17:15 – 17:45</span></div>
+                <div><span class="programme-title">Invited talk 8</span><p class="programme-copy">Nathan Thomas</p></div>
+              </div>
+              <div class="programme-row">
+                <div><span class="programme-time">17:45 – 18:00</span></div>
+                <div><span class="programme-title">Closing remark</span><p class="programme-copy">Jim McKinley &amp; Sihan Zhou</p></div>
               </div>
             </div>
           </div>
@@ -1018,7 +1054,6 @@
           <div class="section-side">
             <span class="section-kicker">Registration</span>
             <h2>Participation and attendance</h2>
-            <p class="section-intro">Registration information is simplified to in-person participation only.</p>
           </div>
           <div class="info-table">
             <div class="info-row">
@@ -1027,10 +1062,6 @@
                 <p class="info-copy">Registration for in-person participation is available via the link below.</p>
                 <div style="margin-top: 14px;"><a class="btn btn-primary" href="#" target="_blank" rel="noopener">Register in person</a></div>
               </div>
-            </div>
-            <div class="info-row">
-              <div><h3 class="info-title">Who should attend</h3></div>
-              <div><p class="info-copy">Faculty members, postgraduate researchers, students, programme leaders, and all those interested in EMI, multilingual education, applied linguistics, and the educational implications of GenAI.</p></div>
             </div>
           </div>
         </div>
@@ -1043,7 +1074,6 @@
           <div class="section-side">
             <span class="section-kicker">Venue and access</span>
             <h2>Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</h2>
-            <p class="section-intro">The map module is retained, while the venue information is kept concise and formal.</p>
           </div>
           <div>
             <div class="info-table">
@@ -1073,7 +1103,6 @@
           <div class="section-side">
             <span class="section-kicker">Funding and support</span>
             <h2>Institutional partners</h2>
-            <p class="section-intro">Clean, editorial presentation without promotional logo walls or decorative boxes.</p>
           </div>
           <div class="funding-grid">
             <div class="funding-block">
@@ -1081,8 +1110,8 @@
               <p>This symposium is funded by the UCL–CUHK Strategic Partner Funds and the Department of Curriculum and Instruction, The Chinese University of Hong Kong.</p>
             </div>
             <div class="funding-block">
-              <h3>Organising institutions</h3>
-              <p>Add full institutional names, convenor details, and any affiliated research groups here when the final website information is confirmed.</p>
+              <h3>Organising institution</h3>
+              <p>Department of Curriculum and Instruction, The Chinese University of Hong Kong.</p>
             </div>
           </div>
         </div>
@@ -1095,16 +1124,11 @@
           <div class="section-side">
             <span class="section-kicker">Contact</span>
             <h2>Event enquiries</h2>
-            <p class="section-intro">Contact details remain integrated into the same structured layout as the rest of the site.</p>
           </div>
           <div class="info-table">
             <div class="info-row">
               <div><h3 class="info-title">Email</h3></div>
               <div><p class="info-copy">For any questions about the event, please contact:<br /><a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a></p></div>
-            </div>
-            <div class="info-row">
-              <div><h3 class="info-title">Organisers</h3></div>
-              <div><p class="info-copy">Add convenor names, affiliations, and roles here if you would like the site to foreground the organising team.</p></div>
             </div>
           </div>
         </div>
