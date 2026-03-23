@@ -140,15 +140,15 @@
     }
 
     .hero-visual-wrap {
-      padding: 0 34px;
+      padding: 0;
     }
     .hero-visual {
       position: relative;
-      min-height: 288px;
+      min-height: 430px;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(236,231,247,0.65), rgba(255,255,255,0.88));
+      background: linear-gradient(180deg, rgba(236,231,247,0.30), rgba(255,255,255,0.52));
     }
     .hero-visual-grid {
       position: absolute;
@@ -159,35 +159,45 @@
     .building-slot {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.3));
     }
-    .building-slot + .building-slot { border-left: 1px solid var(--line); }
     .building-slot img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.26;
-      filter: grayscale(8%) saturate(82%) contrast(96%);
+      opacity: 0.52;
+      filter: saturate(88%) contrast(96%) brightness(1.02);
+      transform: scale(1.03);
     }
-    .building-slot::after {
+    .building-slot.left img {
+      object-position: center 46%;
+    }
+    .building-slot.right img {
+      object-position: center 48%;
+    }
+    .hero-visual::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(246,245,249,0.82));
+      background:
+        linear-gradient(180deg, rgba(250,250,254,0.30) 0%, rgba(250,250,254,0.10) 26%, rgba(250,250,254,0.45) 100%),
+        linear-gradient(90deg, rgba(250,250,254,0.00) 46%, rgba(250,250,254,0.62) 50%, rgba(250,250,254,0.00) 54%);
+      z-index: 2;
+      pointer-events: none;
     }
     .ai-overlay {
       position: absolute;
       inset: 0;
       pointer-events: none;
+      z-index: 3;
       mix-blend-mode: multiply;
     }
     .ai-overlay svg {
       width: 100%;
       height: 100%;
       display: block;
-      opacity: 0.42;
+      opacity: 0.30;
     }
 
     .hero-meta {
@@ -522,27 +532,27 @@
           <div class="hero-visual">
             <div class="hero-visual-grid">
               <div class="building-slot left">
-                <img src="data:image/jpeg;base64,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" alt="CUHK landmark image" />
+                <img src="data:image/jpeg;base64,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" alt="CUHK landmark image" />
               </div>
               <div class="building-slot right">
-                <img src="data:image/jpeg;base64,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" alt="UCL landmark image" />
+                <img src="data:image/jpeg;base64,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" alt="UCL landmark image" />
               </div>
             </div>
             <div class="ai-overlay" aria-hidden="true">
-              <svg viewBox="0 0 1200 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 1200 430" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="aiStroke" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stop-color="rgba(101,85,143,0)"/>
-                    <stop offset="30%" stop-color="#b7abd2"/>
+                    <stop offset="28%" stop-color="#c2b7d8"/>
                     <stop offset="70%" stop-color="#8a79b3"/>
                     <stop offset="100%" stop-color="rgba(101,85,143,0)"/>
                   </linearGradient>
                 </defs>
-                <path d="M30 220 C 190 160, 260 116, 390 136 S 650 214, 760 184 S 920 116, 1170 154" fill="none" stroke="url(#aiStroke)" stroke-width="1.6"/>
-                <path d="M110 88 C 250 108, 320 78, 460 96 S 730 146, 1080 102" fill="none" stroke="url(#aiStroke)" stroke-width="1.2" opacity="0.78"/>
-                <path d="M180 262 C 320 214, 490 236, 620 210 S 840 186, 1020 214" fill="none" stroke="url(#aiStroke)" stroke-width="1.1" opacity="0.7"/>
+                <path d="M24 318 C 180 248, 262 176, 396 196 S 658 306, 790 258 S 976 150, 1178 200" fill="none" stroke="url(#aiStroke)" stroke-width="1.7"/>
+                <path d="M112 114 C 248 136, 340 102, 472 120 S 742 174, 1080 136" fill="none" stroke="url(#aiStroke)" stroke-width="1.15" opacity="0.72"/>
+                <path d="M198 374 C 330 334, 484 344, 630 318 S 854 286, 1026 306" fill="none" stroke="url(#aiStroke)" stroke-width="1.05" opacity="0.62"/>
                 <g fill="#8a79b3">
-                  <circle cx="182" cy="178" r="3.2"/><circle cx="390" cy="136" r="3.2"/><circle cx="760" cy="184" r="3.2"/><circle cx="914" cy="118" r="3.2"/>
+                  <circle cx="182" cy="264" r="3.2"/><circle cx="396" cy="196" r="3.2"/><circle cx="790" cy="258" r="3.2"/><circle cx="932" cy="166" r="3.2"/>
                 </g>
               </svg>
             </div>
@@ -596,11 +606,11 @@
           <div class="speaker-grid keynotes">
             <article class="speaker-card">
               <div class="speaker-photo">Photo</div>
-              <h3>Glenn Stockwell</h3>
-              <p class="speaker-affiliation">Affiliation</p>
+              <h3><a href="https://www.eduhk.hk/en/experts/professor-stockwell-glenn" target="_blank" rel="noopener">Glenn Stockwell</a></h3>
+              <p class="speaker-affiliation">The Education University of Hong Kong</p>
               <div class="speaker-field">
                 <span class="speaker-label">Bio</span>
-                <p>Bio to be added.</p>
+                <p>Professor Glenn Stockwell is an internationally recognised scholar in applied linguistics and educational technology, with particular expertise in computer-assisted language learning. He holds a PhD in Applied Linguistics from the University of Queensland and has held academic appointments in Australia, and most recently as Professor of Applied Linguistics at Waseda University in Japan, for 20 years. He currently serves as Editor-in-Chief of <em>Computer Assisted Language Learning</em>, one of the leading international journals in the field.</p>
               </div>
               <div class="speaker-field">
                 <span class="speaker-label">Talk title</span>
@@ -608,16 +618,35 @@
               </div>
               <div class="speaker-field">
                 <span class="speaker-label">Abstract</span>
-                <p>Abstract to be added.</p>
+                <p>As generative AI becomes more common in English-Medium Instruction, it has become fashionable to describe human-AI interaction as “collaboration.” But this framing deserves scrutiny. Drawing on Stockwell and Wang (2025), this keynote argues that AI lacks the shared intent, mutual understanding, and accountability that genuine collaboration requires. Treating AI as a collaborator risks devaluing teacher judgement, conflating AI output with learner competence, and muddying questions of intellectual ownership. Rather than defaulting to this language, we need more precise terms for what AI actually does in educational settings, whether as tool, resource, or interlocutor, and clearer strategies for keeping pedagogical decision-making where it belongs.</p>
               </div>
             </article>
+
             <article class="speaker-card">
               <div class="speaker-photo">Photo</div>
-              <h3>Jim McKinley</h3>
-              <p class="speaker-affiliation">Affiliation</p>
+              <h3><a href="https://profiles.ucl.ac.uk/66669-jim-mckinley" target="_blank" rel="noopener">Jim McKinley</a></h3>
+              <p class="speaker-affiliation">University College London</p>
               <div class="speaker-field">
                 <span class="speaker-label">Bio</span>
-                <p>Bio to be added.</p>
+                <p>Prof. Jim McKinley, SFHEA, has taught in higher education in the UK, Japan, Australia, and Uganda, as well as US schools. His research targets implications of globalization for L2 writing, language education, and higher education studies, particularly the teaching-research nexus and English medium instruction. Jim is co-author and co-editor of several books on research methods in applied linguistics. He is an Editor-in-Chief of <em>System</em>, incoming Editor of <em>TESOL Quarterly</em>, and a co-Editor of the Cambridge Elements series <em>Language Teaching</em> (Cambridge University Press).</p>
+              </div>
+              <div class="speaker-field">
+                <span class="speaker-label">Talk title</span>
+                <p class="speaker-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</p>
+              </div>
+              <div class="speaker-field">
+                <span class="speaker-label">Abstract</span>
+                <p>Generative AI is rapidly reshaping academic communication, yet discussions in English-medium instruction have largely focused on academic integrity and assessment security. This talk argues that generative AI instead challenges more fundamental assumptions about participation, authorship, and linguistic competence that underpin EMI policy and practice. Drawing on recent work on writer identity alongside classroom-based reflections from EMI teaching contexts, I examine a growing pedagogical paradox: while AI tools appear to lower linguistic barriers to academic production, student participation in classroom discussion and collaborative meaning-making may be changing in unexpected ways. Instructors increasingly observe students turning to AI-mediated support during learning activities, raising questions about how engagement, intellectual struggle, and disciplinary socialisation are being reconfigured. I suggest that these developments expose longstanding tensions within EMI, where participation has often been equated with visible linguistic performance in English. Rather than framing AI as either threat or solution, the talk considers how EMI policy and pedagogy might reconceptualise participation and authorship in contexts where academic work is becoming a hybrid human–AI practice.</p>
+              </div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://www.eduhk.hk/ele/people/angel-lin" target="_blank" rel="noopener">Mei Yi Angel Lin</a></h3>
+              <p class="speaker-affiliation">The Education University of Hong Kong</p>
+              <div class="speaker-field">
+                <span class="speaker-label">Bio</span>
+                <p>Professor Angel Lin serves on the editorial boards of international research journals including <em>International Journal of Bilingual Education and Bilingualism</em>, <em>Language Policy</em>, <em>Language and Education</em>, and <em>Language, Culture and Curriculum</em>. Her research and development of the Multimodalities-Entextualization Cycle serves as a critical pragmatic heuristic for educators and researchers to navigate and disrupt often monoglossic institutional spaces by valuing and enabling translingual, multimodal, and multisensory meaning-making, with implications for equity, diversity and inclusion in education. She is the current Chair of the American Educational Research Association’s SIG Semiotics in Education, has been part of the SIG executive board since 2020, started the TL-TS Research Channel on YouTube in 2019, and has organized over 30 research seminars featuring scholars in applied linguistics and education from around the world.</p>
               </div>
               <div class="speaker-field">
                 <span class="speaker-label">Talk title</span>
@@ -625,24 +654,7 @@
               </div>
               <div class="speaker-field">
                 <span class="speaker-label">Abstract</span>
-                <p>Abstract to be added.</p>
-              </div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Angel Lin</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field">
-                <span class="speaker-label">Bio</span>
-                <p>Bio to be added.</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Talk title</span>
-                <p class="speaker-title">Title to be announced</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Abstract</span>
-                <p>Abstract to be added.</p>
+                <p>Abstract to be announced.</p>
               </div>
             </article>
           </div>
@@ -655,75 +667,83 @@
           <div class="speaker-grid featured">
             <article class="speaker-card">
               <div class="speaker-photo">Photo</div>
-              <h3>Daisy Di Zou</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Christy Xuyan Qiu</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Sihan Zhou</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Bo Peng</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">English medium instruction: Preparedness and Support in the era of GenAI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Yuen Yi Lo</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">English medium instruction: Preparedness and Support in the era of GenAI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Gabriel Fan Fang</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>King Tat Daniel Fung</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">The case against AI-mediated scholarship in EMI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Benjamin Moorhouse</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
-            </article>
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3>Nathan Thomas</h3>
-              <p class="speaker-affiliation">Affiliation</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bio to be added.</p></div>
+              <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></h3>
+              <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Daisy Di Zou is a researcher in language education, with a dedicated focus on how emerging technologies can enhance teaching, learning, and assessment. Her academic journey has been shaped by a deep interest in the intersection of language pedagogy and educational innovation. Over the years, she has led and collaborated on more than 20 research projects that explore the pedagogical potential of digital tools in language classrooms. Her research has resulted in over 150 peer-reviewed publications in leading SSCI- and Scopus-indexed journals such as <em>Computers &amp; Education</em>, <em>Computers in Human Behavior</em>, <em>Computer Assisted Language Learning</em>, <em>System</em>, and <em>TESOL Quarterly</em>.</p></div>
               <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Title to be announced</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be added.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be announced.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></h3>
+              <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Christy Xuyan Qiu researches second language teaching and learning, with a focus on three areas. Her work examines the knowledge L2 learners need at different proficiency levels, especially the rhetorical and linguistic features of academic genres through corpus-based approaches. She also investigates how this knowledge can be taught effectively, particularly through task-based language teaching in both face-to-face and virtual settings. In addition, her research explores how English language education can prepare students for English-medium instruction, especially in Chinese contexts, by addressing the needs of EMI students and teachers.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language learners from an English Medium Instruction university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers than on structural markers. AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></h3>
+              <p class="speaker-affiliation">The Chinese University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Sihan Zhou is an Assistant Professor of Curriculum and Instruction at the Chinese University of Hong Kong. She completed her DPhil in Education at the University of Oxford and an MPhil at the University of Cambridge. She formerly served as Tutor of Applied Linguistics at the University of Oxford, Lecturer at the CUHK English Language Teaching Unit, and TESOL Associate at the University of Edinburgh. As a teacher educator, Sihan has taught pre- and in-service language teachers at primary, secondary, and tertiary levels of education, and delivered training workshops both in China and the UK.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Title to be announced</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be announced.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></h3>
+              <p class="speaker-affiliation">The University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bo Peng is a PhD candidate at the Faculty of Education, The University of Hong Kong. Her research interests include English-medium instruction, teacher professional development, and researcher-practitioner collaboration, with a particular interest in how artificial intelligence can support teacher development. She has published in journals such as <em>TESOL Quarterly</em>, <em>System</em>, and the <em>International Journal of Applied Linguistics</em>.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of AI tools offers opportunities to support EMI pedagogy. Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development during collaboration with AI. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></h3>
+              <p class="speaker-affiliation">The University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Yuen Yi Lo is a Professor at the Faculty of Education, The University of Hong Kong. Her research focuses on bilingual education programmes such as English Medium Instruction and Content and Language Integrated Learning. She is particularly interested in cross-curricular collaboration, assessment, and teachers’ professional development in these programmes.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of AI tools offers opportunities to support EMI pedagogy. Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development during collaboration with AI. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></h3>
+              <p class="speaker-affiliation">The Education University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Fang Fan obtained his PhD from the University of Southampton. His research spans sociolinguistics, language education, Global Englishes, translanguaging, EMI, intercultural communication, and language teacher education. His work interrogates accent, identity, and native-speaker ideology, and advances pedagogies for multilingual, multicultural, and equitable language education. His recent work explores the integration of Global Englishes and translanguaging in language policy, pedagogy, and teacher development across diverse international contexts.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">English medium instruction: Preparedness and Support in the era of GenAI</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency. In the era of artificial intelligence, this talk argues for a need to rethink EMI through a decolonial lens so that EMI and AI-mediated practices do not reinforce existing inequalities in language education.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></h3>
+              <p class="speaker-affiliation">The University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Biography to be added.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Language proficiency has always been an important variable in second language research and education. In English Medium Instruction, some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency at the time when they transition from secondary schools to universities. This paper presents the development of an academic c-test with the support of GenAI. The presentation introduces the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications are discussed.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Luke Moorhouse</a></h3>
+              <p class="speaker-affiliation">City University of Hong Kong</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Prof. Benjamin Luke Moorhouse is an Associate Professor in the Department of English, City University of Hong Kong. He has extensive experience as a primary school English language teacher and has worked for the Education Bureau, Hong Kong Baptist University, and The University of Hong Kong. He has received several teaching awards, including The President’s Award for Outstanding Performance in Individual Teaching from Hong Kong Baptist University in 2023. His research focuses on the lived experiences, competencies, and professional learning of language teachers and teacher educators, and he is currently exploring the impact of GenAI on language teaching and learning. According to Stanford University, Benjamin has been in the top 2% of cited scholars worldwide from 2022 to 2025. He is a co-editor of the <em>European Journal of Teacher Education</em>.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">The case against AI-mediated scholarship in EMI</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered summarisers and chat-with-the-article interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a solution. Rather than positioning AI as the solution to these difficulties, I argue that we need to be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement, such as guided slow reading, annotation, dialogic discussion, and genre-aware reading routines. In doing so, we resist efficiency narratives and reclaim deep, critical reading as central to learning.</p></div>
+            </article>
+
+            <article class="speaker-card">
+              <div class="speaker-photo">Photo</div>
+              <h3><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></h3>
+              <p class="speaker-affiliation">University College London</p>
+              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Biography to be added.</p></div>
+              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</p></div>
+              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>There are several key negotiations that often take place in EMI research: policy versus practice, outcomes versus experience, and, recently, tradition versus modernity in the way GenAI is incorporated, or not, in research and practice. In current discussions of open science in relation to qualitative research, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to openness: how can we become more open in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to modern encroachment on the ethos of qualitative research.</p></div>
             </article>
           </div>
         </div>
@@ -738,16 +758,16 @@
         <div class="schedule-shell">
           <div class="schedule-row"><div class="schedule-time">09:45 – 10:00</div><div class="schedule-detail"><div class="schedule-title">Opening remark</div><div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div></div></div>
           <div class="schedule-row"><div class="schedule-time">10:00 – 10:45</div><div class="schedule-detail"><div class="schedule-title">The Collaboration Illusion: AI and Human Agency in EMI</div><div class="schedule-speaker">Glenn Stockwell</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">10:45 – 11:15</div><div class="schedule-detail"><div class="schedule-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div><div class="schedule-speaker">Daisy Di Zou</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">11:15 – 11:45</div><div class="schedule-detail"><div class="schedule-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div><div class="schedule-speaker">Christy Xuyan Qiu</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">11:45 – 12:15</div><div class="schedule-detail"><div class="schedule-title">Developing EMI teacher language awareness through AI-teacher collaboration</div><div class="schedule-speaker">Sihan Zhou</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">13:00 – 13:45</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Jim McKinley</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">13:45 – 14:15</div><div class="schedule-detail"><div class="schedule-title">English medium instruction: Preparedness and Support in the era of GenAI</div><div class="schedule-speaker">Bo Peng &amp; Yuen Yi Lo</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">14:15 – 14:45</div><div class="schedule-detail"><div class="schedule-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div><div class="schedule-speaker">Gabriel Fan Fang</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">14:45 – 15:15</div><div class="schedule-detail"><div class="schedule-title">The case against AI-mediated scholarship in EMI</div><div class="schedule-speaker">King Tat Daniel Fung</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">16:00 – 16:45</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Angel Lin</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">16:45 – 17:15</div><div class="schedule-detail"><div class="schedule-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div><div class="schedule-speaker">Benjamin Moorhouse</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">17:15 – 17:45</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Nathan Thomas</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">10:45 – 11:15</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Daisy Di Zou</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">11:15 – 11:45</div><div class="schedule-detail"><div class="schedule-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div><div class="schedule-speaker">Christy Xuyan Qiu</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">11:45 – 12:15</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Sihan Zhou</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">13:00 – 13:45</div><div class="schedule-detail"><div class="schedule-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div><div class="schedule-speaker">Jim McKinley</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">13:45 – 14:15</div><div class="schedule-detail"><div class="schedule-title">Developing EMI teacher language awareness through AI-teacher collaboration</div><div class="schedule-speaker">Bo Peng &amp; Yuen Yi Lo</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">14:15 – 14:45</div><div class="schedule-detail"><div class="schedule-title">English medium instruction: Preparedness and Support in the era of GenAI</div><div class="schedule-speaker">Gabriel Fan Fang</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">14:45 – 15:15</div><div class="schedule-detail"><div class="schedule-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div><div class="schedule-speaker">King Tat Daniel Fung</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">16:00 – 16:45</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Mei Yi Angel Lin</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">16:45 – 17:15</div><div class="schedule-detail"><div class="schedule-title">The case against AI-mediated scholarship in EMI</div><div class="schedule-speaker">Benjamin Luke Moorhouse</div></div></div>
+          <div class="schedule-row"><div class="schedule-time">17:15 – 17:45</div><div class="schedule-detail"><div class="schedule-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div><div class="schedule-speaker">Nathan Thomas</div></div></div>
           <div class="schedule-row"><div class="schedule-time">17:45 – 18:00</div><div class="schedule-detail"><div class="schedule-title">Closing remark</div><div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div></div></div>
         </div>
       </div>
