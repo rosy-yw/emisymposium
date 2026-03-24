@@ -18,7 +18,7 @@
   <style>
     :root {
       --bg: #f6f5f9;
-      --panel: rgba(255, 255, 255, 0.92);
+      --panel: rgba(255, 255, 255, 0.93);
       --panel-strong: rgba(255, 255, 255, 0.97);
       --text: #2a2438;
       --muted: #6f6782;
@@ -43,12 +43,17 @@
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: linear-gradient(180deg, #fafafe 0%, #f4f2f8 100%);
       color: var(--text);
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .container {
@@ -60,13 +65,13 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(250, 250, 254, 0.9);
+      background: rgba(250, 250, 254, 0.92);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(10px);
     }
 
     .nav {
-      min-height: 64px;
+      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -104,40 +109,41 @@
     .hero-shell {
       position: relative;
       overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
       min-height: 700px;
+      border: 1px solid var(--line);
       background: #f8f7fb;
+      box-shadow: var(--shadow);
     }
 
-    .hero-background {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background-image: url("images/hero-bg.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      transform: scale(1.01);
-    }
-
-    .hero-background::after {
+    .hero-shell::before {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(248, 247, 251, 0.74) 0%,
-          rgba(248, 247, 251, 0.30) 30%,
-          rgba(248, 247, 251, 0.78) 100%
-        );
+      z-index: 1;
+      background-image: url("./images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 1;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(248, 247, 251, 0.70) 0%,
+        rgba(248, 247, 251, 0.24) 30%,
+        rgba(248, 247, 251, 0.78) 100%
+      );
     }
 
     .ai-overlay {
       position: absolute;
       inset: 0;
-      z-index: 2;
+      z-index: 3;
       pointer-events: none;
       mix-blend-mode: multiply;
     }
@@ -151,7 +157,7 @@
 
     .hero-content {
       position: relative;
-      z-index: 3;
+      z-index: 4;
     }
 
     .hero-top {
@@ -207,9 +213,7 @@
       color: var(--muted);
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 700;
@@ -228,7 +232,7 @@
       color: var(--text);
       max-width: 940px;
       margin: 0 auto;
-      line-height: 1.18;
+      line-height: 1.16;
     }
 
     .hero-meta {
@@ -238,7 +242,7 @@
       gap: 16px;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.80);
     }
 
     .meta-item {
@@ -261,7 +265,7 @@
       display: block;
       color: var(--text);
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.35;
       font-weight: 600;
     }
 
@@ -612,8 +616,6 @@
   <main>
     <section class="hero">
       <div class="container hero-shell">
-        <div class="hero-background"></div>
-
         <div class="ai-overlay" aria-hidden="true">
           <svg viewBox="0 0 1200 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -640,11 +642,11 @@
           <div class="hero-top">
             <div class="logo-row">
               <div class="logo-wrap left">
-                <img src="images/ucl-logo.png" alt="University College London logo" />
+                <img src="./images/ucl-logo.png" alt="University College London logo" />
               </div>
               <div class="logo-divider" aria-hidden="true"></div>
               <div class="logo-wrap right">
-                <img src="images/cuhk-logo.png" alt="The Chinese University of Hong Kong logo" />
+                <img src="./images/cuhk-logo.png" alt="The Chinese University of Hong Kong logo" />
               </div>
             </div>
           </div>
@@ -711,7 +713,7 @@
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Professor Glenn Stockwell is a leading scholar in applied linguistics and educational technology, specialising in computer-assisted language learning. He previously served as Professor of Applied Linguistics at Waseda University and is Editor-in-Chief of <em>Computer Assisted Language Learning</em>.</p>
+              <p>Professor Glenn Stockwell is an internationally recognised scholar in applied linguistics and educational technology, with particular expertise in computer-assisted language learning. He holds a PhD in Applied Linguistics from the University of Queensland and has held academic appointments in Australia, and most recently as Professor of Applied Linguistics at Waseda University in Japan, for 20 years. He currently serves as Editor-in-Chief of Computer Assisted Language Learning, one of the leading international journals in the field.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -719,7 +721,7 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This keynote questions the now common description of human–AI interaction as collaboration in EMI. It argues that AI lacks the intentionality, reciprocity, and accountability required for genuine collaboration, and calls for more precise ways of describing AI’s pedagogical role.</p>
+              <p>As generative AI becomes more common in English-Medium Instruction, it has become fashionable to describe human-AI interaction as "collaboration." But this framing deserves scrutiny. Drawing on Stockwell and Wang (2025), this keynote argues that AI lacks the shared intent, mutual understanding, and accountability that genuine collaboration requires. Treating AI as a collaborator risks devaluing teacher judgement, conflating AI output with learner competence, and muddying questions of intellectual ownership. Rather than defaulting to this language, we need more precise terms for what AI actually does in educational settings, whether as tool, resource, or interlocutor, and clearer strategies for keeping pedagogical decision-making where it belongs.</p>
             </div>
           </article>
 
@@ -729,7 +731,7 @@
             <p class="speaker-affiliation">University College London</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Prof. Jim McKinley researches implications of globalization for L2 writing, language education, and higher education studies, especially the teaching-research nexus and English medium instruction. He is Editor-in-Chief of <em>System</em> and incoming Editor of <em>TESOL Quarterly</em>.</p>
+              <p>Prof. Jim McKinley, SFHEA, has taught in higher education in the UK, Japan, Australia, and Uganda, as well as US schools. His research targets implications of globalization for L2 writing, language education, and higher education studies, particularly the teaching-research nexus and English medium instruction. Jim is co-author and co-editor of several books on research methods in applied linguistics. He is an Editor-in-Chief of the journal System, incoming Editor of TESOL Quarterly, and a co-Editor of the Cambridge Elements series Language Teaching (Cambridge University Press).</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -737,7 +739,9 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This talk argues that generative AI challenges basic assumptions about participation, authorship, and linguistic competence in EMI. Rather than treating AI as either threat or solution, it asks how EMI pedagogy might reconceptualise participation when academic work increasingly becomes a hybrid human–AI practice.</p>
+              <p>"Generative AI is rapidly reshaping academic communication, yet discussions in English-medium instruction (EMI) have largely focused on academic integrity and assessment security. This talk argues that generative AI instead challenges more fundamental assumptions about participation, authorship, and linguistic competence that underpin EMI policy and practice.
+Drawing on recent work on writer identity alongside classroom-based reflections from EMI teaching contexts, I examine a growing pedagogical paradox: while AI tools appear to lower linguistic barriers to academic production, student participation in classroom discussion and collaborative meaning-making may be changing in unexpected ways. Instructors increasingly observe students turning to AI-mediated support during learning activities, raising questions about how engagement, intellectual struggle, and disciplinary socialisation are being reconfigured.
+I suggest that these developments expose longstanding tensions within EMI, where participation has often been equated with visible linguistic performance in English. Rather than framing AI as either threat or solution, the talk considers how EMI policy and pedagogy might reconceptualise participation and authorship in contexts where academic work is becoming a hybrid human–AI practice."</p>
             </div>
           </article>
 
@@ -747,7 +751,7 @@
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Professor Angel Lin works on multilingual, multimodal, and multisensory meaning-making in education, with implications for equity, diversity, and inclusion. She chairs AERA’s SIG Semiotics in Education and has led extensive international research engagement in applied linguistics and education.</p>
+              <p>Professor Angel Lin serves on the editorial boards of international research journals including International Journal of Bilingual Education and Bilingualism, Language Policy, Language and Education, Language, Culture and Curriculum. Her research and development of the Multimodalities-Entextualization Cycle (MEC) serves as a critical pragmatic heuristic for educators and researchers to navigate and disrupt the often monoglossic institutional spaces by both valuing and enabling translingual, multimodal, and multisensory meaning making actions with implications for equity, diversity and inclusion in education.  She is the current Chair of the American Educational Research Association’s Special Interest Group (SIG), Semiotics in Education, and has been a part of the SIG’s executive board since 2020. She started the TL-TS Research Channel on YouTube in 2019 and has organized over 30 research seminars featuring both seasoned and emergent scholars in applied linguistics and education from all over the world.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -771,7 +775,7 @@
             <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Professor Daisy Di Zou researches language education and educational technology, with a sustained focus on how emerging tools can support teaching, learning, and assessment. She has led or collaborated on over 20 projects and published widely in major journals including <em>Computers &amp; Education</em>, <em>System</em>, and <em>TESOL Quarterly</em>.</p>
+              <p>Professor Daisy Di Zou a researcher in language education, with a dedicated focus on how emerging technologies can enhance teaching, learning, and assessment. Her academic journey has been shaped by a deep interest in the intersection of language pedagogy and educational innovation. Over the years, she has led and collaborated on more than 20 research projects that explore the pedagogical potential of digital tools in language classrooms. her research has resulted in over 150 peer-reviewed publications, appearing in leading SSCI- and Scopus-indexed journals such as Computers & Education, Computers in Human Behavior, Computer Assisted Language Learning, System, and TESOL Quaterly.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -789,7 +793,7 @@
             <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Professor Christy Xuyan Qiu researches second language teaching and learning, especially academic genre knowledge, task-based pedagogy, and how English language education prepares students for EMI in Chinese contexts.</p>
+              <p>Professor Christy Xuyan Qiu researches second language teaching and learning, with a focus on three areas. Her work examines the knowledge L2 learners need at different proficiency levels, especially the rhetorical and linguistic features of academic genres through corpus-based approaches. She also investigates how this knowledge can be taught effectively, particularly through task-based language teaching in both face-to-face and virtual settings. In addition, her research explores how English language education can prepare students for English-medium instruction, especially in Chinese contexts, by addressing the needs of EMI students and teachers.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -797,17 +801,17 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This study examines how task complexity, pragmatic demand, and interaction modality shape EMI students’ discourse marker use in oral tasks with both human interlocutors and ChatGPT. The findings suggest that task design and AI-mediated interaction both influence how spoken communication develops in L2 contexts.</p>
+              <p>This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language (L2) learners from an English Medium Instruction (EMI) university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s (2007) framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers (which clarify or specify information) than on structural markers (which organise or sequence discourse). AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p>
             </div>
           </article>
 
           <article class="speaker-card">
             <div class="speaker-photo"></div>
             <h3><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></h3>
-            <p class="speaker-affiliation">The Chinese University of Hong Kong</p>
+            <p class="speaker-affiliation">CUHK</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Sihan Zhou is Assistant Professor of Curriculum and Instruction at CUHK. She completed her DPhil in Education at Oxford and an MPhil at Cambridge, and has taught and delivered teacher education in Hong Kong, China, and the UK.</p>
+              <p>Sihan Zhou is an Assistant Professor of Curriculum and Instruction at the Chinese University of Hong Kong (CUHK). She completed her DPhil in Education at the University of Oxford and an MPhil at the University of Cambridge. She formerly served as Tutor of Applied Linguistics at the University of Oxford, Lecturer at CUHK English Language Teaching Unit, and TESOL Associate at the University of Edinburgh. As a teacher educator, Sihan has taught pre- and in-service language teachers at primary, secondary, and tertiary level of education, and delivered training workshops both in China and the UK.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -822,10 +826,10 @@
           <article class="speaker-card">
             <div class="speaker-photo"></div>
             <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></h3>
-            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <p class="speaker-affiliation">HKU</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Bo Peng is a PhD candidate at the Faculty of Education, The University of Hong Kong. Her work focuses on EMI, teacher professional development, researcher-practitioner collaboration, and the role of AI in supporting teacher development.</p>
+              <p>Bo Peng is a PhD candidate at the Faculty of Education, The University of Hong Kong. Her research interests include English-medium instruction (EMI), teacher professional development, and researcher-practitioner collaboration, with a particular interest in how artificial intelligence can support teacher development. She has published in journals such as TESOL Quarterly, System, and the International Journal of Applied Linguistics.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -833,17 +837,18 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This design-based study examines how a novice EMI accounting teacher’s language awareness developed over one semester through collaboration with AI. The findings show increased attention to students’ language-related challenges, stronger scaffolding practices, and more language-sensitive assessment design.</p>
+              <p>"English-medium instruction (EMI) has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of artificial intelligence (AI) tools offers opportunities to support EMI pedagogy. This study seeks to explore how EMI teachers collaborate with AI to improve instructional and assessment practices.
+Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness (TLA) developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development in her TLA during the collaboration with AI. She demonstrated increased awareness of students’ language-related challenges and of the importance of instructional language and scaffolding. Such TLA was translated to her classroom and assessment practices, where she incorporated more language-related episodes and visual support to facilitate students’ comprehension, and developed more language-sensitive assessment tasks. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide."</p>
             </div>
           </article>
 
           <article class="speaker-card">
             <div class="speaker-photo"></div>
             <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></h3>
-            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <p class="speaker-affiliation">HKU</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Yuen Yi Lo is Professor at the Faculty of Education, The University of Hong Kong. Her research focuses on EMI, CLIL, cross-curricular collaboration, assessment, and teacher professional development in bilingual education.</p>
+              <p>Yuen Yi Lo is a Professor at the Faculty of Education, The University of Hong Kong. Her research focuses on bilingual education programmes such as English Medium Instruction (EMI) and Content and Language Integrated Learning (CLIL). She is particularly interested in cross-curricular collaboration, assessment and teachers’ professional development in these programmes.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -851,7 +856,8 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This design-based study examines how a novice EMI accounting teacher’s language awareness developed over one semester through collaboration with AI. The findings show increased attention to students’ language-related challenges, stronger scaffolding practices, and more language-sensitive assessment design.</p>
+              <p>"English-medium instruction (EMI) has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of artificial intelligence (AI) tools offers opportunities to support EMI pedagogy. This study seeks to explore how EMI teachers collaborate with AI to improve instructional and assessment practices.
+Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness (TLA) developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development in her TLA during the collaboration with AI. She demonstrated increased awareness of students’ language-related challenges and of the importance of instructional language and scaffolding. Such TLA was translated to her classroom and assessment practices, where she incorporated more language-related episodes and visual support to facilitate students’ comprehension, and developed more language-sensitive assessment tasks. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide."</p>
             </div>
           </article>
 
@@ -861,7 +867,7 @@
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Professor Gabriel Fan Fang works across sociolinguistics, language education, Global Englishes, translanguaging, EMI, and teacher education. His research addresses accent, identity, native-speaker ideology, and equitable multilingual pedagogies.</p>
+              <p>Professor Fang Fan obtained his PhD from the University of Southampton. His research spans sociolinguistics, language education, Global Englishes, translanguaging, EMI, intercultural communication, and language teacher education. His research interrogates accent, identity, and native-speaker ideology, and advances pedagogies for multilingual, multicultural, and equitable language education. His recent work explores the integration of Global Englishes and translanguaging in language policy, pedagogy, and teacher development across diverse international contexts. His research on translanguaging is also connected to English as a medium of instruction (EMI), particularly in relation to language policy and planning. His ongoing research continues to focus on sociolinguistics and foreign language education more broadly, with the aim of fostering multilingual and multicultural awareness and promoting linguistic diversity and equity.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -869,17 +875,17 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This talk reports two studies from the Chinese context and argues that EMI must be examined beyond the classroom. It highlights insufficient student preparedness, concerns about teaching quality, and the risk that AI-mediated EMI practices may reproduce existing inequalities unless designed with stronger language support and equity in mind.</p>
+              <p>English-medium instruction (EMI) has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue of EMI concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency, potentially leading to educational inequality if not well-planned. Students also raised concerns about the quality of EMI teaching and highlighted the need for discipline-specific language support. In the era of artificial intelligence, this talk argues for a need of rethinking EMI through a decolonial lens in terms of how EMI and AI-mediated practices may be designed in order not to reinforce existing inequalities in language education.</p>
             </div>
           </article>
 
           <article class="speaker-card">
             <div class="speaker-photo"></div>
             <h3><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></h3>
-            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <p class="speaker-affiliation">HKU</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Biography to be added.</p>
+              <p></p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -887,7 +893,7 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This paper presents the development of an academic c-test supported by GenAI as an efficient way of assessing students’ academic English proficiency in EMI contexts. It introduces the validity of c-tests, explains the development process, and considers both research and pedagogical implications.</p>
+              <p>Language proficiency has always been an important variable in second language research and education. In English Medium Instruction (EMI), some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency especially at the time when they transition from secondary schools to universities, because many students would not have taken an academic proficiency test such as IELTS. It is, therefore, of both theoretical and pedagogical value to develop an academic English proficiency assessment that is efficient and economical. This paper presents the development of such a test – an academic c-test – with the support of GenAI. The presentation will start with an introduction of the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications will be discussed.</p>
             </div>
           </article>
 
@@ -897,7 +903,7 @@
             <p class="speaker-affiliation">City University of Hong Kong</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Prof. Benjamin Luke Moorhouse is Associate Professor in the Department of English at City University of Hong Kong. His work focuses on teachers’ lived experiences, competencies, and professional learning, and he is currently exploring the impact of GenAI on language teaching and learning.</p>
+              <p>Prof. Benjamin Luke Moorhouse is an Associate Professor in the Department of English, City University of Hong Kong, China. He has extensive experience as a primary school English language teacher. He has worked for the Education Bureau, Hong Kong Baptist University (HKBU), and The University of Hong Kong.  He has received several teaching awards, including The President’s Award for Outstanding Performance in Individual Teaching from HKBU in 2023. His research focuses on the lived experiences, competencies and professional learning of language teachers and teacher educators. Currently, he is exploring the impact of GenAI on language teaching and learning. He has published widely in international journals, including TESOL Quarterly, System, RELC Journal and ELT Journal. According to Stanford University, Benjamin has been in the top 2% of cited scholars worldwide from 2022-2025. He is a co-editor of the European Journal of Teacher Education.</p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -905,7 +911,8 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This talk critiques the growing dependence on AI-mediated scholarship in EMI, especially summariser and chat-with-the-article tools. It argues instead for scaffolded practices of authentic engagement, such as slow reading, annotation, discussion, and genre-aware routines, in order to preserve intellectual struggle as central to learning.</p>
+              <p>"This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered “summarisers” and “chat-with-the-article” interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a ‘solution’ to these difficulties.  
+Rather than positioning AI as the solution to these difficulties, I argue that we need be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement (e.g., guided slow reading, annotation, dialogic discussion, and genre-aware reading routines) and that advocate for intellectual struggle as a condition for developing language skills, disciplinary knowledge and judgement. In doing so, we resist efficiency narratives and reclaims deep, critical reading as central to learning."</p>
             </div>
           </article>
 
@@ -915,7 +922,7 @@
             <p class="speaker-affiliation">University College London</p>
             <div class="speaker-field">
               <span class="speaker-label">Bio</span>
-              <p>Biography to be added.</p>
+              <p></p>
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Talk title</span>
@@ -923,7 +930,7 @@
             </div>
             <div class="speaker-field">
               <span class="speaker-label">Abstract</span>
-              <p>This talk proposes Participant Narratives as a way of improving interpretive transparency in qualitative EMI research. Rather than yielding to simplistic versions of openness, it argues for a form of rigor that gives fuller context, sustains ethical responsibility, and remains faithful to the ethos of qualitative inquiry.</p>
+              <p>There are several key negotiations that often take place in EMI research: policy vs practice, outcomes vs experience, and, recently, tradition vs modernity in the way GenAI is incorporated, or not, in research and practice. We can also witness similar negotiations in current discussions of open science (a “modern” phenomenon) in relation to qualitative research, which has rich traditions. Fundamentally, is “modern” always preferential in relation to tradition? At what point does something modern become tradition? And is there a risk that practices associated with modernity or tradition become dogma? In thinking through some of these issues, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to open science: how can we become more “open” in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide a fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to “modern” encroachment on the ethos of qualitative research. I demonstrate how they can be used by researchers interested in narrating the lived experience of EMI.</p>
             </div>
           </article>
         </div>
