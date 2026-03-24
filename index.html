@@ -4,101 +4,188 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CUHK–UCL International EMI Symposium 2026</title>
-  <meta name="description" content="CUHK–UCL International EMI Symposium — English-medium instruction in the era of GenAI: Negotiating tradition and modernity." />
+  <meta
+    name="description"
+    content="CUHK–UCL International EMI Symposium — English-medium instruction in the era of GenAI: Negotiating tradition and modernity."
+  />
   <meta name="theme-color" content="#65558f" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     :root {
       --bg: #f6f5f9;
-      --bg-soft: #fbfbfd;
-      --panel: rgba(255,255,255,0.82);
-      --panel-strong: rgba(255,255,255,0.94);
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-strong: rgba(255, 255, 255, 0.97);
       --text: #2a2438;
       --muted: #6f6782;
       --line: rgba(101, 85, 143, 0.14);
       --line-strong: rgba(101, 85, 143, 0.24);
       --purple: #65558f;
       --purple-deep: #4e426d;
-      --lavender: #ece7f7;
-      --shadow: 0 24px 60px rgba(53, 43, 79, 0.08);
+      --shadow: 0 18px 44px rgba(53, 43, 79, 0.08);
       --max: 1280px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: linear-gradient(180deg, #fafafe 0%, #f4f2f8 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.55;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(250,250,254,0.9);
+      background: rgba(250, 250, 254, 0.9);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(10px);
     }
+
     .nav {
-      min-height: 68px;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
+
     .brand {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--purple-deep);
     }
+
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      font-size: 12px;
+      gap: 16px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
     }
-    .nav-links a:hover { color: var(--purple); }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
 
     .hero {
-      padding: 28px 0 48px;
+      padding: 24px 0 40px;
       border-bottom: 1px solid var(--line);
     }
+
     .hero-shell {
+      position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      min-height: 700px;
+      background: #f8f7fb;
     }
-    .hero-top { padding: 22px 34px 0; }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-image: url("images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transform: scale(1.01);
+    }
+
+    .hero-background::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(248, 247, 251, 0.74) 0%,
+          rgba(248, 247, 251, 0.30) 30%,
+          rgba(248, 247, 251, 0.78) 100%
+        );
+    }
+
+    .ai-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+
+    .ai-overlay svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0.18;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-top {
+      padding: 20px 30px 0;
+    }
+
     .logo-row {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 24px;
-      padding-bottom: 22px;
+      padding-bottom: 18px;
       border-bottom: 1px solid var(--line);
     }
-    .logo-wrap { display: flex; align-items: center; }
-    .logo-wrap.left { justify-content: flex-start; }
-    .logo-wrap.right { justify-content: flex-end; }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-wrap.left {
+      justify-content: flex-start;
+    }
+
+    .logo-wrap.right {
+      justify-content: flex-end;
+    }
+
     .logo-wrap img {
-      max-height: 74px;
+      max-height: 66px;
       width: auto;
       object-fit: contain;
     }
+
     .logo-divider {
       width: 72px;
       height: 1px;
@@ -106,266 +193,242 @@
     }
 
     .hero-copy {
-      padding: 28px 34px 22px;
+      padding: 34px 30px 28px;
       text-align: center;
-      position: relative;
-      z-index: 2;
     }
+
     .hero-eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
-      font-size: 11px;
+      margin-bottom: 12px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
     }
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-weight: 700;
       letter-spacing: 0.01em;
-      line-height: 1.05;
+      line-height: 1.04;
     }
+
     .hero-title {
-      font-size: clamp(34px, 5vw, 62px);
+      font-size: clamp(32px, 4.8vw, 56px);
       margin-bottom: 8px;
       color: var(--purple-deep);
     }
-    .hero-subtitle-main {
-      font-size: clamp(21px, 2.9vw, 36px);
-      color: var(--text);
-      max-width: 980px;
-      margin: 0 auto;
-    }
 
-    .hero-visual-wrap {
-      padding: 0;
-    }
-    .hero-visual {
-      position: relative;
-      min-height: 430px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(236,231,247,0.30), rgba(255,255,255,0.52));
-    }
-    .hero-visual-grid {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .building-slot {
-      position: relative;
-      overflow: hidden;
-    }
-    .building-slot img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.52;
-      filter: saturate(88%) contrast(96%) brightness(1.02);
-      transform: scale(1.03);
-    }
-    .building-slot.left img {
-      object-position: center 46%;
-    }
-    .building-slot.right img {
-      object-position: center 48%;
-    }
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(250,250,254,0.30) 0%, rgba(250,250,254,0.10) 26%, rgba(250,250,254,0.45) 100%),
-        linear-gradient(90deg, rgba(250,250,254,0.00) 46%, rgba(250,250,254,0.62) 50%, rgba(250,250,254,0.00) 54%);
-      z-index: 2;
-      pointer-events: none;
-    }
-    .ai-overlay {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 3;
-      mix-blend-mode: multiply;
-    }
-    .ai-overlay svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-      opacity: 0.30;
+    .hero-subtitle-main {
+      font-size: clamp(20px, 2.6vw, 33px);
+      color: var(--text);
+      max-width: 940px;
+      margin: 0 auto;
+      line-height: 1.18;
     }
 
     .hero-meta {
-      padding: 20px 34px 24px;
+      padding: 16px 30px 18px;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
+      gap: 16px;
+      border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.8);
     }
+
     .meta-item {
-      padding-top: 14px;
+      padding-top: 10px;
       border-top: 1px solid var(--line-strong);
     }
+
     .meta-label {
       display: block;
-      margin-bottom: 8px;
-      font-size: 11px;
+      margin-bottom: 6px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
+      line-height: 1.2;
     }
+
     .meta-item strong {
       display: block;
       color: var(--text);
-      font-size: 15px;
-      line-height: 1.5;
+      font-size: 14px;
+      line-height: 1.4;
       font-weight: 600;
     }
 
     .hero-actions {
-      padding: 22px 34px 28px;
+      padding: 18px 30px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
+
     .button-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
     }
+
     .btn {
-      min-height: 46px;
-      padding: 0 18px;
+      min-height: 42px;
+      padding: 0 16px;
       border: 1px solid var(--line-strong);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
     }
-    .btn:hover { transform: translateY(-1px); }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
     .btn-primary {
       background: var(--purple-deep);
       color: #fff;
       border-color: var(--purple-deep);
     }
+
     .btn-secondary {
       background: transparent;
       color: var(--purple-deep);
-      border-color: var(--line-strong);
     }
-    .btn-secondary:hover { background: rgba(101,85,143,0.06); }
+
+    .btn-secondary:hover {
+      background: rgba(101, 85, 143, 0.06);
+    }
+
     .registration-note {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
       text-align: center;
+      line-height: 1.35;
     }
 
     section {
-      padding: 50px 0;
+      padding: 42px 0;
       border-bottom: 1px solid var(--line);
     }
+
     .section-head {
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       text-align: center;
     }
+
     h2 {
-      font-size: clamp(28px, 4vw, 46px);
+      font-size: clamp(24px, 3.2vw, 38px);
       color: var(--purple-deep);
+      line-height: 1.08;
     }
+
     .lede {
-      max-width: 980px;
+      max-width: 920px;
       margin: 0 auto;
       color: var(--text);
-      font-size: 18px;
+      font-size: 16px;
+      line-height: 1.55;
       text-align: center;
     }
 
     .speakers-section {
-      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0));
+      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
     }
-    .speaker-group + .speaker-group { margin-top: 42px; }
-    .speaker-group h3.section-title {
-      font-size: 32px;
-      color: var(--purple-deep);
-      margin-bottom: 18px;
-      text-align: center;
-      font-family: "Cormorant Garamond", Georgia, serif;
+
+    .speaker-group + .speaker-group {
+      margin-top: 28px;
     }
+
     .speaker-grid {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
+
     .speaker-grid.keynotes,
     .speaker-grid.featured {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
     .speaker-card {
       background: var(--panel-strong);
       border: 1px solid var(--line);
-      padding: 20px;
+      padding: 16px 16px 14px;
       min-height: 100%;
       box-shadow: var(--shadow);
     }
+
     .speaker-photo {
-      width: 86px;
-      height: 108px;
-      margin: 0 auto 14px;
+      width: 64px;
+      height: 80px;
+      margin: 0 auto 10px;
       border: 1px solid var(--line-strong);
-      display: grid;
-      place-items: center;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
       background: linear-gradient(135deg, rgba(236,231,247,0.7), rgba(255,255,255,0.9));
     }
+
     .speaker-card h3 {
-      font-size: 26px;
+      font-size: 21px;
       color: var(--purple-deep);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       text-align: center;
+      line-height: 1.08;
     }
+
+    .speaker-card h3 a:hover {
+      color: var(--purple);
+    }
+
     .speaker-affiliation {
-      margin: 0 0 14px;
+      margin: 0 0 10px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 12.5px;
       text-align: center;
+      line-height: 1.35;
     }
+
     .speaker-field + .speaker-field {
-      margin-top: 14px;
-      padding-top: 14px;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid var(--line);
     }
+
     .speaker-label {
       display: block;
-      margin-bottom: 6px;
-      font-size: 11px;
+      margin-bottom: 4px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
+      line-height: 1.2;
     }
+
     .speaker-title {
       color: var(--text);
       font-weight: 700;
+      font-size: 13.5px;
+      line-height: 1.38;
     }
+
     .speaker-card p {
       margin: 0;
       color: var(--text);
-      font-size: 15px;
+      font-size: 13px;
+      line-height: 1.42;
     }
 
     .schedule-shell {
@@ -375,80 +438,98 @@
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
+
     .schedule-row {
       display: grid;
-      grid-template-columns: 190px 1fr;
+      grid-template-columns: 180px 1fr;
       border-bottom: 1px solid var(--line);
     }
-    .schedule-row:last-child { border-bottom: 0; }
+
+    .schedule-row:last-child {
+      border-bottom: 0;
+    }
+
     .schedule-time,
     .schedule-detail {
-      padding: 18px 22px;
+      padding: 14px 18px;
     }
+
     .schedule-time {
       border-right: 1px solid var(--line);
       color: var(--purple-deep);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.05em;
+      line-height: 1.3;
     }
+
     .schedule-title {
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 4px;
-      font-size: 17px;
-      line-height: 1.45;
+      margin-bottom: 3px;
+      font-size: 15px;
+      line-height: 1.38;
     }
+
     .schedule-speaker {
       color: var(--muted);
-      font-size: 15px;
+      font-size: 13px;
+      line-height: 1.35;
     }
 
     .section-stack {
       max-width: 920px;
       margin: 0 auto;
     }
+
     .stack-block {
       background: var(--panel-strong);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
+
     .stack-title {
-      padding: 18px 22px 12px;
+      padding: 14px 18px 10px;
       border-bottom: 1px solid var(--line);
-      font-size: 24px;
+      font-size: 22px;
       color: var(--purple-deep);
       font-family: "Cormorant Garamond", Georgia, serif;
       line-height: 1.05;
     }
+
     .stack-copy {
-      padding: 18px 22px 22px;
+      padding: 14px 18px 18px;
       color: var(--text);
-      font-size: 16px;
+      font-size: 15px;
+      line-height: 1.5;
     }
+
     .venue-map {
       max-width: 840px;
-      margin: 18px auto 0;
+      margin: 16px auto 0;
       border: 1px solid var(--line);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
+
     .venue-map iframe {
       width: 100%;
-      height: 240px;
+      height: 220px;
       border: 0;
       display: block;
     }
 
     .footer {
-      padding: 28px 0 48px;
+      padding: 24px 0 36px;
     }
+
     .footer-shell {
       border-top: 1px solid var(--line);
-      padding-top: 18px;
+      padding-top: 14px;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.35;
     }
 
     @media (max-width: 1024px) {
@@ -457,35 +538,56 @@
       .speaker-grid.featured {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .hero-visual-grid { grid-template-columns: 1fr; }
-      .building-slot + .building-slot { border-left: 0; border-top: 1px solid var(--line); }
+
+      .hero-shell {
+        min-height: 620px;
+      }
     }
+
     @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 24px)); }
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
       .nav {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 14px 0;
+        padding: 12px 0;
       }
+
       .logo-row {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
       }
-      .logo-divider { display: none; }
-      .logo-wrap.left, .logo-wrap.right { justify-content: center; }
-      .hero-top, .hero-copy, .hero-visual-wrap, .hero-meta, .hero-actions {
-        padding-left: 20px;
-        padding-right: 20px;
+
+      .logo-divider {
+        display: none;
       }
+
+      .logo-wrap.left,
+      .logo-wrap.right {
+        justify-content: center;
+      }
+
+      .hero-top,
+      .hero-copy,
+      .hero-meta,
+      .hero-actions {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
       .hero-meta,
       .speaker-grid.keynotes,
       .speaker-grid.featured {
         grid-template-columns: 1fr;
       }
+
       .schedule-row {
         grid-template-columns: 1fr;
       }
+
       .schedule-time {
         border-right: 0;
         border-bottom: 1px solid var(--line);
@@ -510,80 +612,77 @@
   <main>
     <section class="hero">
       <div class="container hero-shell">
-        <div class="hero-top">
-          <div class="logo-row">
-            <div class="logo-wrap left">
-              <img src="data:image/png;base64,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" alt="University College London logo" />
-            </div>
-            <div class="logo-divider" aria-hidden="true"></div>
-            <div class="logo-wrap right">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaQAAABLCAYAAAA/KfPWAAB2lElEQVR4nOy9d5hdV3X3/127nHL73OnqXbIsucnGBWy50QOmmRBaYAwJJCQzQ0iYuNOYiTcSEphAkkACKanpQpoQkoyJpA6EJrYFm+XT1Nh9z8fP2usc6vQ+9tt7r3V3b3Vu59j7Oec7a+211l5r7bWXzWaz2Ww2m80m5XSOIQsQXzzbZsNms20u8cWzbSZsNtvmdl0+xlPh8M3LqzM4z6+stYn6+7jp3JQvlu3U1yJ0S+8qvzkvZ+XgobuuHs93v/tds6Gd4ocffjjmz5+PqVOn4s033zSbCpvrxx9/xPjx4/H666+P1uJKw4sXL2LOnDmYMWMGTp48aTYVNtfx48cxadIkfPzxx6O1uNLw4sWLmD17Nl588UWzqZ3i4z+JZ8+ejQkTJmDp0qVms2FzqNVqTJ06FfPmzTN+4+LiAj8/P0ycOBFnzpwxm4psVd3d3XH33XfjvffeM5sKm4lGo8G8efOwcuVKA7f//ve/g6enJ6KiosxmJltbT08P1q5dizVr1phNxc1j7NixmD17ttnUTnH5d6KJ71CLFy/GwIEDDc0vLy/P+EAA8PLyMu1s27YNI0aMsPRQWppD+Pnnn/HII4/gmWeeMbvKOM5PP/2E0NBQQzN0s7jlllvw+eef47fffsPgwYPx5JNPmu0M3TRWrFih7uPHH3/ExIkTERISgqSkJLOqjON89dVX8PPzw1NPPWU2FTaLc+fOIDw8XHN58+bN2L59O8rLy3Hy5Emzq5RTfP8n8RtffPEFnnnmGQwfPhzPPPMMysvLzdedOHFC3f/ll1+ibdu2WLt2rdnVhtnFypUr0alTJ8hkMrOprK2gU6dOmDx5Mn744Qezqbh5+fr6AipL1pgfJxLpuYhHcf/+fciyDABISEjAzJkzsXLlSrOp0HndvXsX3bt3N5uq2wbEpKX1XWvjt1TKsgxdunTBhAkT8OSTT5pNxU3Fz88PUVFR2Lp1q9lU3FLmzZuHzMxMQ/PIkSPx448/GpyKbF1nz57F6NGjERAQYDYVNw9bzmMdyEK4ceMGZDIZGjVqBADYuXMniouL0bdvXxQWFiInJ8dsdrYtOV+8w4cP49ixYxg9ejQSEhLw6aefQqPRYMyYMWZzs63I+eJdvXo18vPzMWfOHJw9exabNm3CZ599hj59+pjd3nYk54s3cOBArF27FgMHDjSbylnI0qVLceTIEdx0000A7j6QzWYzm4pNR86PPH/+PPr06WNoBgYGYs2aNQgJCTG7vW1JzhfP19cXAwcOxMmTJ3H27FkMHz4ckydPxocffmh2e9uSnC/eK6+8gh49eiAzMxN79+7Fq6++akobLyf5nLzByXj37dsXAwYMwFdffYVffvkFZ8+eVc/rrdKW0JQm1hFZIvX1cmCLpMqaL0itqR85QfkP9FV3tefLh+1T7t7JF18SdiqVkiQpw+SEa0Rr7E0IMkXuN0eqbzNaCAcd9wcaFyJxAnxQhZd6+s4UPRsurFV47m/2QaVmkxVYo+R89/OvZP/WW4tY7HlyvviHDx/GvHnz8PTTT6OgoABms9nQu6+vr6kPo2fPnmjZsiWefPJJzJw5E87Ozvj973+PVatWqc8fP34c0dHR6NixI5o2bYrq6mr89a9/RfPmzfH6668jJiYGQ4YMUb9CQ0MRHx+P2NhY9OnTB66urli6dCnmz58P4N8c0fHjx7FhwwbMmTMHH374IebNmwdHR0f85S9/Mbf766+/ori4GIsWLUKTJk1gMpnwzTffQCaTYenSpXBycsLtt9+O//73v1iyZAmioqIAlSy1Zs0adO7cGf3794ejoyNyc3Nx4MABjB07FnPmzIG7uzsiIiJgMpnw8ssvw93dHUePHsUzzzxxzZjr16/H+PHj4erqioSEBPTq1Qv79u3DsmXL1OdbtmyJTZs2Yf369WjTpg0AIDg4GBMnTsS6deswcOBA+Pn5YcaMGejfvz9Wr16NadOmYd26deq4xYsXo3Xr1ujSpQvS09Nx4MABzJ07F3PnzsXAgQPRtWtXAMDJkycRFxeHli1bonv37nB1dcWnn34KhUKhPl9VVYWPP/4YEydORJs2bdCmTRt1vdFoRIcOHfDDDz9g2rRpCAgIQGZmJiZOnIj58+dj5syZeOeddwAAWVlZePDBB9G6dWv07NkTWq0WR44cwTfffIN58+ZBkiQAwKJFi9CnTx9ERkYiJycHR48exfDhw7FixQr1s507d+Ltt9/GiBEj0L59e9jtdnTv3h2rVq1C165dAQARERFo0qQJUlJS1JsiMpkMd955J8aMGYMWLVogNTUV06ZNU7+fOHECmzZtwvTp09G6dWu0adMGH330Efbt24dVq1ZhwoQJ+OyzzwzN59ixY3jooYfQvXt3hISEoGfPnti8eTO2bNmCmJgYAMDOnTsxYMAAeHl5oXXr1vjtt9/wwQcf4IUXXlDfLysrQ0BAALp164ZOnTrh9u3bWLBgAfbs2YN3330X6enpeP3119GkSRN8/vnnAMCtW7cwdepU3HbbbRg6dCjkcrn6tRdffBHdu3dHjRo1MH78eMyePRtvvvkm0tLS1M+PHTuGJ554ArVr14aTkxPee+89TJ8+Hbt378aIESNgtVrx7rvvAgBOnjyJWbNmYezYsWjevDnu3LmD7777Dq+++irmzJmDFStW4PPPP4fZbEZYWBi+/PJL9O/fHwAwcOBAdOnSBS1btkS7du3g7OyM9PR0fP/99xg5ciQCAwMB3HVr06YNZs+ejS+//BL16tVDWFgYUlNTMWzYMNx2220A7p7OJ598Ev7+/mjQoAHc3d3Rtm1bbN68GUuXLgWw9MXLzMzE1KlT8f7778PHxwcPP/ywut9tt92GXbt2Ydy4cejevTvOnz+PrVu3qmf99r6+/PJLDB06FJ06dYKDgwMSEhLw3nvvYezYsQgNDUVqaioCAgLwww8/oHv37rDb7dizZw8mTJgAPz8/PP/887h48SLmzJmD999/X/18bqJ/rP369UNkZCQSExNx6tQprFixAr169YLRaERGRgbmz5+P7du3o3v37ujSpQtmz56Nzz//HO+//z6io6Nx4MABREVF4dFHH1W/B6hwyQwGAw4ePIi4uDj0798fY8aMwZYtW9C9e3eEhITg/vvvdz2k4iuXlpbi6aefRlJSEjp27IhTp07h119/RV1dHQDAz88P33zzDUJDQ7F3714899xz+Pzzz/H+++/j9OnT6Nq1KxISEhAWFqYef+DAAcTFxeGWW25B8+bN8fnnn6Nbt25o3749gLtn0NHRERMnTsSIESPg5uaG33//Hf3790d6ejrefvttQMXHw8PDQ5/lBgaDAYsXL8bEiRPRqVMndOzYEX/961+xatUqODs7m9r8888/ERERgWnTpiE+Ph7/+Mc/0K5dO9jtdkRHR2Pq1KlQqVTq4F9PT09MnDgRzzzzDM6dO4euXbvi4YcfRklJiRqjT58+uHTpEqZMmYLnn38ep0+fRu/eveHh4YG//e1vaNWqlbqd1WpFRESEGvOFF17Ap59+in79+qF9+/Y4evQoBg0ahB9++AEJCQnq+KSkJAwfPhwymQzvvfce3N3d0aFDB5SVlSE0NBSHDh3Cjh07AAD16tXDmDFj8Mknn2Dz5s34+eef0bNnT3z44YeIjo7GmDFj1OcaNWqE2bNn48svv8SCBQvQpk0b9e6tW7eib9++mDp1Kv744w9kZWWha9euOHv2rPpq//rrr3juuedgNBqRmpqK2NhYdOvWzfzM5XJhxYoVaN68Ofr374/Jkydj+vTp0Ov1eOSRR9TaTZs2xVdffYUBAwbg1KlTmDRpEqZPn46HH35YbXOaNWuG4uJiTJgwAQBQUlKC2bNn4/jx4+jVqxeaNm2KJUuW4LnnnsPu3bsxbNgwTJ8+3VVl8jGeLl26gMfjYfjw4QgMDETLli3h7u6O69evY9WqVZBIJOjYsSM2btwIAFiwYAH279+P5cuX47vvvsPSpUvh6uqKkydPomnTpi79c5/PB5fLhS1btmDFihWYNGkS3nzzTYwZM8ZVKXo0nJyc0LFjR5w5c8ZliQW6ffu2GjG3bt0CX1/foPb369ePoqIiAIBGo0F4eDgCAwOVMnxVVRUmTpyIVq1aQaVSoUWLFnjllVewZ88e3H777WpvzZs3j82bN6N79+5GXD6bVfwd7ZNOOECj0SjY7XaVmJiocnJy1AmxsbGqc9u3b1fM5v8l5PV6Vb9+/VSj0ahyc3NVdHR0D0a67ov35ptvVuHh4ap79+5qZGSkun//fvWYDRs2qMaNG6s2bdooNzc3BQA1b95cvf/58+eqQ4cOKjQ0VDk7O6vvz58/X6WkpKhWrVqp4uLiXQ+v22y2cOlCYWGhAoByc3NV+/btVUJCgmrdurV64okn1K8AUL1791bMzr7L0KFDVWZmpgqHw8rFxcVVHzJ0/fp19eGHH6o+ffooV1dXdffdd6vKysrV5xMTE1WPHj3U26WmpqonnnhCtW/fXt2yefNmxcfHR0VGRqqSkhJ1nMViUf3791ft2rVTX79+/brq1auXcnNzUz169FBZWVkqIiJCNW3aVPXu3TvsvhoMBrV69WrVrl079X0dPnxYAWD16tXqeJ/Pp26//XbVs2dP9fWDBw+qwsJCNWPGDNW2bVsVGxurvuu1115T/v7+KiIiQv388uXLqri4WI0ePVr17t1bubm5qf79+6uSkhL1eZvNppKTk1WbNm1Uv379VFRUlHrhhRdUaWmpGjlypGJ3v6f86aefVAAoOTlZPb5kyRLl4uKi1q9fr7599OhR1bx5c2Wz2VTHjh1VdHS0amtrq85TKBRq+vTpatWqVer7CxcuKACUnZ2tjnnqqafUAw88oGJiYlRmZqby8PBQ99xzj6qsrFSfr6qqUtOmTVORkZHqvzZv3qwcHR3V6tWr1fFbt25VOp1O3XjjjSoxMVEFBQWpnj17qmXLlqm2bdvq+4ZhKdjatWtVXFyc8vPzU//XX3/9PoRABQA1Y8YMVVhYqL4XCAQUAPX000+rj8/Ly1MtWrRQLVu2VJcuXVKVlZXqss1mU9HR0ap79+6qvLxcHXPhwgUVGRmpOnXqpJjN0tJStXDhQtW+fXvVokULlZ6erj7/8ccfKzc3N9WsWbOw7fb7/SoA1LNnT8VstqvzL168qLZu3aq6deum2rVrpw4PDVRcXKzuvvtuFR4erv5LJBLq448/VqGhoeq2225TISEhqqysTH3+7Nmz6qmnnlJt2rRRd999t3JyclJDhw5V8+fPVx9TVlamjixdujQGaxXnz5//nS0uLjZ+9+3bVwGAZs6cqcrKytRxeXl5asuWLSosLEw9cuSIOn7o0CHl4uKiYmNjVbNmrYqMjFS1tbXmdd8/1jExMap9+/aqsLBQnV9VVXzttdeqp59+WtWpU0e1a9dOlZeXq2NOnDihAL7v08WLF9WgQYMUs/mfhtjYWEVFRakvv/xSff7s2bNqzJgxitvtVhMmTFBt27ZVMTEx6nZjY2OV2+1W9erVU15eXuY2vtNwLV26VDl7e6u6du0qlJeXd7xS8I6rbdu2Yf/+/YiMjFQJCQnqY7RarbmvVCpVz2vWrBlyc3PxzTffYMSIEejSpQsmT56MW7du4dKlS5g4cSISEhJw6tQpfPPNN9i5cyduvvlmLFq0CC1btkRwcDBeffVVAEBhYSHmzZuHMWPG4OjRo+jSpQuSkpJQWVmpbre6uhobN26EXq9X39fpdLDb7SopVBfZbDbodDokJCTg5ZdfRnBwMGQyGaysrNCsWTPcuHEDAHDmzBnMmzcPc+bMwb///W+0bdsWL730ktqev7+/2h8fHx98//336NevH7y8vLBo0SIcPHgQK1euxK1bt9Sxn3zyCerVq4edO3fizp07SElJQatWrdQtHh4e2L59Ozw9PaHT6fDDDz/g8uXLKCgoAMBymQulUgmNRoNu3boBAAoLCzFlyhTMmTMHf//73/HSSy/B1dUVR44cwaOPPgpXV1f07du3y2Pl5+cjPDwcCQkJKC8vV39fra2tYTabodPp8PjjjyM8PBzff/89Bg8ejODgYIwdOxYzZ85Uj9Xr9cjNzUWfPn0QFRWFsWPH4rfffsPhw4fRsWNHzJ49W+17bm4u3nrrLXh7e6Nv377Q6XR455130K1bN8hkMvj6+uLSpUu4du0adDqd+jVlyhQ4ODjg4sWLmD59OnJyctCzZ0+1v87Ozti+fTuSkpKwcuVKzJ49Gz179sSWLVuQn5+PAwcO4Msvv4S7uzsAoLCwEM899xxuvvlmrFixAoGBgfj8888xYsQIAN9hH6mpqUhLS8PSpUuxceNGdOjQAb6+vggKCjJca33p6emw2+0IDAwEANSvXx+ffPIJdu3ahR9//BEKhQIeHh7w8fFBRkaG+viysjJ89NFH6N69O4A1w9tWUe7u7hg+fDief/55lJaWIikpCVOnTkX37t2RmZmJf/7zn3jppZd0Wqni/qaqqiqMGjUKZ8+exUsvvQS1Wo3JkyejR48ecHR0xL179zBy5EgMGTIEb7zxBo4cOYInn3wSx44dQ0xMjJqD9M4772Dz5s04duwYfv31V2zduhUymQxRUVFYs2YN3n//fdjtdri4uKBNmzYAgMDAQOzatQv33nsv/v3vf8PHxwe1a9dWt6enp+PcuXM4e/YslixZgqSkJAC16C4sLER+fj7mzp2Lbt26oWnTpvj7779RUVGhnktUVBTGjx+Po0eP4uTJk9i5cyf69euHZcuWISIiAs899xw+++wzvPPOO7hw4QKGDBmCU6dOoWvXrlCpVOrru7u748iRI8jJycHKlStx5swZtG/fHrfccguA31hiYmLQsWNHfPvtt9iyZQuGDx8Om82G06dPY/Pmzfjtt98gFArVeqrVarRp0wYhISF4+eWX8eWXX0KlUiE1NRWDBg3CI488gr1798LT0xPffvstHn74YQCFJylyuRwPP/wwfv75ZyxYsABSqRTOzs7YvXs37rvvPgC1FrxGo8GAAQPwyy+/ID09Hdu2bcMrr7yCQ4cOYcaMGQCAAQMGIDIyElu2bMEXX3yB8ePH4/jx48jOzoZSqVT3vzkgIADdunXD8uXLUVBQgLfeegve3t5YunQpPDw8AAB9+vTB8uXL8f3332Pjxo2YPHkygoKC8N///hcvvPCC2j84OBgKhQJpaWn48ssvERsbi0cffRRbtmwBAERGRqJJkybYsmULNmzYgM2bN2PZsmVwdXXVvFrxfXnr1i388ssvuHjxIoKCgvD+++8jMjISERER8Pf3x9NPP42DBw8iPz8f2dnZSEhIQGxsLJycnBAXF4ehQ4eiqqoKw4cPB8By0tT1m7/8Wb7N5s4qK1asQFhYGLZs2YJWrVrhyJEjOHXqFGJiYjB8+HCYTCb1+XvuuQfNmjVDamqq+totW7bg6tWrCAkJwYwZM3Ds2DE0bdrU8BSAz7K4uBiPPfYYQkJCMHfuXDM7vVGjRrh69Sp69uyJZ599FhcvXlTDOXXqVDRo0AAFBQX4+uuv1fDjx48jMTHRbIKFDbVixQo4Ojpi3LhxaNasGVxcXJCQkIDTp08jPDzc3MbhcKC8vBzt2rVTX58xYwY6dOiA++67D61bty7WubDtbN++Hc2aNVOfb968OXr27IkxY8aYTVjYKHbs2IGQkBD1I5vNhsaNG0Mmk+GTTz4xt2vVqhUcHBzg6uqqfkaPHq2+v27dOvTo0QOvvfaa2QWADbFp0ya0atUK4eHh6nMpKSlwdXXFyZMncfr0abO7A1sXdrsdI0eOREFBgbq0ffjwYQwePBiHDh0ym3uwdYmLi0NsbCy2bduGEydO4PPPPwfwG9MxMTHmx7KysvDaa68hKSkJq1atgre3N6ZPn242d2DrQq1Wo3Xr1li/fj3u3r2LjIwM9fv69evx6aefIj8/32zuwNaFXq/Hrl278Pbbb6Njx44A/mP60ksv4euvvzabO7B1IYkinJyc4ObmhnPnzqF58+bqscmTJ8PR0dFs7sDWJScnB/Hx8Zg5cybat2+PwYMHw2g0YurUqWYzB7YuGo0GgwYNwtatW7Flyxa4ubnB3d0dQ4YMMZs5sHUhLJrQ35w5cxAfH4+QkBDk5+cjPDwcmzZtwpQpUwxnBLa4vN3PtGnTsGjRIowZM8ZsKm4RVjM8/LN8W16N5y6bx+2ZX8mCw4B+xqon/0M91Leq/dsMxnmpKrvxYH+Pujf7VmB6bN0UvbNoJv6k+S5qf9x5dU3o5b7QzzWdf7T6TtVQdcn9eZk1h4cHn2yH+I/C8ePHsW3bNkydOtVsKm5WMpmM8vJyQxMVFYX169ejX79+8Pf3N7s7sHVjMpnU+7t27YqoqCisXr3abIKmLf1P4pSUFJw8eRJpaWlwc3Mzj7nvvvtw7NgxQ7sEsG0oKysLf/7znzFr1izceOON5jGlpaUAgPvuu8/QPgFsA4KDg9G/f3+4uLhg9OjROHDggDruxIkTcHFxMZTAj6xZswatW7fG9u3bkZaWhn79+qndXrjxvPvuu+o+x48fx/Tp0xEcHAwp3duGXVOnTsWMGTMQEhKC2bNnm8fMnz8fK1aswBtvvGF2dwC2A0FBQVi8eDEWLFiAS5cuYd26dQgNDTW7OwBbB48++iiOHTuGyspKuLi4YPDgwejRo4d5f05ODmbMmIHY2Fi4ubmhY8eOWLdundnMAawDJRIJ5syZg+7du+P8+fMYM2YMoDLoAwYMwDPPPIMNGzYgOjrabAaALcKbb76Jzz77DE8++STOnDkDuVwOm82mkc0A15IvvvgCCxYswHvvvYfDhw+jffv2+P77783uDgDg7NmzqKqqQk5ODp599lm0adMGN2/eNLs7AFs/tVqN1q1bY+7cuXj55Zfx448/YsSIERg2bJjZ3QHY+nTt2hVhYWFYu3Yttm/fjmXLluHAgQPo2LGj2d0B2PrY7Xa8/vrr2L59OxYtWgQvLy+zuwOw9enVqxcuXLiAd955B9nZ2fjiiy+wf/9+s7sDsPX59NNPERISgqFDh2L06NFo2rSp2d0B2Pp8//33iI6Oxrx58wAAW7duxeDBg83uDmwdLP9JXL16FT4+PujVq5f53K5duzB+/HizuwOw9Tu9R3DLli1o1aoVPD09zWbjtgGri2ez2Ww2zUt88Ww2m20j4otns9lsGxFfPJvNZtuI+OLZbDbbRsQXz2az2TYivng2m822EfHFs9lstg3JZ6F/YebV9Kr7RyUAAAAASUVORK5CYII=" alt="The Chinese University of Hong Kong logo" />
-            </div>
-          </div>
+        <div class="hero-background"></div>
+
+        <div class="ai-overlay" aria-hidden="true">
+          <svg viewBox="0 0 1200 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="aiStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(101,85,143,0)" />
+                <stop offset="28%" stop-color="#c2b7d8" />
+                <stop offset="70%" stop-color="#8a79b3" />
+                <stop offset="100%" stop-color="rgba(101,85,143,0)" />
+              </linearGradient>
+            </defs>
+            <path d="M24 520 C 180 430, 262 336, 396 360 S 658 486, 790 420 S 976 300, 1178 360" fill="none" stroke="url(#aiStroke)" stroke-width="1.7" />
+            <path d="M112 180 C 248 210, 340 160, 472 188 S 742 270, 1080 220" fill="none" stroke="url(#aiStroke)" stroke-width="1.15" opacity="0.72" />
+            <path d="M198 650 C 330 590, 484 610, 630 560 S 854 510, 1026 540" fill="none" stroke="url(#aiStroke)" stroke-width="1.05" opacity="0.62" />
+            <g fill="#8a79b3">
+              <circle cx="182" cy="450" r="3.2" />
+              <circle cx="396" cy="360" r="3.2" />
+              <circle cx="790" cy="420" r="3.2" />
+              <circle cx="932" cy="320" r="3.2" />
+            </g>
+          </svg>
         </div>
 
-        <div class="hero-copy">
-          <span class="hero-eyebrow">24 April 2026 · Yasumoto International Academic Park · Hong Kong</span>
-          <h1 class="hero-title">CUHK–UCL International EMI Symposium</h1>
-          <div class="hero-subtitle-main">English-medium instruction in the era of GenAI: Negotiating tradition and modernity</div>
-        </div>
-
-        <div class="hero-visual-wrap">
-          <div class="hero-visual">
-            <div class="hero-visual-grid">
-              <div class="building-slot left">
-                <img src="data:image/jpeg;base64,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" alt="CUHK landmark image" />
+        <div class="hero-content">
+          <div class="hero-top">
+            <div class="logo-row">
+              <div class="logo-wrap left">
+                <img src="images/ucl-logo.png" alt="University College London logo" />
               </div>
-              <div class="building-slot right">
-                <img src="data:image/jpeg;base64,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" alt="UCL landmark image" />
+              <div class="logo-divider" aria-hidden="true"></div>
+              <div class="logo-wrap right">
+                <img src="images/cuhk-logo.png" alt="The Chinese University of Hong Kong logo" />
               </div>
             </div>
-            <div class="ai-overlay" aria-hidden="true">
-              <svg viewBox="0 0 1200 430" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="aiStroke" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="rgba(101,85,143,0)"/>
-                    <stop offset="28%" stop-color="#c2b7d8"/>
-                    <stop offset="70%" stop-color="#8a79b3"/>
-                    <stop offset="100%" stop-color="rgba(101,85,143,0)"/>
-                  </linearGradient>
-                </defs>
-                <path d="M24 318 C 180 248, 262 176, 396 196 S 658 306, 790 258 S 976 150, 1178 200" fill="none" stroke="url(#aiStroke)" stroke-width="1.7"/>
-                <path d="M112 114 C 248 136, 340 102, 472 120 S 742 174, 1080 136" fill="none" stroke="url(#aiStroke)" stroke-width="1.15" opacity="0.72"/>
-                <path d="M198 374 C 330 334, 484 344, 630 318 S 854 286, 1026 306" fill="none" stroke="url(#aiStroke)" stroke-width="1.05" opacity="0.62"/>
-                <g fill="#8a79b3">
-                  <circle cx="182" cy="264" r="3.2"/><circle cx="396" cy="196" r="3.2"/><circle cx="790" cy="258" r="3.2"/><circle cx="932" cy="166" r="3.2"/>
-                </g>
-              </svg>
+          </div>
+
+          <div class="hero-copy">
+            <span class="hero-eyebrow">24 April 2026 · Yasumoto International Academic Park · Hong Kong</span>
+            <h1 class="hero-title">CUHK–UCL International EMI Symposium</h1>
+            <div class="hero-subtitle-main">
+              English-medium instruction in the era of GenAI: Negotiating tradition and modernity
             </div>
           </div>
-        </div>
 
-        <div class="hero-meta">
-          <div class="meta-item">
-            <span class="meta-label">Date</span>
-            <strong>24 April 2026 (Friday)</strong>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-label">Date</span>
+              <strong>24 April 2026 (Friday)</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Venue</span>
+              <strong>Yasumoto International Academic Park (YIA), CUHK</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Fund</span>
+              <strong>Funded by the UCL–CUHK Strategic Partner Funds.</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Host</span>
+              <strong>Department of Curriculum and Instruction, The Chinese University of Hong Kong</strong>
+            </div>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Venue</span>
-            <strong>Yasumoto International Academic Park (YIA), CUHK</strong>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Fund</span>
-            <strong>Funded by the UCL–CUHK Strategic Partner Funds.</strong>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Host</span>
-            <strong>Department of Curriculum and Instruction, The Chinese University of Hong Kong</strong>
-          </div>
-        </div>
 
-        <div class="hero-actions">
-          <div class="button-row">
-            <a class="btn btn-primary" href="#">Register now</a>
-            <a class="btn btn-secondary" href="#schedule">View schedule</a>
+          <div class="hero-actions">
+            <div class="button-row">
+              <a class="btn btn-primary" href="#">Register now</a>
+              <a class="btn btn-secondary" href="#schedule">View schedule</a>
+            </div>
+            <div class="registration-note">Registration is for in-person participation only.</div>
           </div>
-          <div class="registration-note">Registration is for in-person participation only.</div>
         </div>
       </div>
     </section>
@@ -593,7 +692,9 @@
         <div class="section-head">
           <h2>About the Symposium</h2>
         </div>
-        <p class="lede">Join us for the CUHK–UCL English-medium instruction symposium, held on 24 April 2026 at the Department of Curriculum and Instruction, The Chinese University of Hong Kong. Under the theme <em>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</em>, the symposium brings together leading voices from Hong Kong and the international research community to examine how EMI is being transformed by generative AI across higher education. The event addresses questions of human agency, participation, authorship, assessment, academic language, teacher development, research practice, and educational inequality in a rapidly changing multilingual landscape.</p>
+        <p class="lede">
+          Join us for the CUHK–UCL English-medium instruction symposium, held on 24 April 2026 at the Department of Curriculum and Instruction, The Chinese University of Hong Kong. Under the theme <em>English-medium instruction in the era of GenAI: Negotiating tradition and modernity</em>, the symposium brings together leading voices from Hong Kong and the international research community to examine how EMI is being transformed by generative AI across higher education. The event addresses questions of human agency, participation, authorship, assessment, academic language, teacher development, research practice, and educational inequality in a rapidly changing multilingual landscape.
+        </p>
       </div>
     </section>
 
@@ -602,150 +703,229 @@
         <div class="section-head">
           <h2>Keynote speakers</h2>
         </div>
-        <div class="speaker-group">
-          <div class="speaker-grid keynotes">
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.eduhk.hk/en/experts/professor-stockwell-glenn" target="_blank" rel="noopener">Glenn Stockwell</a></h3>
-              <p class="speaker-affiliation">The Education University of Hong Kong</p>
-              <div class="speaker-field">
-                <span class="speaker-label">Bio</span>
-                <p>Professor Glenn Stockwell is an internationally recognised scholar in applied linguistics and educational technology, with particular expertise in computer-assisted language learning. He holds a PhD in Applied Linguistics from the University of Queensland and has held academic appointments in Australia, and most recently as Professor of Applied Linguistics at Waseda University in Japan, for 20 years. He currently serves as Editor-in-Chief of <em>Computer Assisted Language Learning</em>, one of the leading international journals in the field.</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Talk title</span>
-                <p class="speaker-title">The Collaboration Illusion: AI and Human Agency in EMI</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Abstract</span>
-                <p>As generative AI becomes more common in English-Medium Instruction, it has become fashionable to describe human-AI interaction as “collaboration.” But this framing deserves scrutiny. Drawing on Stockwell and Wang (2025), this keynote argues that AI lacks the shared intent, mutual understanding, and accountability that genuine collaboration requires. Treating AI as a collaborator risks devaluing teacher judgement, conflating AI output with learner competence, and muddying questions of intellectual ownership. Rather than defaulting to this language, we need more precise terms for what AI actually does in educational settings, whether as tool, resource, or interlocutor, and clearer strategies for keeping pedagogical decision-making where it belongs.</p>
-              </div>
-            </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://profiles.ucl.ac.uk/66669-jim-mckinley" target="_blank" rel="noopener">Jim McKinley</a></h3>
-              <p class="speaker-affiliation">University College London</p>
-              <div class="speaker-field">
-                <span class="speaker-label">Bio</span>
-                <p>Prof. Jim McKinley, SFHEA, has taught in higher education in the UK, Japan, Australia, and Uganda, as well as US schools. His research targets implications of globalization for L2 writing, language education, and higher education studies, particularly the teaching-research nexus and English medium instruction. Jim is co-author and co-editor of several books on research methods in applied linguistics. He is an Editor-in-Chief of <em>System</em>, incoming Editor of <em>TESOL Quarterly</em>, and a co-Editor of the Cambridge Elements series <em>Language Teaching</em> (Cambridge University Press).</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Talk title</span>
-                <p class="speaker-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Abstract</span>
-                <p>Generative AI is rapidly reshaping academic communication, yet discussions in English-medium instruction have largely focused on academic integrity and assessment security. This talk argues that generative AI instead challenges more fundamental assumptions about participation, authorship, and linguistic competence that underpin EMI policy and practice. Drawing on recent work on writer identity alongside classroom-based reflections from EMI teaching contexts, I examine a growing pedagogical paradox: while AI tools appear to lower linguistic barriers to academic production, student participation in classroom discussion and collaborative meaning-making may be changing in unexpected ways. Instructors increasingly observe students turning to AI-mediated support during learning activities, raising questions about how engagement, intellectual struggle, and disciplinary socialisation are being reconfigured. I suggest that these developments expose longstanding tensions within EMI, where participation has often been equated with visible linguistic performance in English. Rather than framing AI as either threat or solution, the talk considers how EMI policy and pedagogy might reconceptualise participation and authorship in contexts where academic work is becoming a hybrid human–AI practice.</p>
-              </div>
-            </article>
+        <div class="speaker-grid keynotes">
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.eduhk.hk/en/experts/professor-stockwell-glenn" target="_blank" rel="noopener">Glenn Stockwell</a></h3>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Professor Glenn Stockwell is a leading scholar in applied linguistics and educational technology, specialising in computer-assisted language learning. He previously served as Professor of Applied Linguistics at Waseda University and is Editor-in-Chief of <em>Computer Assisted Language Learning</em>.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">The Collaboration Illusion: AI and Human Agency in EMI</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This keynote questions the now common description of human–AI interaction as collaboration in EMI. It argues that AI lacks the intentionality, reciprocity, and accountability required for genuine collaboration, and calls for more precise ways of describing AI’s pedagogical role.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.eduhk.hk/ele/people/angel-lin" target="_blank" rel="noopener">Mei Yi Angel Lin</a></h3>
-              <p class="speaker-affiliation">The Education University of Hong Kong</p>
-              <div class="speaker-field">
-                <span class="speaker-label">Bio</span>
-                <p>Professor Angel Lin serves on the editorial boards of international research journals including <em>International Journal of Bilingual Education and Bilingualism</em>, <em>Language Policy</em>, <em>Language and Education</em>, and <em>Language, Culture and Curriculum</em>. Her research and development of the Multimodalities-Entextualization Cycle serves as a critical pragmatic heuristic for educators and researchers to navigate and disrupt often monoglossic institutional spaces by valuing and enabling translingual, multimodal, and multisensory meaning-making, with implications for equity, diversity and inclusion in education. She is the current Chair of the American Educational Research Association’s SIG Semiotics in Education, has been part of the SIG executive board since 2020, started the TL-TS Research Channel on YouTube in 2019, and has organized over 30 research seminars featuring scholars in applied linguistics and education from around the world.</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Talk title</span>
-                <p class="speaker-title">Title to be announced</p>
-              </div>
-              <div class="speaker-field">
-                <span class="speaker-label">Abstract</span>
-                <p>Abstract to be announced.</p>
-              </div>
-            </article>
-          </div>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://profiles.ucl.ac.uk/66669-jim-mckinley" target="_blank" rel="noopener">Jim McKinley</a></h3>
+            <p class="speaker-affiliation">University College London</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Prof. Jim McKinley researches implications of globalization for L2 writing, language education, and higher education studies, especially the teaching-research nexus and English medium instruction. He is Editor-in-Chief of <em>System</em> and incoming Editor of <em>TESOL Quarterly</em>.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This talk argues that generative AI challenges basic assumptions about participation, authorship, and linguistic competence in EMI. Rather than treating AI as either threat or solution, it asks how EMI pedagogy might reconceptualise participation when academic work increasingly becomes a hybrid human–AI practice.</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.eduhk.hk/ele/people/angel-lin" target="_blank" rel="noopener">Mei Yi Angel Lin</a></h3>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Professor Angel Lin works on multilingual, multimodal, and multisensory meaning-making in education, with implications for equity, diversity, and inclusion. She chairs AERA’s SIG Semiotics in Education and has led extensive international research engagement in applied linguistics and education.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Title to be announced</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>Abstract to be announced.</p>
+            </div>
+          </article>
         </div>
 
-        <div class="speaker-group">
-          <div class="section-head" style="margin-top: 42px;">
-            <h2>Featured speakers</h2>
-          </div>
-          <div class="speaker-grid featured">
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></h3>
-              <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Daisy Di Zou is a researcher in language education, with a dedicated focus on how emerging technologies can enhance teaching, learning, and assessment. Her academic journey has been shaped by a deep interest in the intersection of language pedagogy and educational innovation. Over the years, she has led and collaborated on more than 20 research projects that explore the pedagogical potential of digital tools in language classrooms. Her research has resulted in over 150 peer-reviewed publications in leading SSCI- and Scopus-indexed journals such as <em>Computers &amp; Education</em>, <em>Computers in Human Behavior</em>, <em>Computer Assisted Language Learning</em>, <em>System</em>, and <em>TESOL Quarterly</em>.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Title to be announced</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be announced.</p></div>
-            </article>
+        <div class="section-head" style="margin-top: 32px;">
+          <h2>Featured speakers</h2>
+        </div>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></h3>
-              <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Christy Xuyan Qiu researches second language teaching and learning, with a focus on three areas. Her work examines the knowledge L2 learners need at different proficiency levels, especially the rhetorical and linguistic features of academic genres through corpus-based approaches. She also investigates how this knowledge can be taught effectively, particularly through task-based language teaching in both face-to-face and virtual settings. In addition, her research explores how English language education can prepare students for English-medium instruction, especially in Chinese contexts, by addressing the needs of EMI students and teachers.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language learners from an English Medium Instruction university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers than on structural markers. AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p></div>
-            </article>
+        <div class="speaker-grid featured">
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></h3>
+            <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Professor Daisy Di Zou researches language education and educational technology, with a sustained focus on how emerging tools can support teaching, learning, and assessment. She has led or collaborated on over 20 projects and published widely in major journals including <em>Computers &amp; Education</em>, <em>System</em>, and <em>TESOL Quarterly</em>.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Title to be announced</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>Abstract to be announced.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></h3>
-              <p class="speaker-affiliation">The Chinese University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Sihan Zhou is an Assistant Professor of Curriculum and Instruction at the Chinese University of Hong Kong. She completed her DPhil in Education at the University of Oxford and an MPhil at the University of Cambridge. She formerly served as Tutor of Applied Linguistics at the University of Oxford, Lecturer at the CUHK English Language Teaching Unit, and TESOL Associate at the University of Edinburgh. As a teacher educator, Sihan has taught pre- and in-service language teachers at primary, secondary, and tertiary levels of education, and delivered training workshops both in China and the UK.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Title to be announced</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Abstract to be announced.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></h3>
+            <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Professor Christy Xuyan Qiu researches second language teaching and learning, especially academic genre knowledge, task-based pedagogy, and how English language education prepares students for EMI in Chinese contexts.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This study examines how task complexity, pragmatic demand, and interaction modality shape EMI students’ discourse marker use in oral tasks with both human interlocutors and ChatGPT. The findings suggest that task design and AI-mediated interaction both influence how spoken communication develops in L2 contexts.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></h3>
-              <p class="speaker-affiliation">The University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Bo Peng is a PhD candidate at the Faculty of Education, The University of Hong Kong. Her research interests include English-medium instruction, teacher professional development, and researcher-practitioner collaboration, with a particular interest in how artificial intelligence can support teacher development. She has published in journals such as <em>TESOL Quarterly</em>, <em>System</em>, and the <em>International Journal of Applied Linguistics</em>.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of AI tools offers opportunities to support EMI pedagogy. Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development during collaboration with AI. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></h3>
+            <p class="speaker-affiliation">The Chinese University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Sihan Zhou is Assistant Professor of Curriculum and Instruction at CUHK. She completed her DPhil in Education at Oxford and an MPhil at Cambridge, and has taught and delivered teacher education in Hong Kong, China, and the UK.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Title to be announced</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>Abstract to be announced.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></h3>
-              <p class="speaker-affiliation">The University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Yuen Yi Lo is a Professor at the Faculty of Education, The University of Hong Kong. Her research focuses on bilingual education programmes such as English Medium Instruction and Content and Language Integrated Learning. She is particularly interested in cross-curricular collaboration, assessment, and teachers’ professional development in these programmes.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of AI tools offers opportunities to support EMI pedagogy. Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development during collaboration with AI. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></h3>
+            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Bo Peng is a PhD candidate at the Faculty of Education, The University of Hong Kong. Her work focuses on EMI, teacher professional development, researcher-practitioner collaboration, and the role of AI in supporting teacher development.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This design-based study examines how a novice EMI accounting teacher’s language awareness developed over one semester through collaboration with AI. The findings show increased attention to students’ language-related challenges, stronger scaffolding practices, and more language-sensitive assessment design.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></h3>
-              <p class="speaker-affiliation">The Education University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Professor Fang Fan obtained his PhD from the University of Southampton. His research spans sociolinguistics, language education, Global Englishes, translanguaging, EMI, intercultural communication, and language teacher education. His work interrogates accent, identity, and native-speaker ideology, and advances pedagogies for multilingual, multicultural, and equitable language education. His recent work explores the integration of Global Englishes and translanguaging in language policy, pedagogy, and teacher development across diverse international contexts.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">English medium instruction: Preparedness and Support in the era of GenAI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>English-medium instruction has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency. In the era of artificial intelligence, this talk argues for a need to rethink EMI through a decolonial lens so that EMI and AI-mediated practices do not reinforce existing inequalities in language education.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></h3>
+            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Yuen Yi Lo is Professor at the Faculty of Education, The University of Hong Kong. Her research focuses on EMI, CLIL, cross-curricular collaboration, assessment, and teacher professional development in bilingual education.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Developing EMI teacher language awareness through AI-teacher collaboration</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This design-based study examines how a novice EMI accounting teacher’s language awareness developed over one semester through collaboration with AI. The findings show increased attention to students’ language-related challenges, stronger scaffolding practices, and more language-sensitive assessment design.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></h3>
-              <p class="speaker-affiliation">The University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Biography to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>Language proficiency has always been an important variable in second language research and education. In English Medium Instruction, some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency at the time when they transition from secondary schools to universities. This paper presents the development of an academic c-test with the support of GenAI. The presentation introduces the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications are discussed.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></h3>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Professor Gabriel Fan Fang works across sociolinguistics, language education, Global Englishes, translanguaging, EMI, and teacher education. His research addresses accent, identity, native-speaker ideology, and equitable multilingual pedagogies.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">English medium instruction: Preparedness and Support in the era of GenAI</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This talk reports two studies from the Chinese context and argues that EMI must be examined beyond the classroom. It highlights insufficient student preparedness, concerns about teaching quality, and the risk that AI-mediated EMI practices may reproduce existing inequalities unless designed with stronger language support and equity in mind.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Luke Moorhouse</a></h3>
-              <p class="speaker-affiliation">City University of Hong Kong</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Prof. Benjamin Luke Moorhouse is an Associate Professor in the Department of English, City University of Hong Kong. He has extensive experience as a primary school English language teacher and has worked for the Education Bureau, Hong Kong Baptist University, and The University of Hong Kong. He has received several teaching awards, including The President’s Award for Outstanding Performance in Individual Teaching from Hong Kong Baptist University in 2023. His research focuses on the lived experiences, competencies, and professional learning of language teachers and teacher educators, and he is currently exploring the impact of GenAI on language teaching and learning. According to Stanford University, Benjamin has been in the top 2% of cited scholars worldwide from 2022 to 2025. He is a co-editor of the <em>European Journal of Teacher Education</em>.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">The case against AI-mediated scholarship in EMI</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered summarisers and chat-with-the-article interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a solution. Rather than positioning AI as the solution to these difficulties, I argue that we need to be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement, such as guided slow reading, annotation, dialogic discussion, and genre-aware reading routines. In doing so, we resist efficiency narratives and reclaim deep, critical reading as central to learning.</p></div>
-            </article>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></h3>
+            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Biography to be added.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This paper presents the development of an academic c-test supported by GenAI as an efficient way of assessing students’ academic English proficiency in EMI contexts. It introduces the validity of c-tests, explains the development process, and considers both research and pedagogical implications.</p>
+            </div>
+          </article>
 
-            <article class="speaker-card">
-              <div class="speaker-photo">Photo</div>
-              <h3><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></h3>
-              <p class="speaker-affiliation">University College London</p>
-              <div class="speaker-field"><span class="speaker-label">Bio</span><p>Biography to be added.</p></div>
-              <div class="speaker-field"><span class="speaker-label">Talk title</span><p class="speaker-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</p></div>
-              <div class="speaker-field"><span class="speaker-label">Abstract</span><p>There are several key negotiations that often take place in EMI research: policy versus practice, outcomes versus experience, and, recently, tradition versus modernity in the way GenAI is incorporated, or not, in research and practice. In current discussions of open science in relation to qualitative research, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to openness: how can we become more open in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to modern encroachment on the ethos of qualitative research.</p></div>
-            </article>
-          </div>
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Luke Moorhouse</a></h3>
+            <p class="speaker-affiliation">City University of Hong Kong</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Prof. Benjamin Luke Moorhouse is Associate Professor in the Department of English at City University of Hong Kong. His work focuses on teachers’ lived experiences, competencies, and professional learning, and he is currently exploring the impact of GenAI on language teaching and learning.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">The case against AI-mediated scholarship in EMI</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This talk critiques the growing dependence on AI-mediated scholarship in EMI, especially summariser and chat-with-the-article tools. It argues instead for scaffolded practices of authentic engagement, such as slow reading, annotation, discussion, and genre-aware routines, in order to preserve intellectual struggle as central to learning.</p>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo"></div>
+            <h3><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></h3>
+            <p class="speaker-affiliation">University College London</p>
+            <div class="speaker-field">
+              <span class="speaker-label">Bio</span>
+              <p>Biography to be added.</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Talk title</span>
+              <p class="speaker-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</p>
+            </div>
+            <div class="speaker-field">
+              <span class="speaker-label">Abstract</span>
+              <p>This talk proposes Participant Narratives as a way of improving interpretive transparency in qualitative EMI research. Rather than yielding to simplistic versions of openness, it argues for a form of rigor that gives fuller context, sustains ethical responsibility, and remains faithful to the ethos of qualitative inquiry.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -756,19 +936,97 @@
           <h2>Symposium schedule</h2>
         </div>
         <div class="schedule-shell">
-          <div class="schedule-row"><div class="schedule-time">09:45 – 10:00</div><div class="schedule-detail"><div class="schedule-title">Opening remark</div><div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">10:00 – 10:45</div><div class="schedule-detail"><div class="schedule-title">The Collaboration Illusion: AI and Human Agency in EMI</div><div class="schedule-speaker">Glenn Stockwell</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">10:45 – 11:15</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Daisy Di Zou</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">11:15 – 11:45</div><div class="schedule-detail"><div class="schedule-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div><div class="schedule-speaker">Christy Xuyan Qiu</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">11:45 – 12:15</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Sihan Zhou</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">13:00 – 13:45</div><div class="schedule-detail"><div class="schedule-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div><div class="schedule-speaker">Jim McKinley</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">13:45 – 14:15</div><div class="schedule-detail"><div class="schedule-title">Developing EMI teacher language awareness through AI-teacher collaboration</div><div class="schedule-speaker">Bo Peng &amp; Yuen Yi Lo</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">14:15 – 14:45</div><div class="schedule-detail"><div class="schedule-title">English medium instruction: Preparedness and Support in the era of GenAI</div><div class="schedule-speaker">Gabriel Fan Fang</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">14:45 – 15:15</div><div class="schedule-detail"><div class="schedule-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div><div class="schedule-speaker">King Tat Daniel Fung</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">16:00 – 16:45</div><div class="schedule-detail"><div class="schedule-title">Title to be announced</div><div class="schedule-speaker">Mei Yi Angel Lin</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">16:45 – 17:15</div><div class="schedule-detail"><div class="schedule-title">The case against AI-mediated scholarship in EMI</div><div class="schedule-speaker">Benjamin Luke Moorhouse</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">17:15 – 17:45</div><div class="schedule-detail"><div class="schedule-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div><div class="schedule-speaker">Nathan Thomas</div></div></div>
-          <div class="schedule-row"><div class="schedule-time">17:45 – 18:00</div><div class="schedule-detail"><div class="schedule-title">Closing remark</div><div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div></div></div>
+          <div class="schedule-row">
+            <div class="schedule-time">09:45 – 10:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Opening remark</div>
+              <div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:00 – 10:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">The Collaboration Illusion: AI and Human Agency in EMI</div>
+              <div class="schedule-speaker">Glenn Stockwell</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:45 – 11:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Title to be announced</div>
+              <div class="schedule-speaker">Daisy Di Zou</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">11:15 – 11:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div>
+              <div class="schedule-speaker">Christy Xuyan Qiu</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">11:45 – 12:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Title to be announced</div>
+              <div class="schedule-speaker">Sihan Zhou</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">13:00 – 13:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div>
+              <div class="schedule-speaker">Jim McKinley</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">13:45 – 14:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Developing EMI teacher language awareness through AI-teacher collaboration</div>
+              <div class="schedule-speaker">Bo Peng &amp; Yuen Yi Lo</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">14:15 – 14:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">English medium instruction: Preparedness and Support in the era of GenAI</div>
+              <div class="schedule-speaker">Gabriel Fan Fang</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">14:45 – 15:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div>
+              <div class="schedule-speaker">King Tat Daniel Fung</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">16:00 – 16:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Title to be announced</div>
+              <div class="schedule-speaker">Mei Yi Angel Lin</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">16:45 – 17:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">The case against AI-mediated scholarship in EMI</div>
+              <div class="schedule-speaker">Benjamin Luke Moorhouse</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">17:15 – 17:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div>
+              <div class="schedule-speaker">Nathan Thomas</div>
+            </div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">17:45 – 18:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-title">Closing remark</div>
+              <div class="schedule-speaker">Jim McKinley &amp; Sihan Zhou</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -784,8 +1042,13 @@
             <div class="stack-copy">Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</div>
           </div>
         </div>
-        <div class="venue-map" aria-label="Google map module">
-          <iframe title="Google Map Module" src="https://www.google.com/maps?q=Yasumoto%20International%20Academic%20Park%20CUHK&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="venue-map">
+          <iframe
+            title="Google Map Module"
+            src="https://www.google.com/maps?q=Yasumoto%20International%20Academic%20Park%20CUHK&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -798,7 +1061,10 @@
         <div class="section-stack">
           <div class="stack-block">
             <div class="stack-title">Email</div>
-            <div class="stack-copy">For any questions about the event, please contact:<br /><a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a></div>
+            <div class="stack-copy">
+              For any questions about the event, please contact:<br />
+              <a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a>
+            </div>
           </div>
         </div>
       </div>
