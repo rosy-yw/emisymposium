@@ -17,21 +17,25 @@
   />
   <style>
     :root {
-      --bg: #f6f5f9;
-      --panel: rgba(255, 255, 255, 0.92);
-      --panel-strong: rgba(255, 255, 255, 0.97);
       --text: #2a2438;
       --muted: #6f6782;
       --line: rgba(101, 85, 143, 0.14);
       --line-strong: rgba(101, 85, 143, 0.24);
       --purple: #65558f;
       --purple-deep: #4e426d;
+      --panel: rgba(255, 255, 255, 0.94);
+      --panel-strong: rgba(255, 255, 255, 0.98);
       --shadow: 0 18px 44px rgba(53, 43, 79, 0.08);
-      --max: 1280px;
+      --max: 1320px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -104,7 +108,7 @@
     .hero-shell {
       position: relative;
       overflow: hidden;
-      min-height: 690px;
+      min-height: 700px;
       border: 1px solid var(--line);
       background: #f8f7fb;
       box-shadow: var(--shadow);
@@ -130,18 +134,18 @@
       background: linear-gradient(
         180deg,
         rgba(248, 247, 251, 0.70) 0%,
-        rgba(248, 247, 251, 0.22) 30%,
-        rgba(248, 247, 251, 0.80) 100%
+        rgba(248, 247, 251, 0.18) 30%,
+        rgba(248, 247, 251, 0.82) 100%
       );
     }
 
     .hero-content {
       position: relative;
-      z-index: 4;
+      z-index: 3;
     }
 
     .hero-top {
-      padding: 20px 28px 0;
+      padding: 22px 32px 0;
       text-align: center;
     }
 
@@ -156,7 +160,7 @@
     }
 
     .logo-row img {
-      max-height: 64px;
+      max-height: 68px;
       width: auto;
       object-fit: contain;
     }
@@ -169,14 +173,14 @@
 
     .hero-main {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) 350px;
-      gap: 26px;
-      padding: 34px 28px 28px;
+      grid-template-columns: minmax(0, 1.45fr) 380px;
+      gap: 28px;
+      padding: 40px 32px 30px;
       align-items: start;
     }
 
     .hero-left {
-      min-height: 380px;
+      min-height: 360px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -186,12 +190,12 @@
     .hero-eyebrow {
       display: inline-block;
       margin-bottom: 12px;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      text-shadow: 0 1px 8px rgba(0,0,0,0.16);
+      color: rgba(255,255,255,0.92);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.18);
     }
 
     h1, h2, h3 {
@@ -203,35 +207,37 @@
     }
 
     .hero-title {
-      font-size: clamp(36px, 5.3vw, 62px);
-      margin-bottom: 12px;
+      font-size: clamp(38px, 5.6vw, 68px);
+      margin-bottom: 14px;
       color: #ffffff;
       text-shadow: 0 2px 14px rgba(0,0,0,0.22);
+      white-space: nowrap;
     }
 
     .hero-subtitle-main {
-      font-size: clamp(22px, 2.9vw, 36px);
+      font-size: clamp(24px, 3vw, 38px);
       color: #ffffff;
       line-height: 1.16;
       text-shadow: 0 1px 10px rgba(0,0,0,0.22);
-      max-width: 760px;
+      max-width: 860px;
+      white-space: nowrap;
     }
 
     .hero-right {
-      background: rgba(255,255,255,0.84);
+      background: rgba(255,255,255,0.86);
       border: 1px solid var(--line);
-      padding: 16px;
+      padding: 18px;
       box-shadow: var(--shadow);
     }
 
     .hero-meta {
       display: grid;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .meta-item {
-      padding-top: 9px;
+      padding-top: 10px;
       border-top: 1px solid var(--line-strong);
     }
 
@@ -249,26 +255,26 @@
     .meta-item strong {
       display: block;
       color: var(--text);
-      font-size: 14px;
-      line-height: 1.35;
+      font-size: 15px;
+      line-height: 1.45;
       font-weight: 600;
     }
 
     .hero-actions {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       align-items: stretch;
     }
 
     .btn {
-      min-height: 46px;
-      padding: 0 16px;
+      min-height: 50px;
+      padding: 0 18px;
       border: 1px solid var(--line-strong);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -297,35 +303,35 @@
     }
 
     .registration-note {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
       text-align: center;
-      line-height: 1.35;
+      line-height: 1.4;
       padding-top: 2px;
     }
 
     section {
-      padding: 42px 0;
+      padding: 46px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .section-head {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
     h2 {
-      font-size: clamp(24px, 3.2vw, 38px);
+      font-size: clamp(26px, 3.4vw, 42px);
       color: var(--purple-deep);
       line-height: 1.08;
     }
 
     .lede {
-      max-width: 960px;
+      max-width: 1020px;
       margin: 0 auto;
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.62;
+      font-size: 19px;
+      line-height: 1.72;
       text-align: center;
     }
 
@@ -335,7 +341,7 @@
 
     .speaker-grid {
       display: grid;
-      gap: 18px;
+      gap: 20px;
     }
 
     .speaker-grid.keynotes {
@@ -343,14 +349,14 @@
     }
 
     .speaker-grid.featured {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 26px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
     }
 
     .speaker-card {
       background: var(--panel-strong);
       border: 1px solid var(--line);
-      padding: 16px 16px 14px;
+      padding: 18px 18px 16px;
       min-height: 100%;
       box-shadow: var(--shadow);
     }
@@ -360,7 +366,7 @@
       aspect-ratio: 4 / 4.8;
       overflow: hidden;
       border: 1px solid var(--line-strong);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       background: linear-gradient(135deg, rgba(236,231,247,0.7), rgba(255,255,255,0.9));
     }
 
@@ -372,11 +378,11 @@
 
     .speaker-name {
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 24px;
+      font-size: 29px;
       line-height: 1.06;
       color: var(--purple-deep);
       text-align: center;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .speaker-name a:hover {
@@ -384,56 +390,51 @@
     }
 
     .speaker-affiliation {
-      margin: 0 0 2px;
-      color: var(--muted);
-      font-size: 12.5px;
-      text-align: center;
-      line-height: 1.35;
-    }
-
-    .speaker-role {
       margin: 0 0 12px;
-      color: var(--text);
-      font-size: 13px;
+      color: var(--muted);
+      font-size: 15px;
       text-align: center;
-      line-height: 1.35;
-      font-weight: 600;
+      line-height: 1.42;
     }
 
     .talk-title {
       color: var(--text);
-      font-size: 15px;
-      line-height: 1.42;
+      font-size: 18px;
+      line-height: 1.45;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .abstract-text {
       margin: 0;
       color: var(--text);
-      font-size: 14.5px;
-      line-height: 1.58;
+      font-size: 16px;
+      line-height: 1.68;
+    }
+
+    .duo-card {
+      grid-column: span 2;
     }
 
     .duo-card .duo-people {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 16px;
+      margin-bottom: 14px;
     }
 
     .duo-person .speaker-photo-large {
       aspect-ratio: 4 / 4.8;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .duo-person .speaker-name {
-      font-size: 22px;
+      font-size: 27px;
     }
 
     .schedule-shell {
-      max-width: 1060px;
+      max-width: 1100px;
       margin: 0 auto;
       background: var(--panel-strong);
       border: 1px solid var(--line);
@@ -442,7 +443,7 @@
 
     .schedule-row {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 190px 1fr;
       border-bottom: 1px solid var(--line);
     }
 
@@ -452,43 +453,34 @@
 
     .schedule-time,
     .schedule-detail {
-      padding: 14px 18px;
+      padding: 16px 20px;
     }
 
     .schedule-time {
       border-right: 1px solid var(--line);
       color: var(--purple-deep);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 0.05em;
-      line-height: 1.3;
-    }
-
-    .schedule-type {
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 3px;
+      line-height: 1.35;
     }
 
     .schedule-title {
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 3px;
-      font-size: 15px;
-      line-height: 1.38;
+      margin-bottom: 4px;
+      font-size: 17px;
+      line-height: 1.5;
     }
 
     .schedule-speaker {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .section-stack {
-      max-width: 920px;
+      max-width: 980px;
       margin: 0 auto;
     }
 
@@ -499,24 +491,24 @@
     }
 
     .stack-title {
-      padding: 14px 18px 10px;
+      padding: 16px 20px 12px;
       border-bottom: 1px solid var(--line);
-      font-size: 22px;
+      font-size: 24px;
       color: var(--purple-deep);
       font-family: "Cormorant Garamond", Georgia, serif;
       line-height: 1.05;
     }
 
     .stack-copy {
-      padding: 14px 18px 18px;
+      padding: 16px 20px 20px;
       color: var(--text);
-      font-size: 15px;
-      line-height: 1.55;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     .venue-map {
-      max-width: 840px;
-      margin: 16px auto 0;
+      max-width: 900px;
+      margin: 18px auto 0;
       border: 1px solid var(--line);
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -524,7 +516,7 @@
 
     .venue-map iframe {
       width: 100%;
-      height: 220px;
+      height: 240px;
       border: 0;
       display: block;
     }
@@ -542,17 +534,29 @@
       line-height: 1.35;
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1180px) {
       .hero-main {
         grid-template-columns: 1fr;
       }
 
       .hero-left {
-        min-height: 260px;
+        min-height: 280px;
       }
 
+      .hero-title,
+      .hero-subtitle-main {
+        white-space: normal;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .speaker-grid.keynotes,
       .speaker-grid.featured {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .duo-card {
+        grid-column: span 2;
       }
     }
 
@@ -579,9 +583,18 @@
         padding-right: 18px;
       }
 
+      .hero-title,
+      .hero-subtitle-main {
+        white-space: normal;
+      }
+
       .speaker-grid.keynotes,
       .speaker-grid.featured {
         grid-template-columns: 1fr;
+      }
+
+      .duo-card {
+        grid-column: span 1;
       }
 
       .duo-card .duo-people {
@@ -629,10 +642,7 @@
             <div class="hero-left">
               <span class="hero-eyebrow">24 April 2026 · Yasumoto International Academic Park · Hong Kong</span>
               <h1 class="hero-title">CUHK–UCL International Symposium</h1>
-              <div class="hero-subtitle-main">
-                English-medium instruction in the era of GenAI:<br>
-                Negotiating tradition and modernity
-              </div>
+              <div class="hero-subtitle-main">English-medium instruction in the era of GenAI: Negotiating tradition and modernity</div>
             </div>
 
             <div class="hero-right">
@@ -643,10 +653,10 @@
                 </div>
                 <div class="meta-item">
                   <span class="meta-label">Venue</span>
-                  <strong>Lecture Theatre 8, 2/F, Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</strong>
+                  <strong>Lecture Theatre 8, 2/F,<br>Yasumoto International Academic Park (YIA),<br>The Chinese University of Hong Kong</strong>
                 </div>
                 <div class="meta-item">
-                  <span class="meta-label">Funded</span>
+                  <span class="meta-label">Funded By</span>
                   <strong>UCL–CUHK Strategic Partner Funds</strong>
                 </div>
                 <div class="meta-item">
@@ -680,7 +690,7 @@
     <section id="speakers" class="speakers-section">
       <div class="container">
         <div class="section-head">
-          <h2>Keynote speakers</h2>
+          <h2>Keynote Speakers</h2>
         </div>
 
         <div class="speaker-grid keynotes">
@@ -690,8 +700,7 @@
             </div>
             <div class="speaker-name"><a href="https://www.eduhk.hk/en/experts/professor-stockwell-glenn" target="_blank" rel="noopener">Glenn Stockwell</a></div>
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
-            <p class="speaker-role">Professor</p>
-            <div class="talk-title">The Collaboration Illusion: AI and Human Agency in EMI</div>
+            <div class="talk-title">The collaboration illusion: AI and human agency in EMI</div>
             <p class="abstract-text">As generative AI becomes more common in English-Medium Instruction, it has become fashionable to describe human-AI interaction as "collaboration." But this framing deserves scrutiny. Drawing on Stockwell and Wang (2025), this keynote argues that AI lacks the shared intent, mutual understanding, and accountability that genuine collaboration requires. Treating AI as a collaborator risks devaluing teacher judgement, conflating AI output with learner competence, and muddying questions of intellectual ownership. Rather than defaulting to this language, we need more precise terms for what AI actually does in educational settings, whether as tool, resource, or interlocutor, and clearer strategies for keeping pedagogical decision-making where it belongs.</p>
           </article>
 
@@ -701,9 +710,8 @@
             </div>
             <div class="speaker-name"><a href="https://www.eduhk.hk/ele/people/angel-lin" target="_blank" rel="noopener">Mei Yi Angel Lin</a></div>
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
-            <p class="speaker-role">Professor</p>
             <div class="talk-title">Title to be announced</div>
-            <p class="abstract-text">Abstract to be announced.</p>
+            <p class="abstract-text"></p>
           </article>
 
           <article class="speaker-card">
@@ -712,14 +720,13 @@
             </div>
             <div class="speaker-name"><a href="https://profiles.ucl.ac.uk/66669-jim-mckinley" target="_blank" rel="noopener">Jim McKinley</a></div>
             <p class="speaker-affiliation">University College London</p>
-            <p class="speaker-role">Professor</p>
             <div class="talk-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div>
             <p class="abstract-text">Generative AI is rapidly reshaping academic communication, yet discussions in English-medium instruction (EMI) have largely focused on academic integrity and assessment security. This talk argues that generative AI instead challenges more fundamental assumptions about participation, authorship, and linguistic competence that underpin EMI policy and practice.<br><br>Drawing on recent work on writer identity alongside classroom-based reflections from EMI teaching contexts, I examine a growing pedagogical paradox: while AI tools appear to lower linguistic barriers to academic production, student participation in classroom discussion and collaborative meaning-making may be changing in unexpected ways. Instructors increasingly observe students turning to AI-mediated support during learning activities, raising questions about how engagement, intellectual struggle, and disciplinary socialisation are being reconfigured.<br><br>I suggest that these developments expose longstanding tensions within EMI, where participation has often been equated with visible linguistic performance in English. Rather than framing AI as either threat or solution, the talk considers how EMI policy and pedagogy might reconceptualise participation and authorship in contexts where academic work is becoming a hybrid human–AI practice.</p>
           </article>
         </div>
 
-        <div class="section-head" style="margin-top: 34px;">
-          <h2>Featured speakers</h2>
+        <div class="section-head" style="margin-top: 36px;">
+          <h2>Featured Speakers</h2>
         </div>
 
         <div class="speaker-grid featured">
@@ -731,7 +738,6 @@
                 </div>
                 <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></div>
                 <p class="speaker-affiliation">The University of Hong Kong</p>
-                <p class="speaker-role">Professor</p>
               </div>
               <div class="duo-person">
                 <div class="speaker-photo-large">
@@ -739,7 +745,6 @@
                 </div>
                 <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></div>
                 <p class="speaker-affiliation">The University of Hong Kong</p>
-                <p class="speaker-role">PhD candidate</p>
               </div>
             </div>
             <div class="talk-title">Developing EMI teacher language awareness through AI-teacher collaboration</div>
@@ -752,9 +757,8 @@
             </div>
             <div class="speaker-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></div>
             <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
-            <p class="speaker-role">Professor</p>
-            <div class="talk-title">Title to be announced</div>
-            <p class="abstract-text">Abstract to be announced.</p>
+            <div class="talk-title">What do we really know about AI in language education? Empirical evidence of its effectiveness in teaching and learning</div>
+            <p class="abstract-text">Artificial intelligence has rapidly gained prominence in language education, with growing interest in its potential to support writing, reading, speaking, feedback, and personalized learning. However, much of the current discussion still centers on conceptual arguments, technological affordances, or teachers’ and students’ perceptions of AI use. While such perspectives are valuable, they do not by themselves demonstrate whether AI actually improves language learning outcomes. This talk focuses on the empirical evidence for the effectiveness of AI in language education, asking not what AI is expected to do in theory, but what research has shown it can actually achieve in practice. Drawing on experimental, quasi-experimental, intervention-based, and evaluative studies, the presentation examines how AI-supported language learning has been investigated through measurable outcomes rather than speculative claims.<br><br>The presentation reviews empirical findings across three core language domains (writing, reading, and speaking) and discusses evidence related to writing quality, reading comprehension, speaking performance, learning anxiety, self-efficacy, and self-regulated learning. It also considers why AI may be effective from the perspective of language learning theories/concepts such as scaffolding, affective support, and self-regulation, while maintaining a clear emphasis on outcome-based research. In addition, the presentation addresses key concerns that shape the interpretation of current findings, including transferability, overreliance, privacy, equity, and the reliability of AI-generated content. By distinguishing between conceptual promise and demonstrated impact, this presentation aims to provide a more evidence-based understanding of the real value, limitations, and future direction of AI in language teaching and learning.</p>
           </article>
 
           <article class="speaker-card">
@@ -763,18 +767,16 @@
             </div>
             <div class="speaker-name"><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></div>
             <p class="speaker-affiliation">The Education University of Hong Kong</p>
-            <p class="speaker-role">Professor</p>
-            <div class="talk-title">English medium instruction: Preparedness and Support in the era of GenAI</div>
+            <div class="talk-title">English medium instruction: Preparedness and support in the era of GenAI</div>
             <p class="abstract-text">English-medium instruction (EMI) has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue of EMI concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency, potentially leading to educational inequality if not well-planned. Students also raised concerns about the quality of EMI teaching and highlighted the need for discipline-specific language support. In the era of artificial intelligence, this talk argues for a need of rethinking EMI through a decolonial lens in terms of how EMI and AI-mediated practices may be designed in order not to reinforce existing inequalities in language education.</p>
           </article>
 
           <article class="speaker-card">
             <div class="speaker-photo-large">
-              <img src="./images/speakers/benjamin-moorhouse.jpg" alt="Benjamin Luke Moorhouse" />
+              <img src="./images/speakers/benjamin-moorhouse.jpg" alt="Benjamin Moorhouse" />
             </div>
             <div class="speaker-name"><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Moorhouse</a></div>
             <p class="speaker-affiliation">City University of Hong Kong</p>
-            <p class="speaker-role">Associate Professor</p>
             <div class="talk-title">The case against AI-mediated scholarship in EMI</div>
             <p class="abstract-text">This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered “summarisers” and “chat-with-the-article” interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a ‘solution’ to these difficulties.<br><br>Rather than positioning AI as the solution to these difficulties, I argue that we need be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement (e.g., guided slow reading, annotation, dialogic discussion, and genre-aware reading routines) and that advocate for intellectual struggle as a condition for developing language skills, disciplinary knowledge and judgement. In doing so, we resist efficiency narratives and reclaims deep, critical reading as central to learning.</p>
           </article>
@@ -785,8 +787,7 @@
             </div>
             <div class="speaker-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></div>
             <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
-            <p class="speaker-role">Professor</p>
-            <div class="talk-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div>
+            <div class="talk-title">Human vs. AI interaction: EMI university students’ discourse marker choices in oral tasks</div>
             <p class="abstract-text">This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language (L2) learners from an English Medium Instruction (EMI) university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s (2007) framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers (which clarify or specify information) than on structural markers (which organise or sequence discourse). AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p>
           </article>
 
@@ -796,7 +797,6 @@
             </div>
             <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></div>
             <p class="speaker-affiliation">The University of Hong Kong</p>
-            <p class="speaker-role"></p>
             <div class="talk-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div>
             <p class="abstract-text">Language proficiency has always been an important variable in second language research and education. In English Medium Instruction (EMI), some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency especially at the time when they transition from secondary schools to universities, because many students would not have taken an academic proficiency test such as IELTS. It is, therefore, of both theoretical and pedagogical value to develop an academic English proficiency assessment that is efficient and economical. This paper presents the development of such a test – an academic c-test – with the support of GenAI. The presentation will start with an introduction of the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications will be discussed.</p>
           </article>
@@ -807,7 +807,6 @@
             </div>
             <div class="speaker-name"><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></div>
             <p class="speaker-affiliation">University College London</p>
-            <p class="speaker-role"></p>
             <div class="talk-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div>
             <p class="abstract-text">There are several key negotiations that often take place in EMI research: policy vs practice, outcomes vs experience, and, recently, tradition vs modernity in the way GenAI is incorporated, or not, in research and practice. We can also witness similar negotiations in current discussions of open science (a “modern” phenomenon) in relation to qualitative research, which has rich traditions. Fundamentally, is “modern” always preferential in relation to tradition? At what point does something modern become tradition? And is there a risk that practices associated with modernity or tradition become dogma? In thinking through some of these issues, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to open science: how can we become more “open” in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide a fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to “modern” encroachment on the ethos of qualitative research. I demonstrate how they can be used by researchers interested in narrating the lived experience of EMI.</p>
           </article>
@@ -818,9 +817,8 @@
             </div>
             <div class="speaker-name"><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></div>
             <p class="speaker-affiliation">CUHK</p>
-            <p class="speaker-role">Assistant Professor</p>
-            <div class="talk-title">Title to be announced</div>
-            <p class="abstract-text">Abstract to be announced.</p>
+            <div class="talk-title">Agentic engagement with GenAI: New perspectives in English-medium higher education</div>
+            <p class="abstract-text">The rapid expansion of generative AI (GenAI) has brought learner agency to the forefront of education research and practice. Given the transactional and reciprocal nature of human-AI interactions, learners must exercise agency not only through intentional efforts to direct interactions but also through simultaneous adaptation in response to AI-generated outputs. In this talk, I will introduce a recent project that investigates students’ agentic engagement with GenAI tools in English-medium instruction (EMI) contexts. In the first part of the talk, I will present a collaborative study that developed and validated an AI Agentic Engagement Scale (AAES). I will then share preliminary findings from a mixed-methods study that employed the AAES to examine EMI students’ agentic engagement and AI literacy in university contexts in China. Both studies highlight that agentic engagement with GenAI is grounded in critical, evaluative knowledge of the tools—rather than mere awareness of their functions. To conclude, I will discuss pedagogical implications for leveraging GenAI to promote agentic, strategic learning in EMI higher education settings.</p>
           </article>
         </div>
       </div>
@@ -835,7 +833,6 @@
           <div class="schedule-row">
             <div class="schedule-time">09:45 – 10:00</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Opening</div>
               <div class="schedule-title">Opening remark</div>
             </div>
           </div>
@@ -843,39 +840,38 @@
           <div class="schedule-row">
             <div class="schedule-time">10:00 – 10:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Keynote 1</div>
-              <div class="schedule-title">Glenn Stockwell</div>
+              <div class="schedule-title">The collaboration illusion: AI and human agency in EMI</div>
+              <div class="schedule-speaker">Glenn Stockwell</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">10:45 – 11:15</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 1</div>
-              <div class="schedule-title">Daisy Di Zou</div>
+              <div class="schedule-title">What do we really know about AI in language education? Empirical evidence of its effectiveness in teaching and learning</div>
+              <div class="schedule-speaker">Daisy Di Zou</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">11:15 – 11:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 2</div>
-              <div class="schedule-title">Christy Xuyan Qiu</div>
+              <div class="schedule-title">Human vs. AI interaction: EMI university students’ discourse marker choices in oral tasks</div>
+              <div class="schedule-speaker">Christy Xuyan Qiu</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">11:45 – 12:15</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 3</div>
-              <div class="schedule-title">Sihan Zhou</div>
+              <div class="schedule-title">Agentic engagement with GenAI: New perspectives in English-medium higher education</div>
+              <div class="schedule-speaker">Sihan Zhou</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">12:15 – 13:00</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Break</div>
               <div class="schedule-title">Break &amp; Snacks</div>
             </div>
           </div>
@@ -883,39 +879,38 @@
           <div class="schedule-row">
             <div class="schedule-time">13:00 – 13:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Keynote 2</div>
-              <div class="schedule-title">Jim McKinley</div>
+              <div class="schedule-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div>
+              <div class="schedule-speaker">Jim McKinley</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">13:45 – 14:15</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 4</div>
-              <div class="schedule-title">Bo Peng &amp; Yuen Yi Lo</div>
+              <div class="schedule-title">Developing EMI teacher language awareness through AI-teacher collaboration</div>
+              <div class="schedule-speaker">Bo Peng &amp; Yuen Yi Lo</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">14:15 – 14:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 5</div>
-              <div class="schedule-title">Gabriel Fan Fang</div>
+              <div class="schedule-title">English medium instruction: Preparedness and support in the era of GenAI</div>
+              <div class="schedule-speaker">Gabriel Fan Fang</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">14:45 – 15:15</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 6</div>
-              <div class="schedule-title">King Tat Daniel Fung</div>
+              <div class="schedule-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div>
+              <div class="schedule-speaker">King Tat Daniel Fung</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">15:15 – 16:00</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Break</div>
               <div class="schedule-title">Break &amp; Snacks</div>
             </div>
           </div>
@@ -923,31 +918,30 @@
           <div class="schedule-row">
             <div class="schedule-time">16:00 – 16:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Keynote 3</div>
-              <div class="schedule-title">Mei Yi Angel Lin</div>
+              <div class="schedule-title">Title to be announced</div>
+              <div class="schedule-speaker">Mei Yi Angel Lin</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">16:45 – 17:15</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 7</div>
-              <div class="schedule-title">Benjamin Moorhouse</div>
+              <div class="schedule-title">The case against AI-mediated scholarship in EMI</div>
+              <div class="schedule-speaker">Benjamin Moorhouse</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">17:15 – 17:45</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Invited talk 8</div>
-              <div class="schedule-title">Nathan Thomas</div>
+              <div class="schedule-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div>
+              <div class="schedule-speaker">Nathan Thomas</div>
             </div>
           </div>
 
           <div class="schedule-row">
             <div class="schedule-time">17:45 – 18:00</div>
             <div class="schedule-detail">
-              <div class="schedule-type">Closing</div>
               <div class="schedule-title">Closing remark</div>
             </div>
           </div>
@@ -963,7 +957,7 @@
         <div class="section-stack">
           <div class="stack-block">
             <div class="stack-title">Venue</div>
-            <div class="stack-copy">Lecture Theatre 8, 2/F, Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</div>
+            <div class="stack-copy">Lecture Theatre 8, 2/F,<br>Yasumoto International Academic Park (YIA),<br>The Chinese University of Hong Kong</div>
           </div>
         </div>
         <div class="venue-map">
