@@ -409,86 +409,78 @@
       line-height: 1.68;
     }
 
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 26px 24px;
-      max-width: 1240px;
-      margin: 28px auto 0;
-    }
+    .featured-grid{
+        display:grid;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:28px 28px;
+        max-width:1200px;
+        margin:32px auto 0;
+        }
 
-    .featured-entry {
-      min-width: 0;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
+        .featured-entry{
+        border-top:1px solid var(--line);
+        padding-top:16px;
+        }
 
-    .featured-entry::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
+        .featured-entry::after{
+        content:"";
+        display:block;
+        clear:both;
+        }
 
-    .featured-figure {
-      float: left;
-      width: 44%;
-      max-width: 210px;
-      margin: 0 16px 10px 0;
-    }
+        /* 关键：统一所有图片尺寸（长方形） */
+        .featured-figure{
+        float:left;
+        width:42%;
+        max-width:200px;
+        margin:0 16px 8px 0;
+        }
 
-    .featured-figure img {
-      width: 100%;
-      aspect-ratio: 4 / 4.8;
-      object-fit: cover;
-      border: 1px solid var(--line-strong);
-      background: linear-gradient(135deg, rgba(236,231,247,0.7), rgba(255,255,255,0.9));
-    }
+        .featured-figure img{
+        width:100%;
+        height:150px;       /* 强制长方形 */
+        object-fit:cover;
+        border:1px solid var(--line-strong);
+        }
 
-    .featured-figure.duo {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      max-width: 230px;
-    }
+        /* Lo & Bo 双图 */
+        .featured-figure.duo{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        }
 
-    .featured-heading {
-      margin-bottom: 8px;
-    }
+        .featured-heading{
+        margin-bottom:6px;
+        }
 
-    .featured-name {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 23px;
-      font-weight: 800;
-      line-height: 1.22;
-      color: var(--text);
-      margin: 0 0 4px;
-    }
+        .featured-name{
+        font-size:20px;
+        font-weight:800;
+        line-height:1.25;
+        margin:0 0 2px;
+        }
 
-    .featured-name a:hover {
-      color: var(--purple);
-    }
+        .featured-affiliation{
+        font-size:13px;
+        color:var(--muted);
+        margin:0 0 8px;
+        }
 
-    .featured-affiliation {
-      font-size: 14px;
-      line-height: 1.4;
-      color: var(--muted);
-      margin: 0 0 10px;
-    }
+        .featured-talk-title{
+        font-size:17px;
+        font-weight:700;
+        line-height:1.35;
+        margin:0 0 8px;
+        }
 
-    .featured-talk-title {
-      font-size: 18px;
-      line-height: 1.38;
-      font-weight: 700;
-      color: var(--text);
-      margin: 0 0 10px;
-    }
+        .featured-abstract{
+        font-size:14.5px;
+        line-height:1.55;
+        margin:0;
+        }
 
-    .featured-abstract {
-      font-size: 15px;
-      line-height: 1.55;
-      color: var(--text);
-      margin: 0;
-    }
+    
 
     .schedule-shell {
       max-width: 1100px;
@@ -778,106 +770,123 @@
           <h2>Featured Speakers</h2>
         </div>
 
-        <div class="featured-grid">
-          <article class="featured-entry">
+       <div class="featured-grid">
+        <!-- Lo & Bo -->
+        <div class="featured-entry">
             <div class="featured-figure duo">
-              <img src="./images/speakers/yuen-yi-lo.jpg" alt="Yuen Yi Lo">
-              <img src="./images/speakers/bo-peng.jpg" alt="Bo Peng">
+            <img src="./images/speakers/yuen-yi-lo.jpg">
+            <img src="./images/speakers/bo-peng.jpg">
             </div>
             <div class="featured-heading">
-              <h3 class="featured-name">Yuen Yi Lo &amp; Bo Peng</h3>
-              <p class="featured-affiliation">The University of Hong Kong</p>
+            <div class="featured-name">
+                Yuen Yi Lo<br>&<br>Bo Peng
             </div>
-            <div class="featured-talk-title">Developing EMI teacher language awareness through AI-teacher collaboration</div>
-            <p class="featured-abstract">English-medium instruction (EMI) has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of artificial intelligence (AI) tools offers opportunities to support EMI pedagogy. This study seeks to explore how EMI teachers collaborate with AI to improve instructional and assessment practices.<br><br>Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness (TLA) developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development in her TLA during the collaboration with AI. She demonstrated increased awareness of students’ language-related challenges and of the importance of instructional language and scaffolding. Such TLA was translated to her classroom and assessment practices, where she incorporated more language-related episodes and visual support to facilitate students’ comprehension, and developed more language-sensitive assessment tasks. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/daisy-di-zou.jpg" alt="Daisy Di Zou">
             </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></h3>
-              <p class="featured-affiliation">The Hong Kong Polytechnic University</p>
+            <div class="featured-talk-title">
+            Developing EMI teacher language awareness through AI-teacher collaboration
             </div>
-            <div class="featured-talk-title">What do we really know about AI in language education? Empirical evidence of its effectiveness in teaching and learning</div>
-            <p class="featured-abstract">Artificial intelligence has rapidly gained prominence in language education, with growing interest in its potential to support writing, reading, speaking, feedback, and personalized learning. However, much of the current discussion still centers on conceptual arguments, technological affordances, or teachers’ and students’ perceptions of AI use. While such perspectives are valuable, they do not by themselves demonstrate whether AI actually improves language learning outcomes. This talk focuses on the empirical evidence for the effectiveness of AI in language education, asking not what AI is expected to do in theory, but what research has shown it can actually achieve in practice. Drawing on experimental, quasi-experimental, intervention-based, and evaluative studies, the presentation examines how AI-supported language learning has been investigated through measurable outcomes rather than speculative claims.<br><br>The presentation reviews empirical findings across three core language domains (writing, reading, and speaking) and discusses evidence related to writing quality, reading comprehension, speaking performance, learning anxiety, self-efficacy, and self-regulated learning. It also considers why AI may be effective from the perspective of language learning theories/concepts such as scaffolding, affective support, and self-regulation, while maintaining a clear emphasis on outcome-based research. In addition, the presentation addresses key concerns that shape the interpretation of current findings, including transferability, overreliance, privacy, equity, and the reliability of AI-generated content. By distinguishing between conceptual promise and demonstrated impact, this presentation aims to provide a more evidence-based understanding of the real value, limitations, and future direction of AI in language teaching and learning.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/gabriel-fan-fang.jpg" alt="Gabriel Fan Fang">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></h3>
-              <p class="featured-affiliation">The Education University of Hong Kong</p>
-            </div>
-            <div class="featured-talk-title">English medium instruction: Preparedness and support in the era of GenAI</div>
-            <p class="featured-abstract">English-medium instruction (EMI) has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue of EMI concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency, potentially leading to educational inequality if not well-planned. Students also raised concerns about the quality of EMI teaching and highlighted the need for discipline-specific language support. In the era of artificial intelligence, this talk argues for a need of rethinking EMI through a decolonial lens in terms of how EMI and AI-mediated practices may be designed in order not to reinforce existing inequalities in language education.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/benjamin-moorhouse.jpg" alt="Benjamin Moorhouse">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Moorhouse</a></h3>
-              <p class="featured-affiliation">City University of Hong Kong</p>
-            </div>
-            <div class="featured-talk-title">The case against AI-mediated scholarship in EMI</div>
-            <p class="featured-abstract">This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered “summarisers” and “chat-with-the-article” interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a ‘solution’ to these difficulties.<br><br>Rather than positioning AI as the solution to these difficulties, I argue that we need be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement (e.g., guided slow reading, annotation, dialogic discussion, and genre-aware reading routines) and that advocate for intellectual struggle as a condition for developing language skills, disciplinary knowledge and judgement. In doing so, we resist efficiency narratives and reclaims deep, critical reading as central to learning.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/christy-qiu.jpg" alt="Christy Xuyan Qiu">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></h3>
-              <p class="featured-affiliation">The Hong Kong Polytechnic University</p>
-            </div>
-            <div class="featured-talk-title">Human vs. AI interaction: EMI university students’ discourse marker choices in oral tasks</div>
-            <p class="featured-abstract">This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language (L2) learners from an English Medium Instruction (EMI) university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s (2007) framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers (which clarify or specify information) than on structural markers (which organise or sequence discourse). AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/daniel-fung.jpg" alt="King Tat Daniel Fung">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></h3>
-              <p class="featured-affiliation">The University of Hong Kong</p>
-            </div>
-            <div class="featured-talk-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div>
-            <p class="featured-abstract">Language proficiency has always been an important variable in second language research and education. In English Medium Instruction (EMI), some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency especially at the time when they transition from secondary schools to universities, because many students would not have taken an academic proficiency test such as IELTS. It is, therefore, of both theoretical and pedagogical value to develop an academic English proficiency assessment that is efficient and economical. This paper presents the development of such a test – an academic c-test – with the support of GenAI. The presentation will start with an introduction of the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications will be discussed.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/nathan-thomas.jpg" alt="Nathan Thomas">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></h3>
-              <p class="featured-affiliation">University College London</p>
-            </div>
-            <div class="featured-talk-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div>
-            <p class="featured-abstract">There are several key negotiations that often take place in EMI research: policy vs practice, outcomes vs experience, and, recently, tradition vs modernity in the way GenAI is incorporated, or not, in research and practice. We can also witness similar negotiations in current discussions of open science (a “modern” phenomenon) in relation to qualitative research, which has rich traditions. Fundamentally, is “modern” always preferential in relation to tradition? At what point does something modern become tradition? And is there a risk that practices associated with modernity or tradition become dogma? In thinking through some of these issues, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to open science: how can we become more “open” in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide a fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to “modern” encroachment on the ethos of qualitative research. I demonstrate how they can be used by researchers interested in narrating the lived experience of EMI.</p>
-          </article>
-
-          <article class="featured-entry">
-            <div class="featured-figure">
-              <img src="./images/speakers/sihan-zhou.jpg" alt="Sihan Zhou">
-            </div>
-            <div class="featured-heading">
-              <h3 class="featured-name"><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></h3>
-              <p class="featured-affiliation">CUHK</p>
-            </div>
-            <div class="featured-talk-title">Agentic engagement with GenAI: New perspectives in English-medium higher education</div>
-            <p class="featured-abstract">The rapid expansion of generative AI (GenAI) has brought learner agency to the forefront of education research and practice. Given the transactional and reciprocal nature of human-AI interactions, learners must exercise agency not only through intentional efforts to direct interactions but also through simultaneous adaptation in response to AI-generated outputs. In this talk, I will introduce a recent project that investigates students’ agentic engagement with GenAI tools in English-medium instruction (EMI) contexts. In the first part of the talk, I will present a collaborative study that developed and validated an AI Agentic Engagement Scale (AAES). I will then share preliminary findings from a mixed-methods study that employed the AAES to examine EMI students’ agentic engagement and AI literacy in university contexts in China. Both studies highlight that agentic engagement with GenAI is grounded in critical, evaluative knowledge of the tools—rather than mere awareness of their functions. To conclude, I will discuss pedagogical implications for leveraging GenAI to promote agentic, strategic learning in EMI higher education settings.</p>
-          </article>
+            <p class="featured-abstract">
+            English-medium instruction (EMI) has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of artificial intelligence (AI) tools offers opportunities to support EMI pedagogy...
+            </p>
         </div>
-      </div>
-    </section>
+
+        <!-- Daisy -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/daisy-di-zou.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Daisy Di Zou</div>
+            <div class="featured-affiliation">The Hong Kong Polytechnic University</div>
+            </div>
+            <div class="featured-talk-title">
+            What do we really know about AI in language education? Empirical evidence of its effectiveness in teaching and learning
+            </div>
+        </div>
+
+        <!-- Fang -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/gabriel-fan-fang.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Gabriel Fan Fang</div>
+            <div class="featured-affiliation">The Education University of Hong Kong</div>
+            </div>
+            <div class="featured-talk-title">
+            English medium instruction: Preparedness and support in the era of GenAI
+            </div>
+        </div>
+
+        <!-- Ben -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/benjamin-moorhouse.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Benjamin Moorhouse</div>
+            <div class="featured-affiliation">City University of Hong Kong</div>
+            </div>
+            <div class="featured-talk-title">
+            The case against AI-mediated scholarship in EMI
+            </div>
+        </div>
+
+        <!-- Christy -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/christy-qiu.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Christy Xuyan Qiu</div>
+            <div class="featured-affiliation">The Hong Kong Polytechnic University</div>
+            </div>
+            <div class="featured-talk-title">
+            Human vs. AI interaction: EMI university students’ discourse marker choices in oral tasks
+            </div>
+        </div>
+
+        <!-- Daniel -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/daniel-fung.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">King Tat Daniel Fung</div>
+            <div class="featured-affiliation">The University of Hong Kong</div>
+            </div>
+            <div class="featured-talk-title">
+            Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI
+            </div>
+        </div>
+
+        <!-- Nathan -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/nathan-thomas.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Nathan Thomas</div>
+            <div class="featured-affiliation">University College London</div>
+            </div>
+            <div class="featured-talk-title">
+            Narrating the lived experience of EMI
+            </div>
+        </div>
+
+        <!-- Sihan -->
+        <div class="featured-entry">
+            <div class="featured-figure">
+            <img src="./images/speakers/sihan-zhou.jpg">
+            </div>
+            <div class="featured-heading">
+            <div class="featured-name">Sihan Zhou</div>
+            <div class="featured-affiliation">CUHK</div>
+            </div>
+            <div class="featured-talk-title">
+            Agentic engagement with GenAI
+            </div>
+        </div>
 
     <section id="schedule">
       <div class="container">
