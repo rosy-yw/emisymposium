@@ -409,22 +409,25 @@
       line-height: 1.68;
     }
 
+    /* Featured speakers */
     .featured-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 28px 24px;
       max-width: 1240px;
       margin: 28px auto 0;
     }
 
     .featured-entry {
+      grid-column: span 2;
       min-width: 0;
       border-top: 1px solid var(--line);
       padding-top: 16px;
     }
 
-    .featured-entry.duo-featured {
-      grid-column: span 2;
+    .featured-entry.duo-featured,
+    .featured-entry.wide-featured {
+      grid-column: span 3;
     }
 
     .featured-entry::after {
@@ -618,8 +621,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .featured-entry.duo-featured {
-        grid-column: span 2;
+      .featured-entry,
+      .featured-entry.duo-featured,
+      .featured-entry.wide-featured {
+        grid-column: span 1;
       }
     }
 
@@ -656,7 +661,9 @@
         grid-template-columns: 1fr;
       }
 
-      .featured-entry.duo-featured {
+      .featured-entry,
+      .featured-entry.duo-featured,
+      .featured-entry.wide-featured {
         grid-column: span 1;
       }
 
@@ -824,7 +831,7 @@
             </p>
           </article>
 
-          <article class="featured-entry">
+          <article class="featured-entry wide-featured">
             <div class="featured-figure">
               <img src="./images/speakers/daisy-di-zou.jpg" alt="Daisy Di Zou">
             </div>
