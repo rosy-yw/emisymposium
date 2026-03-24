@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CUHK–UCL International Symposium 2026</title>
+  <meta
+    name="description"
+    content="CUHK–UCL International Symposium — English-medium instruction in the era of GenAI: Negotiating tradition and modernity."
+  />
+  <meta name="theme-color" content="#65558f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f6f5f9;
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-strong: rgba(255, 255, 255, 0.97);
+      --text: #2a2438;
+      --muted: #6f6782;
+      --line: rgba(101, 85, 143, 0.14);
+      --line-strong: rgba(101, 85, 143, 0.24);
+      --purple: #65558f;
+      --purple-deep: #4e426d;
+      --shadow: 0 18px 44px rgba(53, 43, 79, 0.08);
+      --max: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fafafe 0%, #f4f2f8 100%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 254, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--purple-deep);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .hero {
+      padding: 24px 0 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      min-height: 690px;
+      border: 1px solid var(--line);
+      background: #f8f7fb;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-image: url("./images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 1;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        rgba(248, 247, 251, 0.70) 0%,
+        rgba(248, 247, 251, 0.22) 30%,
+        rgba(248, 247, 251, 0.80) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 4;
+    }
+
+    .hero-top {
+      padding: 20px 28px 0;
+      text-align: center;
+    }
+
+    .logo-row {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      min-width: min(520px, 100%);
+    }
+
+    .logo-row img {
+      max-height: 64px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-divider {
+      width: 56px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) 350px;
+      gap: 26px;
+      padding: 34px 28px 28px;
+      align-items: start;
+    }
+
+    .hero-left {
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 8px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.16);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.04;
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 5.3vw, 62px);
+      margin-bottom: 12px;
+      color: #ffffff;
+      text-shadow: 0 2px 14px rgba(0,0,0,0.22);
+    }
+
+    .hero-subtitle-main {
+      font-size: clamp(22px, 2.9vw, 36px);
+      color: #ffffff;
+      line-height: 1.16;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.22);
+      max-width: 760px;
+    }
+
+    .hero-right {
+      background: rgba(255,255,255,0.84);
+      border: 1px solid var(--line);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-meta {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .meta-item {
+      padding-top: 9px;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.2;
+    }
+
+    .meta-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .btn {
+      min-height: 46px;
+      padding: 0 16px;
+      border: 1px solid var(--line-strong);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--purple-deep);
+      color: #fff;
+      border-color: var(--purple-deep);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--purple-deep);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(101, 85, 143, 0.06);
+    }
+
+    .registration-note {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.35;
+      padding-top: 2px;
+    }
+
+    section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3.2vw, 38px);
+      color: var(--purple-deep);
+      line-height: 1.08;
+    }
+
+    .lede {
+      max-width: 960px;
+      margin: 0 auto;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.62;
+      text-align: center;
+    }
+
+    .speakers-section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
+    }
+
+    .speaker-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .speaker-grid.keynotes {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .speaker-grid.featured {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 26px;
+    }
+
+    .speaker-card {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      padding: 16px 16px 14px;
+      min-height: 100%;
+      box-shadow: var(--shadow);
+    }
+
+    .speaker-photo-large {
+      width: 100%;
+      aspect-ratio: 4 / 4.8;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, rgba(236,231,247,0.7), rgba(255,255,255,0.9));
+    }
+
+    .speaker-photo-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .speaker-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px;
+      line-height: 1.06;
+      color: var(--purple-deep);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .speaker-name a:hover {
+      color: var(--purple);
+    }
+
+    .speaker-affiliation {
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-size: 12.5px;
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    .speaker-role {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .talk-title {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.42;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .abstract-text {
+      margin: 0;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.58;
+    }
+
+    .duo-card .duo-people {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .duo-person .speaker-photo-large {
+      aspect-ratio: 4 / 4.8;
+      margin-bottom: 10px;
+    }
+
+    .duo-person .speaker-name {
+      font-size: 22px;
+    }
+
+    .schedule-shell {
+      max-width: 1060px;
+      margin: 0 auto;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .schedule-row:last-child {
+      border-bottom: 0;
+    }
+
+    .schedule-time,
+    .schedule-detail {
+      padding: 14px 18px;
+    }
+
+    .schedule-time {
+      border-right: 1px solid var(--line);
+      color: var(--purple-deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .schedule-type {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .schedule-title {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+      font-size: 15px;
+      line-height: 1.38;
+    }
+
+    .schedule-speaker {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .section-stack {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .stack-block {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .stack-title {
+      padding: 14px 18px 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 22px;
+      color: var(--purple-deep);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.05;
+    }
+
+    .stack-copy {
+      padding: 14px 18px 18px;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .venue-map {
+      max-width: 840px;
+      margin: 16px auto 0;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .venue-map iframe {
+      width: 100%;
+      height: 220px;
+      border: 0;
+      display: block;
+    }
+
+    .footer {
+      padding: 24px 0 36px;
+    }
+
+    .footer-shell {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-main {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        min-height: 260px;
+      }
+
+      .speaker-grid.featured {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 12px 0;
+      }
+
+      .logo-row {
+        gap: 14px;
+        min-width: 100%;
+      }
+
+      .hero-top,
+      .hero-main {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .speaker-grid.keynotes,
+      .speaker-grid.featured {
+        grid-template-columns: 1fr;
+      }
+
+      .duo-card .duo-people {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-row {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-time {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">CUHK × UCL International Symposium 2026</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#venue">Venue</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-content">
+          <div class="hero-top">
+            <div class="logo-row">
+              <img src="./images/ucl-logo.png" alt="University College London logo" />
+              <div class="logo-divider" aria-hidden="true"></div>
+              <img src="./images/cuhk-logo.png" alt="The Chinese University of Hong Kong logo" />
+            </div>
+          </div>
+
+          <div class="hero-main">
+            <div class="hero-left">
+              <span class="hero-eyebrow">24 April 2026 · Yasumoto International Academic Park · Hong Kong</span>
+              <h1 class="hero-title">CUHK–UCL International Symposium</h1>
+              <div class="hero-subtitle-main">
+                English-medium instruction in the era of GenAI:<br>
+                Negotiating tradition and modernity
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="hero-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Date</span>
+                  <strong>24 April 2026 (Friday)</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Venue</span>
+                  <strong>Lecture Theatre 8, 2/F, Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Funded</span>
+                  <strong>UCL–CUHK Strategic Partner Funds</strong>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Host</span>
+                  <strong>Department of Curriculum and Instruction, The Chinese University of Hong Kong</strong>
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#">Register Now</a>
+                <a class="btn btn-secondary" href="#schedule">View Schedule</a>
+                <div class="registration-note">Registration is for in-person participation only.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About the Symposium</h2>
+        </div>
+        <p class="lede">
+          Join us for the CUHK–UCL international symposium! The symposium brings together leading scholars in English-medium instruction (EMI) and generative artificial intelligence (GenAI). Discussions will revolve around challenges and opportunities brought by modern GenAI technologies to transform EMI research and practice. Central issues such as human agency, authorship, assessment, academic literacy and educational inequality will be addressed to prepare for critical, responsible, and sustainable use of GenAI in the rapidly changing global EMI landscape.
+        </p>
+      </div>
+    </section>
+
+    <section id="speakers" class="speakers-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Keynote speakers</h2>
+        </div>
+
+        <div class="speaker-grid keynotes">
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/glenn-stockwell.jpg" alt="Glenn Stockwell" />
+            </div>
+            <div class="speaker-name"><a href="https://www.eduhk.hk/en/experts/professor-stockwell-glenn" target="_blank" rel="noopener">Glenn Stockwell</a></div>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">The Collaboration Illusion: AI and Human Agency in EMI</div>
+            <p class="abstract-text">As generative AI becomes more common in English-Medium Instruction, it has become fashionable to describe human-AI interaction as "collaboration." But this framing deserves scrutiny. Drawing on Stockwell and Wang (2025), this keynote argues that AI lacks the shared intent, mutual understanding, and accountability that genuine collaboration requires. Treating AI as a collaborator risks devaluing teacher judgement, conflating AI output with learner competence, and muddying questions of intellectual ownership. Rather than defaulting to this language, we need more precise terms for what AI actually does in educational settings, whether as tool, resource, or interlocutor, and clearer strategies for keeping pedagogical decision-making where it belongs.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/angel-lin.jpg" alt="Mei Yi Angel Lin" />
+            </div>
+            <div class="speaker-name"><a href="https://www.eduhk.hk/ele/people/angel-lin" target="_blank" rel="noopener">Mei Yi Angel Lin</a></div>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">Title to be announced</div>
+            <p class="abstract-text">Abstract to be announced.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/jim-mckinley.jpg" alt="Jim McKinley" />
+            </div>
+            <div class="speaker-name"><a href="https://profiles.ucl.ac.uk/66669-jim-mckinley" target="_blank" rel="noopener">Jim McKinley</a></div>
+            <p class="speaker-affiliation">University College London</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">Authorship, participation, and academic voice in English-medium instruction in the age of generative AI</div>
+            <p class="abstract-text">Generative AI is rapidly reshaping academic communication, yet discussions in English-medium instruction (EMI) have largely focused on academic integrity and assessment security. This talk argues that generative AI instead challenges more fundamental assumptions about participation, authorship, and linguistic competence that underpin EMI policy and practice.<br><br>Drawing on recent work on writer identity alongside classroom-based reflections from EMI teaching contexts, I examine a growing pedagogical paradox: while AI tools appear to lower linguistic barriers to academic production, student participation in classroom discussion and collaborative meaning-making may be changing in unexpected ways. Instructors increasingly observe students turning to AI-mediated support during learning activities, raising questions about how engagement, intellectual struggle, and disciplinary socialisation are being reconfigured.<br><br>I suggest that these developments expose longstanding tensions within EMI, where participation has often been equated with visible linguistic performance in English. Rather than framing AI as either threat or solution, the talk considers how EMI policy and pedagogy might reconceptualise participation and authorship in contexts where academic work is becoming a hybrid human–AI practice.</p>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top: 34px;">
+          <h2>Featured speakers</h2>
+        </div>
+
+        <div class="speaker-grid featured">
+          <article class="speaker-card duo-card">
+            <div class="duo-people">
+              <div class="duo-person">
+                <div class="speaker-photo-large">
+                  <img src="./images/speakers/yuen-yi-lo.jpg" alt="Yuen Yi Lo" />
+                </div>
+                <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a></div>
+                <p class="speaker-affiliation">The University of Hong Kong</p>
+                <p class="speaker-role">Professor</p>
+              </div>
+              <div class="duo-person">
+                <div class="speaker-photo-large">
+                  <img src="./images/speakers/bo-peng.jpg" alt="Bo Peng" />
+                </div>
+                <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a></div>
+                <p class="speaker-affiliation">The University of Hong Kong</p>
+                <p class="speaker-role">PhD candidate</p>
+              </div>
+            </div>
+            <div class="talk-title">Developing EMI teacher language awareness through AI-teacher collaboration</div>
+            <p class="abstract-text">English-medium instruction (EMI) has been widely promoted in higher education across non-Anglophone contexts. Despite its expansion, a notable gap remains between macro-level policy goals and micro-level classroom implementation. EMI teachers are often content specialists without formal training in language pedagogy and frequently encounter pedagogical and linguistic challenges. Meanwhile, the rapid development of artificial intelligence (AI) tools offers opportunities to support EMI pedagogy. This study seeks to explore how EMI teachers collaborate with AI to improve instructional and assessment practices.<br><br>Adopting a design-based research methodology, this study examines the extent to which a novice EMI accounting teacher’s language awareness (TLA) developed over one semester at a Chinese university. Multiple sources of data indicate that the teacher experienced noticeable development in her TLA during the collaboration with AI. She demonstrated increased awareness of students’ language-related challenges and of the importance of instructional language and scaffolding. Such TLA was translated to her classroom and assessment practices, where she incorporated more language-related episodes and visual support to facilitate students’ comprehension, and developed more language-sensitive assessment tasks. These findings contribute to theoretical discussion on EMI teacher development and offer practical insights into how AI can support EMI teachers in comparable policy-driven EMI contexts worldwide.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/daisy-di-zou.jpg" alt="Daisy Di Zou" />
+            </div>
+            <div class="speaker-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-di-zou/" target="_blank" rel="noopener">Daisy Di Zou</a></div>
+            <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">Title to be announced</div>
+            <p class="abstract-text">Abstract to be announced.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/gabriel-fan-fang.jpg" alt="Gabriel Fan Fang" />
+            </div>
+            <div class="speaker-name"><a href="https://www.eduhk.hk/ele/people/fan-gabriel-fang/Personal%20Profile" target="_blank" rel="noopener">Gabriel Fan Fang</a></div>
+            <p class="speaker-affiliation">The Education University of Hong Kong</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">English medium instruction: Preparedness and Support in the era of GenAI</div>
+            <p class="abstract-text">English-medium instruction (EMI) has been widely discussed and debated from various perspectives, particularly in relation to language policy and classroom practices. A key issue of EMI concerns the preparedness of and support for the main stakeholders, including both teachers and students. This talk reports on two studies conducted in the Chinese context and argues for the need to move beyond the four walls of the classroom to examine broader issues related to EMI. The findings suggest that many students are insufficiently prepared to achieve the dual goals of content and language learning, and that EMI programmes may widen the gap between students with different levels of English proficiency, potentially leading to educational inequality if not well-planned. Students also raised concerns about the quality of EMI teaching and highlighted the need for discipline-specific language support. In the era of artificial intelligence, this talk argues for a need of rethinking EMI through a decolonial lens in terms of how EMI and AI-mediated practices may be designed in order not to reinforce existing inequalities in language education.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/benjamin-moorhouse.jpg" alt="Benjamin Luke Moorhouse" />
+            </div>
+            <div class="speaker-name"><a href="https://scholars.cityu.edu.hk/en/persons/bmoorhou/" target="_blank" rel="noopener">Benjamin Moorhouse</a></div>
+            <p class="speaker-affiliation">City University of Hong Kong</p>
+            <p class="speaker-role">Associate Professor</p>
+            <div class="talk-title">The case against AI-mediated scholarship in EMI</div>
+            <p class="abstract-text">This talk frames EMI in the GenAI age through AI-mediated scholarship: the growing reliance on Large Language Model-powered “summarisers” and “chat-with-the-article” interfaces that insert algorithmic interpretation between readers and research. EMI students face many challenges when engaging with scholarship, including linguistic load, unfamiliar genres, dense argumentation, and inequitable access to disciplinary discourse, with GenAI often seen as a ‘solution’ to these difficulties.<br><br>Rather than positioning AI as the solution to these difficulties, I argue that we need be cautious of AI-mediated scholarship, and should instead facilitate and promote practices that scaffold authentic engagement (e.g., guided slow reading, annotation, dialogic discussion, and genre-aware reading routines) and that advocate for intellectual struggle as a condition for developing language skills, disciplinary knowledge and judgement. In doing so, we resist efficiency narratives and reclaims deep, critical reading as central to learning.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/christy-qiu.jpg" alt="Christy Xuyan Qiu" />
+            </div>
+            <div class="speaker-name"><a href="https://www.polyu.edu.hk/engl/people/academic-staff/prof-christy-xuyan-qiu/" target="_blank" rel="noopener">Christy Xuyan Qiu</a></div>
+            <p class="speaker-affiliation">The Hong Kong Polytechnic University</p>
+            <p class="speaker-role">Professor</p>
+            <div class="talk-title">Human vs. AI Interaction: EMI University Students’ Discourse Marker Choices in Oral Tasks</div>
+            <p class="abstract-text">This presentation reports on a study investigating how task complexity, pragmatic demand, and interaction modality influence the use of discourse markers by second language (L2) learners from an English Medium Instruction (EMI) university in Hong Kong. The study investigated learners’ discourse marker use in interactions with both human interlocutors and ChatGPT across four distinct oral tasks. Frequencies of discourse marker use were categorised and analysed following Fung and Carter’s (2007) framework. Findings demonstrated that lower task complexity had a greater impact on the use of referential markers (which clarify or specify information) than on structural markers (which organise or sequence discourse). AI-mediated dialogues elicited increased use of sequential markers, and the combined effect of these factors shaped learners’ choices of referential and consequence markers. These results suggest that both task design and interaction modality influence EMI students’ discourse marker use, highlighting opportunities for teachers to leverage AI-mediated activities and task variation to promote more effective spoken communication in L2 contexts.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/daniel-fung.jpg" alt="King Tat Daniel Fung" />
+            </div>
+            <div class="speaker-name"><a href="https://web.edu.hku.hk/faculty-academics/ktdfung" target="_blank" rel="noopener">King Tat Daniel Fung</a></div>
+            <p class="speaker-affiliation">The University of Hong Kong</p>
+            <p class="speaker-role"></p>
+            <div class="talk-title">Measuring academic language proficiency for EMI studies: Development of an academic c-test with GenAI</div>
+            <p class="abstract-text">Language proficiency has always been an important variable in second language research and education. In English Medium Instruction (EMI), some researchers and practitioners are concerned about the English proficiency that students need in order to learn without experiencing too many difficulties. However, it is not always easy to gauge students’ academic English proficiency especially at the time when they transition from secondary schools to universities, because many students would not have taken an academic proficiency test such as IELTS. It is, therefore, of both theoretical and pedagogical value to develop an academic English proficiency assessment that is efficient and economical. This paper presents the development of such a test – an academic c-test – with the support of GenAI. The presentation will start with an introduction of the validity of c-tests, grounded in a systematic review, followed by a description of the development and evaluation of an academic c-test. Finally, research and pedagogical implications will be discussed.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/nathan-thomas.jpg" alt="Nathan Thomas" />
+            </div>
+            <div class="speaker-name"><a href="https://profiles.ucl.ac.uk/74375-nathan-thomas" target="_blank" rel="noopener">Nathan Thomas</a></div>
+            <p class="speaker-affiliation">University College London</p>
+            <p class="speaker-role"></p>
+            <div class="talk-title">Narrating the lived experience of EMI: Participant Narratives as a proposal to advance interpretive transparency in the age of GenAI and open science</div>
+            <p class="abstract-text">There are several key negotiations that often take place in EMI research: policy vs practice, outcomes vs experience, and, recently, tradition vs modernity in the way GenAI is incorporated, or not, in research and practice. We can also witness similar negotiations in current discussions of open science (a “modern” phenomenon) in relation to qualitative research, which has rich traditions. Fundamentally, is “modern” always preferential in relation to tradition? At what point does something modern become tradition? And is there a risk that practices associated with modernity or tradition become dogma? In thinking through some of these issues, I propose a research practice that appears anti-modern as a possible solution for the very modern dilemma qualitative researchers face in relation to open science: how can we become more “open” in our interpretive research practices? Participant Narratives are analytic artefacts that invite readers to engage directly with interpreted material, provide a fuller context than isolated excerpts, and offer a feasible alternative to accessible transcripts. Importantly, these narratives steer toward methodological rigor and ethical responsibility, without yielding to “modern” encroachment on the ethos of qualitative research. I demonstrate how they can be used by researchers interested in narrating the lived experience of EMI.</p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo-large">
+              <img src="./images/speakers/sihan-zhou.jpg" alt="Sihan Zhou" />
+            </div>
+            <div class="speaker-name"><a href="https://www.fed.cuhk.edu.hk/cri/faculty/prof-zhou-sihan/" target="_blank" rel="noopener">Sihan Zhou</a></div>
+            <p class="speaker-affiliation">CUHK</p>
+            <p class="speaker-role">Assistant Professor</p>
+            <div class="talk-title">Title to be announced</div>
+            <p class="abstract-text">Abstract to be announced.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="container">
+        <div class="section-head">
+          <h2>Symposium Schedule</h2>
+        </div>
+        <div class="schedule-shell">
+          <div class="schedule-row">
+            <div class="schedule-time">09:45 – 10:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Opening</div>
+              <div class="schedule-title">Opening remark</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">10:00 – 10:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Keynote 1</div>
+              <div class="schedule-title">Glenn Stockwell</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">10:45 – 11:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 1</div>
+              <div class="schedule-title">Daisy Di Zou</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">11:15 – 11:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 2</div>
+              <div class="schedule-title">Christy Xuyan Qiu</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">11:45 – 12:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 3</div>
+              <div class="schedule-title">Sihan Zhou</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">12:15 – 13:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Break</div>
+              <div class="schedule-title">Break &amp; Snacks</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">13:00 – 13:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Keynote 2</div>
+              <div class="schedule-title">Jim McKinley</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">13:45 – 14:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 4</div>
+              <div class="schedule-title">Bo Peng &amp; Yuen Yi Lo</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">14:15 – 14:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 5</div>
+              <div class="schedule-title">Gabriel Fan Fang</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">14:45 – 15:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 6</div>
+              <div class="schedule-title">King Tat Daniel Fung</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">15:15 – 16:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Break</div>
+              <div class="schedule-title">Break &amp; Snacks</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">16:00 – 16:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Keynote 3</div>
+              <div class="schedule-title">Mei Yi Angel Lin</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">16:45 – 17:15</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 7</div>
+              <div class="schedule-title">Benjamin Moorhouse</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">17:15 – 17:45</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Invited talk 8</div>
+              <div class="schedule-title">Nathan Thomas</div>
+            </div>
+          </div>
+
+          <div class="schedule-row">
+            <div class="schedule-time">17:45 – 18:00</div>
+            <div class="schedule-detail">
+              <div class="schedule-type">Closing</div>
+              <div class="schedule-title">Closing remark</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="venue">
+      <div class="container">
+        <div class="section-head">
+          <h2>Venue and Access</h2>
+        </div>
+        <div class="section-stack">
+          <div class="stack-block">
+            <div class="stack-title">Venue</div>
+            <div class="stack-copy">Lecture Theatre 8, 2/F, Yasumoto International Academic Park (YIA), The Chinese University of Hong Kong</div>
+          </div>
+        </div>
+        <div class="venue-map">
+          <iframe
+            title="Google Map Module"
+            src="https://www.google.com/maps?q=Yasumoto%20International%20Academic%20Park%20CUHK&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+        </div>
+        <div class="section-stack">
+          <div class="stack-block">
+            <div class="stack-title">Email</div>
+            <div class="stack-copy">
+              For any questions about the event, please contact:<br />
+              <a href="mailto:your-symposium-email@cuhk.edu.hk">your-symposium-email@cuhk.edu.hk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-shell">CUHK–UCL International Symposium 2026</div>
+  </footer>
+</body>
+</html>
