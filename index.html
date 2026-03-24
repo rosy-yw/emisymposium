@@ -173,8 +173,8 @@
 
     .hero-main {
       display: grid;
-      grid-template-columns: minmax(0, 1.45fr) 390px;
-      gap: 28px;
+      grid-template-columns: minmax(0, 1.65fr) 360px;
+      gap: 24px;
       padding: 40px 32px 30px;
       align-items: start;
     }
@@ -184,6 +184,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
+      text-align: left;
       padding-right: 8px;
     }
 
@@ -207,20 +209,19 @@
     }
 
     .hero-title {
-      font-size: clamp(38px, 5.6vw, 68px);
-      margin-bottom: 14px;
+      font-size: clamp(34px, 4.7vw, 58px);
+      margin-bottom: 12px;
       color: #ffffff;
       text-shadow: 0 2px 14px rgba(0,0,0,0.22);
-      white-space: nowrap;
+      max-width: 760px;
     }
 
     .hero-subtitle-main {
-      font-size: clamp(24px, 3vw, 38px);
+      font-size: clamp(21px, 2.35vw, 31px);
       color: #ffffff;
-      line-height: 1.16;
+      line-height: 1.18;
       text-shadow: 0 1px 10px rgba(0,0,0,0.22);
-      max-width: 860px;
-      white-space: nowrap;
+      max-width: 760px;
     }
 
     .hero-right {
@@ -327,7 +328,7 @@
     }
 
     .lede {
-      max-width: 1020px;
+      max-width: 1080px;
       margin: 0 auto;
       color: var(--text);
       font-size: 19px;
@@ -408,63 +409,44 @@
       line-height: 1.68;
     }
 
-    .featured-list {
-      max-width: 1120px;
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 28px;
+      max-width: 1180px;
       margin: 28px auto 0;
     }
 
     .featured-entry {
-      padding: 30px 0 34px;
       border-top: 1px solid var(--line);
-    }
-
-    .featured-entry:first-child {
-      border-top: none;
-      padding-top: 8px;
-    }
-
-    .featured-entry::after {
-      content: "";
-      display: block;
-      clear: both;
+      padding-top: 18px;
     }
 
     .featured-media {
-      float: left;
-      width: 260px;
-      margin: 0 28px 14px 0;
+      margin-bottom: 12px;
     }
 
     .featured-media img {
       width: 100%;
-      aspect-ratio: 4 / 4.8;
+      aspect-ratio: 4 / 4.5;
       object-fit: cover;
       border: 1px solid var(--line-strong);
       background: linear-gradient(135deg, rgba(236,231,247,0.7), rgba(255,255,255,0.9));
     }
 
     .featured-media.duo {
-      width: 548px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 18px;
     }
 
     .featured-person-name {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      line-height: 1.35;
-      margin: 10px 0 2px;
+      line-height: 1.32;
+      margin: 10px 0 0;
       color: var(--text);
       text-align: center;
-    }
-
-    .featured-person-affiliation {
-      font-size: 14px;
-      line-height: 1.4;
-      color: var(--muted);
-      text-align: center;
-      margin: 0;
     }
 
     .featured-heading {
@@ -473,9 +455,9 @@
 
     .featured-name {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 30px;
+      font-size: 29px;
       font-weight: 800;
-      line-height: 1.22;
+      line-height: 1.2;
       color: var(--text);
       margin: 0 0 4px;
     }
@@ -485,23 +467,23 @@
     }
 
     .featured-affiliation {
-      font-size: 17px;
-      line-height: 1.48;
+      font-size: 16px;
+      line-height: 1.42;
       color: var(--muted);
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .featured-talk-title {
-      font-size: 23px;
-      line-height: 1.4;
+      font-size: 21px;
+      line-height: 1.38;
       font-weight: 700;
       color: var(--text);
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .featured-abstract {
-      font-size: 18px;
-      line-height: 1.86;
+      font-size: 16px;
+      line-height: 1.65;
       color: var(--text);
       margin: 0;
     }
@@ -618,23 +600,14 @@
 
       .hero-title,
       .hero-subtitle-main {
-        white-space: normal;
+        max-width: 100%;
       }
     }
 
     @media (max-width: 980px) {
-      .speaker-grid.keynotes {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .featured-media.duo {
-        width: 100%;
-        float: none;
-        margin: 0 0 18px 0;
-      }
-
-      .featured-media {
-        width: 300px;
+      .speaker-grid.keynotes,
+      .featured-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -659,22 +632,6 @@
       .hero-main {
         padding-left: 18px;
         padding-right: 18px;
-      }
-
-      .hero-title,
-      .hero-subtitle-main {
-        white-space: normal;
-      }
-
-      .speaker-grid.keynotes {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-media,
-      .featured-media.duo {
-        float: none;
-        width: 100%;
-        margin: 0 0 18px 0;
       }
 
       .featured-media.duo {
@@ -810,7 +767,7 @@
           <h2>Featured Speakers</h2>
         </div>
 
-        <div class="featured-list">
+        <div class="featured-grid">
           <article class="featured-entry">
             <div class="featured-media duo">
               <div>
@@ -818,17 +775,14 @@
                 <div class="featured-person-name">
                   <a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Yuen Yi Lo</a>
                 </div>
-                <p class="featured-person-affiliation">The University of Hong Kong</p>
               </div>
               <div>
                 <img src="./images/speakers/bo-peng.jpg" alt="Bo Peng">
                 <div class="featured-person-name">
                   <a href="https://web.edu.hku.hk/faculty-academics/yuenyilo" target="_blank" rel="noopener">Bo Peng</a>
                 </div>
-                <p class="featured-person-affiliation">The University of Hong Kong</p>
               </div>
             </div>
-
             <div class="featured-heading">
               <h3 class="featured-name">Yuen Yi Lo &amp; Bo Peng</h3>
               <p class="featured-affiliation">The University of Hong Kong</p>
