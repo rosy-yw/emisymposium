@@ -145,32 +145,43 @@
     }
 
     .logo-strip {
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
-      padding: 18px 32px;
-      position: relative;
-      z-index: 4;
-    }
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    padding: 28px 32px;
+    position: relative;
+    z-index: 4;
 
-    .logo-row {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 22px;
-      min-width: min(520px, 100%);
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .logo-row img {
-      max-height: 68px;
-      width: auto;
-      object-fit: contain;
-    }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 
-    .logo-divider {
-      width: 56px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
-    }
+  .logo-row img {
+    height: 120px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .logo-divider {
+    width: 72px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+    flex: 0 0 auto;
+  }
 
     .hero-shell {
       position: relative;
